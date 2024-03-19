@@ -1,0 +1,9 @@
+Component     myCar.Logger size ( 8 , 8 ) {
+	labelPosition ( 0 , 1 )
+	methodLayout calc {
+		pin t ( Left , 0 )
+		pin x ( Left , 2 )
+		pin y ( Left , 4 )
+		pin z ( Left , 6 )
+	}
+}

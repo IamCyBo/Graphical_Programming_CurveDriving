@@ -1,0 +1,151 @@
+classType myCar.myCar
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_58, connection_54, connection_45, connection_40, connection_24, connection_19
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (611, 175) {
+		label at (0, -1)
+		inPin connection_20
+		sequenceCall at (-10, -14) {
+			inPin connection_19
+		}
+	}
+	simpleIdentifier resources.CarMessages.x at (611, 75) {
+		label at (0, -1)
+		inPin connection_41
+		sequenceCall at (-10, -14) {
+			inPin connection_40
+		}
+	}
+	simpleIdentifier resources.CarMessages.y at (611, 125) {
+		label at (0, -1)
+		inPin connection_25
+		sequenceCall at (-10, -14) {
+			inPin connection_24
+		}
+	}
+	simpleIdentifier resources.CarMessages.steering at (61, 25) {
+		label at (0, -1)
+		outPin {
+			connection_18
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.power at (61, 85) {
+		label at (0, -1)
+		outPin {
+			connection_3
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.brake at (61, 155) {
+		label at (0, -1)
+		outPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier SystemLib.Miscellaneous.DeltaTimeService.deltaT at (271, 275) {
+		label at (-30, -1)
+		inPin outPin {
+			connection_59
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.mybearing at (611, 25) {
+		label at (0, -1)
+		inPin connection_31 {
+			bendpoints (0, -20)
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_45
+		}
+	}
+	complexIdentifier myVehicle at (151, 61) size (38, 14) backgroundColor #ffffff {
+		label at (-10, 1)
+		methodCall myCar.myDrive_4.move {
+			argumentPin powerCtrl at (left, 2) connection_3
+			argumentPin brakeCtrl at (left, 9) connection_1
+			argumentPin mydt at (bottom, 31) connection_53 {
+				bendpoints (10, 0)
+			}
+			argumentPin myg at (bottom, 16) connection_47 {
+				bendpoints (50, 0)
+			}
+			argumentPin delta at (top, 14) connection_18 {
+				bendpoints (200, 0)
+			}
+			sequenceCall at (220, -54) {
+				inPin connection_54
+			}
+		}
+		elementCall (myCar.myDrive_4.v) {
+			returnPin at (right, 11) {
+				connection_20
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.x) {
+			returnPin at (right, 1) {
+				connection_41
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.y) {
+			returnPin at (right, 6) {
+				connection_25
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.bearing) {
+			returnPin at (top, 30) {
+				connection_31
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier mydt at (351, 275) {
+		label at (0, -1)
+		inPin connection_59
+		outPin {
+			connection_60
+		}
+		sequenceCall {
+			inPin connection_58
+		}
+	}
+	unitConversion at (421, 271) {
+		inPin connection_60
+		outPin {
+			connection_53
+		}
+		inputType real outputType units.si.s
+	}
+	simpleIdentifier g at (231, 235) {
+		label at (0, 9)
+		outPin {
+			connection_47
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+}

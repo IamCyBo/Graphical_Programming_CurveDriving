@@ -1,0 +1,64 @@
+classType myCar.Route
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_1, connection_3
+		}
+	}
+	simpleIdentifier x at (211, 121) {
+		label at (-40, -69)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_7 {
+			bendpoints (100, 0)
+		}
+		outPin {
+			connection_2
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier y at (221, 291) {
+		label at (-40, -69)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_6 {
+			bendpoints (110, 0)
+		}
+		outPin {
+			connection_4
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier x0 at (351, 135) {
+		label at (0, -1)
+		inPin connection_2
+		outPin sequenceCall {
+			inPin connection_1
+		}
+	}
+	simpleIdentifier y0 at (351, 305) {
+		label at (0, -1)
+		inPin connection_4
+		outPin sequenceCall {
+			inPin connection_3
+		}
+	}
+	methodArgumentIdentifier calc.arg at (111, 355) {
+		label at (0, -1)
+		outPin {
+			connection_6
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.arg at (111, 185) {
+		label at (0, -1)
+		outPin {
+			connection_7
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+}
