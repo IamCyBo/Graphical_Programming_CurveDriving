@@ -1,0 +1,33 @@
+classType vectorOperations.test
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_2
+		}
+	}
+	unitConversion at (251, 171) {
+		inPin connection_1
+		outPin {
+			connection_3
+		}
+		inputType units.si.cm outputType real
+	}
+	simpleIdentifier c at (191, 175) {
+		label at (0, -1)
+		outPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier v at (381, 185) {
+		label at (0, -1)
+		inPin connection_3 {
+			bendpoints (90, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_2
+		}
+	}
+}
