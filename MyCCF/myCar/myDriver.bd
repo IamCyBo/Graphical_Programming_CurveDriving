@@ -23,7 +23,7 @@ blockdiagramSpecification calc_spec {
 			inPin
 		}
 	}
-	literal unit units.common.kmph "60" at (141, 193) size (49, 0) {
+	literal unit units.common.kmph "50" at (141, 193) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_1
