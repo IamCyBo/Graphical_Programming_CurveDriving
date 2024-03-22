@@ -20,13 +20,17 @@ class vectOps {
 
 	// Calculates the length of a vector and returns it as a real value
 	// The length of the vector is calculated using the pythagorean theorem: sqrt(x^2 + y^2)
-	public real length(vect v_in) {
-		return lib.sqrt((v_in[0] * v_in[0] + v_in[1] * v_in[1]) / 1[m ^ 2]);
+	public m length(vect v_in) {
+		return lib.sqrt((v_in[0] * v_in[0] + v_in[1] * v_in[1]) / 1[m ^ 2]) *1[m];
 	}
 	
 	// Normalizes the given vector by dividing by it's length
-	public vect norm(vect v_in){
-		real size = length(v_in);
+	public vect norm(vect v_in) {
+		real size = length(v_in)/1[m];
+		if (size == 0){
+			vect_norm = v_in;
+			return vect_norm;
+		}
 		vect_norm[0] = v_in[0]/size;
 		vect_norm[1] = v_in[1]/size;
 		return vect_norm;
@@ -38,20 +42,18 @@ class vectOps {
 		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m^2];
 	}
 	
-	// Calculates the angle between two vectors and returns it in rad
-	// The angle is calculated by using acos((A*B)/(|A|*|B|))
-	public real angle(vect vectA, vect vectB){
-		real scalar = scalar(vectA, vectB);
-		real lengthA = length(vectA);
-		real lengthB = length(vectB);
-		
-		return lib.acos(scalar/(lengthA * lengthB));
-	}
-	
 	// Calculates the cross Product of two vektors and returns it as a real value
 	// The cross prduct is calulated by A1*B2-B1*A2
 	public real crossProduct(vect pointA, vect pointB){
 		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m^2];
+	}
+		
+	// Calculates the angle between two vectors and returns it in rad
+	public real angle(vect vectA, vect vectB){
+		real cross = crossProduct(vectA, vectB);
+		real scal = scalar(vectA, vectB);
+		
+		return lib.atan2(cross, scal);
 	}
 	
 	// Calculates the distance between a Point and a Line Segment and returns it in m
