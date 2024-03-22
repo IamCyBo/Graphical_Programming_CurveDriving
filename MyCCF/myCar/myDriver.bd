@@ -2,19 +2,10 @@ classType myCar.myDriver
 blockdiagramSpecification calc_spec {
 	methodBody calc {
 		outPin active {
-			connection_62
+			connection_3
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (651, 195) {
-		label at (0, -1)
-		inPin connection_59
-		sequenceCall {
-			inPin connection_58 {
-				bendpoints (0, -120), (-100, -120)
-			}
-		}
-	}
-	simpleIdentifier resources.CarMessages.v at (151, 265) {
+	simpleIdentifier resources.CarMessages.v at (51, 105) {
 		label at (0, -1)
 		outPin {
 			connection_2
@@ -23,85 +14,30 @@ blockdiagramSpecification calc_spec {
 			inPin
 		}
 	}
-	literal unit units.common.kmph "50" at (141, 193) size (49, 0) {
+	literal unit units.common.kmph "60" at (51, 63) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_1
 		}
 	}
-	subtraction at (291, 216) {
-		inPin connection_1 {
-			bendpoints (100, 0)
-		}
-		inPin connection_2 {
-			bendpoints (100, 0)
-		}
-		outPin {
-			connection_55
-		}
-	}
-	unitConversion at (551, 191) {
-		inPin connection_52
-		outPin {
-			connection_59, connection_56
-		}
-		inputType units.common.kmph outputType real
-	}
-	literal Numeric "2000" at (341, 123) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_49
+	complexIdentifier driverTemplate_instance at (141, 61) size (14, 8) {
+		label at (-20, 41)
+		methodCall components.driverTemplate.power {
+			argumentPin vSoll at (left, 0) connection_1
+			argumentPin vIst at (left, 4) connection_2
+			returnPin at (right, 0) {
+				connection_4
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
-	multiplication at (471, 186) {
-		inPin connection_49 {
-			bendpoints (0, 60)
-		}
-		inPin connection_55 {
-			bendpoints (140, 0)
-		}
-		outPin {
-			connection_52
-		}
-	}
-	greaterOrEqual at (641, 256) {
-		inPin connection_56 {
-			bendpoints (50, 0)
-		}
-		inPin connection_57
-		outPin {
-			connection_63
-		}
-	}
-	literal Numeric "0.0" at (571, 273) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_57
-		}
-	}
-	ifElse at (691, 261) {
-		inPin connection_63
-		ifControlFlowOutPin {
-			connection_58
-		}
-		elseControlFlowOutPin {
-			connection_64
-		}
-		sequenceCall {
-			inPin connection_62
-		}
-	}
-	simpleIdentifier resources.CarMessages.power at (721, 355) {
+	simpleIdentifier resources.CarMessages.power at (321, 65) {
 		label at (0, -1)
-		inPin connection_65
+		inPin connection_4
 		sequenceCall {
-			inPin connection_64
-		}
-	}
-	literal Numeric "0.0" at (651, 353) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_65
+			inPin connection_3
 		}
 	}
 }
