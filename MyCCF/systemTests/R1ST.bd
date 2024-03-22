@@ -1,0 +1,360 @@
+classType systemTests.R1ST
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_33, connection_44, connection_57, connection_59, connection_63, connection_67, connection_69
+		}
+	}
+	literal unit units.common.kmph "60" at (201, 273) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_9, connection_5
+		}
+	}
+	multiplication at (291, 296) {
+		inPin connection_5 {
+			bendpoints (30, 0), (30, 20)
+		}
+		inPin connection_6
+		outPin {
+			connection_22
+		}
+	}
+	literal Numeric "0.01" at (201, 313) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_6
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (201, 235) {
+		label at (0, -1)
+		outPin {
+			connection_50
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (291, 236) {
+		inPin connection_50
+		inPin connection_9 {
+			bendpoints (30, 0), (30, -20)
+		}
+		outPin {
+			connection_10
+		}
+	}
+	absolute at (341, 241) {
+		inPin connection_10
+		outPin {
+			connection_21
+		}
+	}
+	if at (451, 271) {
+		inPin connection_20
+		ifControlFlowOutPin {
+			connection_37
+		}
+		sequenceCall {
+			inPin connection_15 {
+				bendpoints (210, 0), (210, -190), (-20, -190)
+			}
+		}
+	}
+	greater at (401, 266) {
+		inPin connection_21 {
+			bendpoints (20, 0)
+		}
+		inPin connection_22 {
+			bendpoints (70, 0)
+		}
+		outPin {
+			connection_20
+		}
+	}
+	complexIdentifier StopWatch_instance at (201, 511) size (6, 4) backgroundColor #ffffff {
+		label at (-120, -109)
+		methodCall SystemLib.CounterTimer.StopWatch.value {
+			returnPin at (right, 1) {
+				connection_41, connection_30
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		methodCall SystemLib.CounterTimer.StopWatch.compute {
+			methodVoidPin at (left, 1) sequenceCall at (60, 36) {
+				inPin connection_28
+			}
+		}
+		methodCall SystemLib.CounterTimer.StopWatch.reset {
+			methodVoidPin at (bottom, 2) sequenceCall at (-14, 21) {
+				inPin connection_29 {
+					bendpoints (0, -40), (-260, -40), (-260, 520)
+				}
+			}
+		}
+	}
+	simpleIdentifier T_1D_REAL_instance at (291, 361) {
+		label at (-70, 71)
+		inPin connection_30 {
+			bendpoints (0, -150)
+		}
+		outPin {
+			connection_31
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	equal at (361, 386) {
+		inPin connection_31 {
+			bendpoints (0, 10)
+		}
+		inPin connection_32
+		outPin {
+			connection_34
+		}
+	}
+	literal Numeric "1.0" at (311, 443) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_43, connection_32
+		}
+	}
+	if at (411, 391) {
+		inPin connection_34
+		ifControlFlowOutPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin connection_33
+		}
+	}
+	simpleIdentifier result at (851, 245) {
+		label at (0, -1)
+		inPin connection_38
+		outPin {
+			connection_49
+		}
+		sequenceCall {
+			inPin connection_37 {
+				bendpoints (20, 0), (20, -50)
+			}
+		}
+	}
+	literal Boolean "false" at (761, 243) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_38
+		}
+	}
+	simpleIdentifier resources.TestMessages.r1st_success at (921, 245) {
+		label at (0, -1)
+		inPin connection_49
+		sequenceCall {
+			inPin connection_48 {
+				bendpoints (450, 0)
+			}
+		}
+	}
+	simpleIdentifier T_1D_REAL_instance_2 at (291, 511) {
+		label at (0, 1)
+		inPin connection_41
+		outPin {
+			connection_42
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	equal at (361, 496) {
+		inPin connection_43
+		inPin connection_42 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_45
+		}
+	}
+	if at (411, 501) {
+		inPin connection_45
+		ifControlFlowOutPin {
+			connection_46, connection_48
+		}
+		sequenceCall {
+			inPin connection_44
+		}
+	}
+	simpleIdentifier resources.TestMessages.r1st_complete at (921, 295) {
+		label at (0, -1)
+		inPin connection_47
+		sequenceCall {
+			inPin connection_46 {
+				bendpoints (450, 0)
+			}
+		}
+	}
+	literal Boolean "true" at (761, 293) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_47
+		}
+	}
+	complexIdentifier EdgeFalling_instance at (171, 41) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
+			argumentPin signal at (left, 1) connection_58 {
+				bendpoints (50, 0)
+			}
+			sequenceCall at (10, -54) {
+				inPin connection_57
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeFalling.value {
+			returnPin at (right, 1) {
+				connection_64
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	complexIdentifier EdgeRising_instance at (171, 101) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
+			argumentPin signal at (left, 1) connection_60 {
+				bendpoints (50, 0)
+			}
+			sequenceCall at (-30, 46) {
+				inPin connection_59
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeRising.value {
+			returnPin at (right, 1) {
+				connection_70
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier cstart at (71, 85) {
+		label at (0, -1)
+		outPin {
+			connection_60, connection_58
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	if at (241, 51) {
+		inPin connection_64
+		ifControlFlowOutPin {
+			connection_29, connection_75, connection_80, connection_78, connection_82
+		}
+		sequenceCall {
+			inPin connection_63
+		}
+	}
+	if at (141, 561) {
+		inPin connection_77
+		ifControlFlowOutPin {
+			connection_28
+		}
+		sequenceCall {
+			inPin connection_67
+		}
+	}
+	if at (241, 111) {
+		inPin connection_70
+		ifControlFlowOutPin {
+			connection_71
+		}
+		sequenceCall {
+			inPin connection_69
+		}
+	}
+	simpleIdentifier start at (401, 155) {
+		label at (0, -1)
+		inPin connection_72
+		outPin sequenceCall at (-10, -44) {
+			inPin connection_71
+		}
+	}
+	literal Boolean "false" at (331, 73) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_76
+		}
+	}
+	literal Boolean "true" at (331, 153) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_72
+		}
+	}
+	simpleIdentifier start at (401, 75) {
+		label at (0, -1)
+		inPin connection_76
+		outPin sequenceCall {
+			inPin connection_75 {
+				bendpoints (0, -30), (100, -30)
+			}
+		}
+	}
+	simpleIdentifier start at (51, 565) {
+		label at (0, -1)
+		inPin outPin {
+			connection_77
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.TestMessages.r1st_complete at (931, 395) {
+		label at (0, -1)
+		inPin connection_79
+		sequenceCall {
+			inPin connection_78 {
+				bendpoints (0, -30), (630, -30)
+			}
+		}
+	}
+	literal Boolean "false" at (761, 343) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_81
+		}
+	}
+	literal Boolean "false" at (761, 393) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_79
+		}
+	}
+	simpleIdentifier resources.TestMessages.r1st_success at (931, 345) {
+		label at (0, -1)
+		inPin connection_81
+		sequenceCall {
+			inPin connection_80 {
+				bendpoints (0, -30), (630, -30)
+			}
+		}
+	}
+	simpleIdentifier result at (681, 115) {
+		label at (0, -1)
+		inPin connection_83
+		outPin sequenceCall {
+			inPin connection_82 {
+				bendpoints (0, -30), (380, -30)
+			}
+		}
+	}
+	literal Boolean "true" at (601, 113) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_83
+		}
+	}
+}
