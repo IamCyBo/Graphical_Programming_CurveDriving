@@ -59,22 +59,32 @@ class vectOps {
 	// Calculates the distance between a Point and a Line Segment and returns it in m
 	// The distance is either the distance from the Point to the segment start/end
 	// and otherwise calculated by abs(crossproduct(AB/AP))/length(vect(AB,AP))
-	public m distancePointSegment(vect point, vect segA, vect segB){		
+	public m distancePointSegment(vect point, vect segA, vect segB){
+		vect seg_dir;
+		real projection_length;
+		vect orthogonal_vect;
+				
 		vect AB = getVect(segA, segB);
-		vect BP = getVect(segB, point);
 		vect AP = getVect(segA, point);
+		vect BP = getVect(segB, point);
 		
-		real scalar_ABBP = scalar(AB, BP);
-		real scalar_ABAP = scalar(AB, AP);
-		
-		if (scalar_ABBP > 0){
-			return length(BP);
-		}
-		else if (scalar_ABAP < 0){
+		m seg_length = length(AB);
+		if (seg_length == 0) {
 			return length(AP);
 		}
-		else {
-			return abs(crossProduct(AB, AP))/(length(getVect(AB, AP))/1[m]) *1[m];
+		
+		seg_dir = norm(AB);
+		projection_length = scalar(AP, seg_dir);
+		
+		if (projection_length < 0) {
+			return length(AP);
 		}
+		if (projection_length > seg_length) {
+			return length(BP);
+		}
+		seg_dir[0] = seg_dir[0] * projection_length;
+		seg_dir[1] = seg_dir[1] * projection_length;
+		orthogonal_vect = getVect(AB, seg_dir);
+		return length(orthogonal_vect);
 	}
 }
