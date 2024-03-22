@@ -7,15 +7,21 @@ import units.si.m;
 class vectOps {
 	private MathLib lib;
 	
-	private vect vect_norm = {0[m]};
-	private vect vect_get = {0[m]};
+	private vect vect_tmp = {0[m]};
+	
+	// Creates a point from given x and y
+	public vect getPoint(m x, m y){
+		vect_tmp[0] = x;
+		vect_tmp[1] = y;
+		return vect_tmp;
+	}
 	
 	// Calculates the vector from one point to another
 	// The points are given as an origin vector 
 	public vect getVect(vect pointA, vect pointB){
-		vect_get[0] = pointB[0] - pointA[0];
-		vect_get[1] = pointB[1] - pointA[1];
-		return vect_get;
+		vect_tmp[0] = pointB[0] - pointA[0];
+		vect_tmp[1] = pointB[1] - pointA[1];
+		return vect_tmp;
 	}
 
 	// Calculates the length of a vector and returns it as a real value
@@ -27,9 +33,9 @@ class vectOps {
 	// Normalizes the given vector by dividing by it's length
 	public vect norm(vect v_in){
 		real size = length(v_in);
-		vect_norm[0] = v_in[0]/size;
-		vect_norm[1] = v_in[1]/size;
-		return vect_norm;
+		vect_tmp[0] = v_in[0]/size;
+		vect_tmp[1] = v_in[1]/size;
+		return vect_tmp;
 	}
 	
 	// Calculates the scalar product of the two given vectors and returns it as a real value

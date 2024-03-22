@@ -2,7 +2,7 @@ classType myCar.Route
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_1, connection_3
+			connection_18, connection_20
 		}
 	}
 	simpleIdentifier x at (211, 121) {
@@ -11,7 +11,7 @@ blockdiagramSpecification Main {
 			bendpoints (100, 0)
 		}
 		outPin {
-			connection_2
+			connection_19
 		}
 		sequenceCall {
 			inPin
@@ -23,24 +23,10 @@ blockdiagramSpecification Main {
 			bendpoints (110, 0)
 		}
 		outPin {
-			connection_4
+			connection_21
 		}
 		sequenceCall {
 			inPin
-		}
-	}
-	simpleIdentifier x0 at (351, 135) {
-		label at (0, -1)
-		inPin connection_2
-		outPin sequenceCall {
-			inPin connection_1
-		}
-	}
-	simpleIdentifier y0 at (351, 305) {
-		label at (0, -1)
-		inPin connection_4
-		outPin sequenceCall {
-			inPin connection_3
 		}
 	}
 	methodArgumentIdentifier calc.arg at (111, 355) {
@@ -59,6 +45,38 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier vec at (431, 121) {
+		label at (0, 1)
+		inPin connection_19
+		inPin INDEX_SET_X connection_17 {
+			bendpoints (30, 0)
+		}
+		inPin INDEX_GET_X outPin sequenceCall {
+			inPin connection_18
+		}
+	}
+	literal Numeric "0" at (371, 213) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_17
+		}
+	}
+	simpleIdentifier vec at (421, 291) {
+		label at (0, 1)
+		inPin connection_21
+		inPin INDEX_SET_X connection_22 {
+			bendpoints (30, 0)
+		}
+		inPin INDEX_GET_X outPin sequenceCall {
+			inPin connection_20
+		}
+	}
+	literal Numeric "1" at (361, 393) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_22
 		}
 	}
 }
