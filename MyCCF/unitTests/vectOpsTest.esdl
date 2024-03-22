@@ -12,11 +12,6 @@ singleton class vectOpsTest {
 	Assert Assert;
 	MathLib lib;
 
-	vect distancePointSegment_point;
-	vect distancePointSegment_segA;
-	vect distancePointSegment_segB;
-	m distancePointSegment_return;
-
 	@Test
 	// Test case: get the vector from a point to another
 	// Result has a negative and a positive part
@@ -182,10 +177,57 @@ singleton class vectOpsTest {
 	}
 
 	@Test
+	// Test case: point is nearest to segment end A
 	public void testDistancePointSegment() {
-		distancePointSegment_return = testee.distancePointSegment(distancePointSegment_point, distancePointSegment_segA, distancePointSegment_segB); 
+		vect point = {-3[m], -1.5[m]};
+		vect segA = {-1[m], -1.5[m]};
+		vect segB = {1.5[m], 2[m]};
+		m distance = testee.distancePointSegment(point, segA, segB); 
 
-        // TODO: Replace this call with appropriate assertions to implement your test
-		Assert.unimplemented();
+		Assert.assertEqual(distance/1[m], 2);
+	}
+	
+	@Test
+	// Test case: point is nearest to segment end B
+	public void testDistancePointSegment2() {
+		vect point = {2[m], 3.5[m]};
+		vect segA = {-1[m], -1.5[m]};
+		vect segB = {1.5[m], 2[m]};
+		m distance = testee.distancePointSegment(point, segA, segB); 
+
+		Assert.assertNear(distance/1[m], 1.581138, 0.0001);
+	}
+	
+	@Test
+	// Test case: point is nearest to the middle of the segment
+	public void testDistancePointSegment3() {
+		vect point = {-2[m], 2.5[m]};
+		vect segA = {-1[m], -1.5[m]};
+		vect segB = {1.5[m], 2[m]};
+		m distance = testee.distancePointSegment(point, segA, segB); 
+
+		Assert.assertNear(distance/1[m], 3.1387, 0.001);
+	}
+	
+	@Test
+	// Test case: point is nearest to the middle of the segment
+	public void testDistancePointSegment4() {
+		vect point = {0.5[m], -2[m]};
+		vect segA = {-1[m], -1.5[m]};
+		vect segB = {1.5[m], 2[m]};
+		m distance = testee.distancePointSegment(point, segA, segB); 
+
+		Assert.assertNear(distance/1[m], 1.5112, 0.001);
+	}
+	
+	@Test
+	// Test case: segment with length 0
+	public void testDistancePointSegment5() {
+		vect point = {0.5[m], -2[m]};
+		vect segA = {2[m], -1.5[m]};
+		vect segB = {2[m], -1.5[m]};
+		m distance = testee.distancePointSegment(point, segA, segB); 
+
+		Assert.assertNear(distance/1[m], 1.581138, 0.0001);
 	}
 }

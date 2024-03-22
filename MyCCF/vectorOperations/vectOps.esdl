@@ -69,7 +69,7 @@ class vectOps {
 		vect BP = getVect(segB, point);
 		
 		m seg_length = length(AB);
-		if (seg_length == 0) {
+		if (seg_length == 0[m]) {
 			return length(AP);
 		}
 		
@@ -79,12 +79,12 @@ class vectOps {
 		if (projection_length < 0) {
 			return length(AP);
 		}
-		if (projection_length > seg_length) {
+		if (projection_length > seg_length/1[m]) {
 			return length(BP);
 		}
 		seg_dir[0] = seg_dir[0] * projection_length;
 		seg_dir[1] = seg_dir[1] * projection_length;
-		orthogonal_vect = getVect(AB, seg_dir);
+		orthogonal_vect = getVect(AP, seg_dir);
 		return length(orthogonal_vect);
 	}
 }
