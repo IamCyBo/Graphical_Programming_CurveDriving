@@ -2,13 +2,15 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_3, connection_9, connection_11, connection_28, connection_45, connection_43, connection_5
+			connection_9, connection_11, connection_3, connection_71, connection_73, connection_70, connection_75, connection_45, connection_43, connection_5
 		}
 	}
-	complexIdentifier vectOps at (291, 311) size (13, 5) {
+	complexIdentifier vectOps at (381, 301) size (13, 5) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.length {
-			argumentPin v_in at (left, 1) connection_2
+			argumentPin v_in at (left, 1) connection_49 {
+				bendpoints (0, 70), (-100, 70)
+			}
 			returnPin at (right, 1) {
 				connection_6
 			}
@@ -17,7 +19,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier Route at (141, 301) size (8, 7) {
+	complexIdentifier Route at (131, 301) size (15, 7) {
 		label at (0, 1)
 		methodCall myCar.Route.calc {
 			argumentPin arg at (left, 2) connection_4
@@ -25,9 +27,9 @@ blockdiagramSpecification Main {
 				inPin connection_3
 			}
 		}
-		elementCall (myCar.Route.vec) {
+		elementCall (myCar.Route.focuspoint) {
 			returnPin at (right, 2) {
-				connection_18, connection_2
+				connection_18
 			}
 			sequenceCall at (0, 0) {
 				inPin
@@ -35,7 +37,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	simpleIdentifier focuspointIndex at (61, 325) {
-		label at (0, -1)
+		label at (-50, 9)
 		inPin outPin {
 			connection_4
 		}
@@ -43,7 +45,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier distance2focuspoint at (441, 325) {
+	simpleIdentifier distance2focuspoint at (531, 315) {
 		label at (0, -1)
 		inPin connection_6
 		outPin sequenceCall {
@@ -142,11 +144,9 @@ blockdiagramSpecification Main {
 	complexIdentifier vectOps at (561, 161) size (12, 6) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.angle {
-			argumentPin vectA at (left, 1) connection_22 {
-				bendpoints (80, 0)
-			}
-			argumentPin vectB at (left, 3) connection_23 {
-				bendpoints (20, 0)
+			argumentPin vectA at (left, 1) connection_69
+			argumentPin vectB at (left, 3) connection_68 {
+				bendpoints (0, 30)
 			}
 			returnPin at (right, 2) {
 				connection_24
@@ -163,10 +163,10 @@ blockdiagramSpecification Main {
 				bendpoints (0, 40)
 			}
 			argumentPin pointB at (left, 2) connection_18 {
-				bendpoints (40, 0), (40, -150)
+				bendpoints (10, 0), (10, -150)
 			}
 			returnPin at (right, 1) {
-				connection_22
+				connection_68, connection_49
 			}
 			sequenceCall {
 				inPin
@@ -204,11 +204,11 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier tmp at (471, 191) {
+	simpleIdentifier tmp at (491, 101) {
 		label at (0, 1)
 		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.tmp) {
 			returnPin at (right, 0) {
-				connection_23
+				connection_69
 			}
 			sequenceCall at (0, 0) {
 				inPin
@@ -224,99 +224,16 @@ blockdiagramSpecification Main {
 			bendpoints (70, 0)
 		}
 		outPin {
-			connection_42, connection_27
+			connection_72, connection_42
 		}
 	}
-	simpleIdentifier str at (651, 305) {
+	simpleIdentifier str at (651, 295) {
 		label at (0, -1)
 		inPin outPin {
-			connection_26
+			connection_74
 		}
 		sequenceCall {
 			inPin
-		}
-	}
-	greater at (781, 276) {
-		inPin connection_27 {
-			bendpoints (0, 70)
-		}
-		inPin connection_26 {
-			bendpoints (80, 0)
-		}
-		outPin {
-			connection_29
-		}
-	}
-	ifElse at (841, 281) {
-		inPin connection_29
-		ifControlFlowOutPin {
-			connection_32
-		}
-		elseControlFlowOutPin {
-			connection_34
-		}
-		sequenceCall at (-20, -30) {
-			inPin connection_28
-		}
-	}
-	simpleIdentifier dstr at (771, 365) {
-		label at (0, -1)
-		outPin {
-			connection_30
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	addition at (851, 366) {
-		inPin connection_30
-		inPin connection_36 {
-			bendpoints (0, 30), (-130, 30)
-		}
-		outPin {
-			connection_33
-		}
-	}
-	subtraction at (851, 446) {
-		inPin connection_37 {
-			bendpoints (0, -40), (-130, -40)
-		}
-		inPin connection_31
-		outPin {
-			connection_35
-		}
-	}
-	simpleIdentifier dstr at (771, 465) {
-		label at (0, -1)
-		outPin {
-			connection_31
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier str at (931, 375) {
-		label at (0, -1)
-		inPin connection_33
-		outPin {
-			connection_36
-		}
-		sequenceCall {
-			inPin connection_32 {
-				bendpoints (0, 70)
-			}
-		}
-	}
-	simpleIdentifier str at (931, 455) {
-		label at (0, -1)
-		inPin connection_35
-		outPin {
-			connection_37
-		}
-		sequenceCall {
-			inPin connection_34 {
-				bendpoints (-30, 0), (-30, 120)
-			}
 		}
 	}
 	complexIdentifier Logger_instance at (871, 81) size (8, 8) {
@@ -383,6 +300,40 @@ blockdiagramSpecification Main {
 		inPin connection_44
 		sequenceCall {
 			inPin connection_43
+		}
+	}
+	complexIdentifier SteeringCtrl at (821, 281) size (14, 5) {
+		label at (0, 1)
+		methodCall myCar.SteeringCtrl.calc {
+			methodVoidPin at (top, 0) sequenceCall at (6, -30) {
+				inPin connection_70
+			}
+		}
+		elementCall (myCar.SteeringCtrl.str) {
+			argumentPin at (left, 2) connection_74 {
+				bendpoints (0, 10)
+			}
+			returnPin at (right, 0) {
+				connection_76
+			}
+			sequenceCall at (-40, 16) {
+				inPin connection_73
+			}
+		}
+		elementCall (myCar.SteeringCtrl.ref) {
+			argumentPin at (left, 0) connection_72 {
+				bendpoints (0, 70), (20, 70), (20, 80)
+			}
+			sequenceCall at (-30, -34) {
+				inPin connection_71
+			}
+		}
+	}
+	simpleIdentifier str at (991, 285) {
+		label at (0, -1)
+		inPin connection_76
+		outPin sequenceCall {
+			inPin connection_75
 		}
 	}
 }

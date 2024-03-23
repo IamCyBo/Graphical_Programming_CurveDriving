@@ -47,7 +47,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier vec at (431, 121) {
+	simpleIdentifier focuspoint at (431, 121) {
 		label at (0, 1)
 		inPin connection_19
 		inPin INDEX_SET_X connection_17 {
@@ -63,7 +63,7 @@ blockdiagramSpecification Main {
 			connection_17
 		}
 	}
-	simpleIdentifier vec at (421, 291) {
+	simpleIdentifier focuspoint at (421, 291) {
 		label at (0, 1)
 		inPin connection_21
 		inPin INDEX_SET_X connection_22 {

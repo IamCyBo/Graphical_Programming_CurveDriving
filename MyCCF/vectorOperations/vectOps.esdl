@@ -8,8 +8,9 @@ class vectOps {
 	private MathLib lib;
 	
 	private vect vect_tmp = {0[m]};
+	real pi = 3.141592653;
 	
-	// Creates a point from given x and y
+	// Creates a origin vector to point given by x and y
 	public vect getPoint(m x, m y){
 		vect_tmp[0] = x;
 		vect_tmp[1] = y;
@@ -41,23 +42,22 @@ class vectOps {
 	// Calculates the scalar product of the two given vectors and returns it as a real value
 	// The scalar product is calculated using A1*B1 + A2*B2
 	public real scalar(vect vectA, vect vectB){
-		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m^2];
+		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m ^2];
 	}
 	
-	// Calculates the angle between two vectors and returns it in rad
+	// Calculates the angle between two vectors and returns it in rad in interval [-pi;pi]
 	// The angle is calculated by using acos((A*B)/(|A|*|B|))
 	public real angle(vect vectA, vect vectB){
-		real scalar = scalar(vectA, vectB);
-		real lengthA = length(vectA);
-		real lengthB = length(vectB);
+		real cross = crossProduct(vectA, vectB);
+		real scal = scalar(vectA, vectB);
 		
-		return lib.acos(scalar/(lengthA * lengthB));
+		return lib.atan2(cross, scal);
 	}
 	
 	// Calculates the cross Product of two vektors and returns it as a real value
 	// The cross prduct is calulated by A1*B2-B1*A2
 	public real crossProduct(vect pointA, vect pointB){
-		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m^2];
+		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m ^2];
 	}
 	
 	// Calculates the distance between a Point and a Line Segment and returns it in m
