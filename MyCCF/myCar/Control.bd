@@ -2,7 +2,7 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_9, connection_11, connection_3, connection_71, connection_73, connection_70, connection_75, connection_45, connection_43, connection_5
+			connection_9, connection_11, connection_3, connection_71, connection_80, connection_70, connection_75, connection_45, connection_43, connection_5
 		}
 	}
 	complexIdentifier vectOps at (381, 301) size (13, 5) {
@@ -227,15 +227,6 @@ blockdiagramSpecification Main {
 			connection_72, connection_42
 		}
 	}
-	simpleIdentifier str at (651, 295) {
-		label at (0, -1)
-		inPin outPin {
-			connection_74
-		}
-		sequenceCall {
-			inPin
-		}
-	}
 	complexIdentifier Logger_instance at (871, 81) size (8, 8) {
 		label at (0, 1)
 		methodCall myCar.Logger.calc {
@@ -310,14 +301,14 @@ blockdiagramSpecification Main {
 			}
 		}
 		elementCall (myCar.SteeringCtrl.str) {
-			argumentPin at (left, 2) connection_74 {
-				bendpoints (0, 10)
+			argumentPin at (left, 2) connection_81 {
+				bendpoints (0, 80), (-280, 80), (-280, 20)
 			}
 			returnPin at (right, 0) {
 				connection_76
 			}
 			sequenceCall at (-40, 16) {
-				inPin connection_73
+				inPin connection_80
 			}
 		}
 		elementCall (myCar.SteeringCtrl.ref) {
@@ -332,7 +323,10 @@ blockdiagramSpecification Main {
 	simpleIdentifier str at (991, 285) {
 		label at (0, -1)
 		inPin connection_76
-		outPin sequenceCall {
+		outPin {
+			connection_81
+		}
+		sequenceCall {
 			inPin connection_75
 		}
 	}

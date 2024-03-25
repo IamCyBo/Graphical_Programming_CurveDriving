@@ -5,43 +5,43 @@ blockdiagramSpecification Main {
 			connection_3
 		}
 	}
-	lessOrEqual at (631, 186) {
-		inPin connection_6 {
-			bendpoints (10, 0), (10, -70)
+	lessOrEqual at (531, 176) {
+		inPin connection_6
+		inPin connection_19 {
+			bendpoints (0, -10)
 		}
-		inPin connection_19
 		outPin {
 			connection_4
 		}
 	}
-	greater at (431, 156) {
+	greater at (211, 46) {
 		inPin connection_28
 		inPin connection_29 {
-			bendpoints (40, 0)
+			bendpoints (70, 0)
 		}
 		outPin {
 			connection_5
 		}
 	}
-	addition at (501, 246) {
+	addition at (381, 166) {
 		inPin connection_20
 		inPin connection_24 {
-			bendpoints (0, 30), (-130, 30)
+			bendpoints (50, 0), (50, 30), (-430, 30)
 		}
 		outPin {
 			connection_8, connection_6
 		}
 	}
-	subtraction at (501, 326) {
+	subtraction at (361, 476) {
 		inPin connection_23 {
-			bendpoints (0, -40), (-130, -40)
+			bendpoints (30, 0), (30, 40), (-570, 40), (-570, -10)
 		}
 		inPin connection_12
 		outPin {
 			connection_11, connection_9
 		}
 	}
-	simpleIdentifier dstr at (421, 345) {
+	simpleIdentifier dstr at (301, 495) {
 		label at (0, -1)
 		outPin {
 			connection_12
@@ -50,28 +50,28 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	greaterOrEqual at (631, 406) {
+	greaterOrEqual at (541, 396) {
 		inPin connection_9 {
-			bendpoints (10, 0), (10, 70)
+			bendpoints (40, 0), (40, -90)
 		}
 		inPin connection_16
 		outPin {
 			connection_13
 		}
 	}
-	literal Numeric "-0.5" at (571, 423) size (49, 0) {
+	literal Numeric "-0.5" at (461, 413) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_16, connection_15
 		}
 	}
-	literal Numeric "0.5" at (581, 203) size (49, 0) {
+	literal Numeric "0.5" at (471, 203) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_19, connection_18
 		}
 	}
-	simpleIdentifier dstr at (421, 245) {
+	simpleIdentifier dstr at (311, 165) {
 		label at (0, -1)
 		outPin {
 			connection_20
@@ -80,8 +80,10 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	ifElse at (681, 411) {
-		inPin connection_13
+	ifElse at (651, 381) {
+		inPin connection_13 {
+			bendpoints (70, 0)
+		}
 		ifControlFlowOutPin {
 			connection_21
 		}
@@ -90,58 +92,60 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin connection_1 {
-				bendpoints (-110, 0), (-110, 200)
+				bendpoints (0, 40)
 			}
 		}
 	}
-	simpleIdentifier str at (701, 275) {
+	simpleIdentifier str at (631, 205) {
 		label at (0, -1)
 		inPin connection_18 {
-			bendpoints (0, 30), (50, 30), (50, 70)
+			bendpoints (0, 20), (90, 20), (90, 0)
 		}
 		outPin sequenceCall at (0, -24) {
-			inPin connection_26 {
-				bendpoints (-20, 0)
-			}
+			inPin connection_26
 		}
 	}
-	simpleIdentifier str at (681, 475) {
+	simpleIdentifier str at (711, 455) {
 		label at (0, -1)
 		inPin connection_15 {
-			bendpoints (0, 50)
+			bendpoints (20, 0), (20, 40)
 		}
 		outPin sequenceCall {
 			inPin connection_22 {
-				bendpoints (-30, 0)
+				bendpoints (0, 20)
 			}
 		}
 	}
-	simpleIdentifier str at (581, 335) {
+	simpleIdentifier str at (801, 485) {
 		label at (0, -1)
 		inPin connection_11
 		outPin {
 			connection_23
 		}
-		sequenceCall {
+		sequenceCall at (-10, -24) {
 			inPin connection_21 {
-				bendpoints (0, -110), (-160, -110)
+				bendpoints (90, 0)
 			}
 		}
 	}
-	simpleIdentifier str at (581, 255) {
+	simpleIdentifier str at (761, 235) {
 		label at (0, -1)
-		inPin connection_8
+		inPin connection_8 {
+			bendpoints (0, 60)
+		}
 		outPin {
 			connection_24
 		}
 		sequenceCall {
 			inPin connection_25 {
-				bendpoints (0, -60), (-180, -60)
+				bendpoints (50, 0), (50, 140)
 			}
 		}
 	}
-	ifElse at (701, 191) {
-		inPin connection_4
+	ifElse at (611, 71) {
+		inPin connection_4 {
+			bendpoints (0, -110)
+		}
 		ifControlFlowOutPin {
 			connection_25
 		}
@@ -149,36 +153,75 @@ blockdiagramSpecification Main {
 			connection_26
 		}
 		sequenceCall {
-			inPin connection_2 {
-				bendpoints (150, 0)
-			}
+			inPin connection_2
 		}
 	}
-	ifElse at (491, 161) {
+	ifElse at (261, 51) {
 		inPin connection_5
 		ifControlFlowOutPin {
 			connection_2
 		}
 		elseControlFlowOutPin {
-			connection_1
+			connection_30
 		}
 		sequenceCall {
 			inPin connection_3
 		}
 	}
-	simpleIdentifier ref at (341, 155) {
+	simpleIdentifier ref at (91, 45) {
 		label at (0, -1)
 		inPin outPin {
-			connection_28
+			connection_31, connection_28
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier str at (341, 185) {
+	simpleIdentifier str at (91, 75) {
 		label at (0, -1)
 		inPin outPin {
-			connection_29
+			connection_33, connection_29
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	ifElse at (311, 291) {
+		inPin connection_34
+		ifControlFlowOutPin {
+			connection_37
+		}
+		elseControlFlowOutPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin connection_30 {
+				bendpoints (0, 190)
+			}
+		}
+	}
+	equal at (221, 286) {
+		inPin connection_31 {
+			bendpoints (30, 0), (30, 240)
+		}
+		inPin connection_33 {
+			bendpoints (0, 230)
+		}
+		outPin {
+			connection_34
+		}
+	}
+	simpleIdentifier str at (581, 315) {
+		label at (0, -1)
+		inPin connection_38
+		outPin sequenceCall {
+			inPin connection_37
+		}
+	}
+	simpleIdentifier ref at (431, 315) {
+		label at (0, -1)
+		inPin outPin {
+			connection_38
 		}
 		sequenceCall {
 			inPin

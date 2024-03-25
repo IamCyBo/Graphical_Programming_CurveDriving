@@ -23,7 +23,7 @@ writes CarMessages.steering {
 	SteeringCtrl SteeringCtrl;
 
 	@thread
-	@generated("blockdiagram", "722b70b7")
+	@generated("blockdiagram", "2928e123")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {

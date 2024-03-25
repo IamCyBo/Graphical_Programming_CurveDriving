@@ -2,7 +2,7 @@ classType myCar.myDriver
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_6
+			connection_6, connection_17, connection_19, connection_14, connection_21
 		}
 	}
 	literal unit units.common.kmph "60" at (181, 193) size (49, 0) {
@@ -108,6 +108,49 @@ blockdiagramSpecification Main {
 		label at (0, 4)
 		outPin {
 			connection_13
+		}
+	}
+	complexIdentifier SteeringCtrl at (501, 421) size (14, 8) {
+		label at (0, 1)
+		methodCall myCar.SteeringCtrl.calc {
+			methodVoidPin at (top, 0) sequenceCall at (16, -30) {
+				inPin connection_14
+			}
+		}
+		elementCall (myCar.SteeringCtrl.str) {
+			argumentPin at (left, 1) connection_20 {
+				bendpoints (10, 0), (10, -90), (-160, -90)
+			}
+			returnPin at (right, 2) {
+				connection_22, connection_20
+			}
+			sequenceCall at (-50, -14) {
+				inPin connection_19
+			}
+		}
+		elementCall (myCar.SteeringCtrl.ref) {
+			argumentPin at (left, 4) connection_18
+			sequenceCall at (-40, 16) {
+				inPin connection_17
+			}
+		}
+	}
+	simpleIdentifier steer at (321, 465) {
+		label at (0, -1)
+		outPin {
+			connection_18
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.steering at (741, 435) {
+		label at (-20, 19)
+		inPin connection_22 {
+			bendpoints (10, 0), (10, -10)
+		}
+		sequenceCall {
+			inPin connection_21
 		}
 	}
 }
