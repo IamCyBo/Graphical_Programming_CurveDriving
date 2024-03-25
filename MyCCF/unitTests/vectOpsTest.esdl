@@ -11,6 +11,16 @@ singleton class vectOpsTest {
 	vectOps testee;
 	Assert Assert;
 	MathLib lib;
+	
+	@Test
+	public void testGetPoint() {
+		m x = 0[m];
+		m y = 3.76[m];
+		vect vectXY = testee.getPoint(x, y); 
+
+		Assert.assertEqual(vectXY[0]/1[m], x/1[m]);
+		Assert.assertEqual(vectXY[1]/1[m], y/1[m]);
+	}
 
 	@Test
 	// Test case: get the vector from a point to another

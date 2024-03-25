@@ -3,10 +3,10 @@ Component myCar.Route size ( 8 , 7 ) {
 	methodLayout calc {
 		pin arg ( Left , 2 )
 	}
-	memberLayout x0 {
+	memberLayout x {
 		getPinPosition ( Right , 0 )
 	}
-	memberLayout y0 {
+	memberLayout lastElement {
 		getPinPosition ( Right , 5 )
 	}
 }
