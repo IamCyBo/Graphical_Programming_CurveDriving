@@ -2,51 +2,45 @@ classType myCar.Route
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_1, connection_3
+			connection_67, connection_71
 		}
 	}
-	simpleIdentifier x at (211, 121) {
+	simpleIdentifier x at (241, 131) {
 		label at (-40, -69)
 		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_7 {
-			bendpoints (100, 0)
+			bendpoints (130, 0)
 		}
 		outPin {
-			connection_2
+			connection_69
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier y at (221, 291) {
+	simpleIdentifier y at (241, 221) {
 		label at (-40, -69)
 		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_6 {
-			bendpoints (110, 0)
+			bendpoints (130, 0)
 		}
 		outPin {
-			connection_4
+			connection_70
+		}
+		elementCall (myCar.Route.y) {
+			returnPin at (right, 0) {
+				connection_64
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier x0 at (351, 135) {
-		label at (0, -1)
-		inPin connection_2
-		outPin sequenceCall {
-			inPin connection_1
-		}
-	}
-	simpleIdentifier y0 at (351, 305) {
-		label at (0, -1)
-		inPin connection_4
-		outPin sequenceCall {
-			inPin connection_3
-		}
-	}
-	methodArgumentIdentifier calc.arg at (111, 355) {
+	methodArgumentIdentifier calc.arg at (111, 275) {
 		label at (0, -1)
 		outPin {
-			connection_6
+			connection_65, connection_6
 		}
 		sequenceCall {
 			inPin
@@ -59,6 +53,62 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier focuspoint at (541, 151) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Route.focuspoint) {
+			argumentPin at (left, 0) connection_72
+			sequenceCall at (-50, -28) {
+				inPin connection_71
+			}
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	intrinsic method length at (381, 271) {
+		label at (10, 1)
+		inPin connection_64 {
+			bendpoints (50, 0), (50, 30)
+		}
+		outPin {
+			connection_73
+		}
+	}
+	equal at (501, 286) {
+		inPin connection_73 {
+			bendpoints (40, 0), (40, 10)
+		}
+		inPin connection_65 {
+			bendpoints (130, 0), (130, 30)
+		}
+		outPin {
+			connection_68
+		}
+	}
+	simpleIdentifier lastElement at (601, 295) {
+		label at (0, -1)
+		inPin connection_68
+		outPin sequenceCall {
+			inPin connection_67
+		}
+	}
+	complexIdentifier vectOps at (381, 171) size (7, 5) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.getPoint {
+			argumentPin x at (left, 0) connection_69 {
+				bendpoints (50, 0), (50, 30)
+			}
+			argumentPin y at (left, 1) connection_70 {
+				bendpoints (50, 0), (50, -50)
+			}
+			returnPin at (right, 0) {
+				connection_72
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
 }
