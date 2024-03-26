@@ -13,12 +13,12 @@ class Route {
 	@get
 	vect focuspoint = {0.0[m], 0.0[m]};
 	@get
-	boolean lastElement;
+	m lastElement = 0[m];
 
-	@generated("blockdiagram", "99efe8dc")
+	@generated("blockdiagram", "d8036b89")
 	public void calc(integer in arg) {
-		lastElement = (integer((y.length() - integer(1))) == arg); // Main/calc 1
-		focuspoint = vectOps.getPoint(x[arg], y[arg]); // Main/calc 2
+		focuspoint = vectOps.getPoint(x[arg], y[arg]); // Main/calc 1
+		lastElement = this.distanceFocuspointEnd(arg); // Main/calc 2
 	}
 
 	public m point_distance(vect point_in) {
@@ -37,5 +37,20 @@ class Route {
 			}
 		}
 		return min_distance;
+	}
+
+	public m distanceFocuspointEnd(integer arg) {
+		m remainingDistance = 0[m];
+		vect segStart;
+		vect segEnd;
+		if (arg >= x.length() - 1) {
+			return 0[m];
+		}
+		for (i in arg .. x.length() - 2) {
+			segStart = vectOps.getPoint(x[i], y[i]);
+			segEnd = vectOps.getPoint(x[i + 1], y[i + 1]);
+			remainingDistance = remainingDistance + vectOps.length(vectOps.getVect(segStart, segEnd));
+		}
+		return remainingDistance;
 	}
 }
