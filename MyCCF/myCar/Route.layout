@@ -1,6 +1,0 @@
-Component myCar.Route size ( 8 , 7 ) {
-	labelPosition ( 0 , 1 )
-	methodLayout calc {
-		pin arg ( Left , 2 )
-	}
-}

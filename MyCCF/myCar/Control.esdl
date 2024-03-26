@@ -13,8 +13,8 @@ writes CarMessages.steering {
 	vectOps vectOps;
 	Route Route;
 	integer focuspointIndex = 0;
-	real distance2focuspoint = 340.0E6;
-	characteristic real proximity = 5.94328439326;
+	m distance2focuspoint = 340.0E6[m];
+	characteristic m proximity = 5.94328439326[m];
 	EdgeRising ^trigger;
 	arr_m tmp[2] = {1.0[m], 0.0[m]};
 	real str = 0.0;

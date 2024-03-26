@@ -13,12 +13,12 @@ class Route {
 	@get
 	vect focuspoint = {0.0[m], 0.0[m]};
 	@get
-	m lastElement = 0[m];
+	m distanceFocusEnd = 0[m];
 
-	@generated("blockdiagram", "d8036b89")
+	@generated("blockdiagram", "432c4023")
 	public void calc(integer in arg) {
-		focuspoint = vectOps.getPoint(x[arg], y[arg]); // Main/calc 1
-		lastElement = this.distanceFocuspointEnd(arg); // Main/calc 2
+		distanceFocusEnd = this.distanceFocuspointEnd(arg); // Main/calc 1
+		focuspoint = vectOps.getPoint(x[arg], y[arg]); // Main/calc 2
 	}
 
 	public m point_distance(vect point_in) {

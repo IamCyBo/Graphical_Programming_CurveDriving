@@ -2,35 +2,66 @@ classType myCar.Route
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_71, connection_87
+			connection_1, connection_8
 		}
 	}
-	simpleIdentifier x at (241, 131) {
-		label at (-40, -69)
-		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_7 {
-			bendpoints (130, 0)
-		}
-		outPin {
-			connection_19
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier y at (241, 221) {
-		label at (-40, -69)
-		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_6 {
-			bendpoints (130, 0)
-		}
-		outPin {
-			connection_70
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	methodArgumentIdentifier calc.arg at (111, 355) {
+	methodArgumentIdentifier calc.arg at (21, 35) {
 		label at (0, -1)
+		outPin {
+			connection_3
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier Route at (131, 31) size (14, 8) {
+		label at (0, 1)
+		methodCall myCar.Route.distanceFocuspointEnd {
+			argumentPin arg at (left, 0) connection_3
+			returnPin at (right, 0) {
+				connection_2
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier distanceFocusEnd at (331, 35) {
+		label at (0, -1)
+		inPin connection_2
+		outPin sequenceCall {
+			inPin connection_1
+		}
+	}
+	methodArgumentIdentifier calc.arg at (41, 235) {
+		label at (0, -1)
+		outPin {
+			connection_4
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier vectOps at (281, 181) size (12, 7) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.getPoint {
+			argumentPin x at (left, 0) connection_6
+			argumentPin y at (left, 1) connection_7 {
+				bendpoints (40, 0), (40, -80)
+			}
+			returnPin at (right, 0) {
+				connection_9
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier x at (131, 171) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_4 {
+			bendpoints (90, 0)
+		}
 		outPin {
 			connection_6
 		}
@@ -38,8 +69,11 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	methodArgumentIdentifier calc.arg at (111, 185) {
-		label at (0, -1)
+	simpleIdentifier y at (131, 261) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_5 {
+			bendpoints (90, 0)
+		}
 		outPin {
 			connection_7
 		}
@@ -47,59 +81,27 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier focuspoint at (431, 121) {
-		label at (0, 1)
-		inPin connection_19
-		inPin INDEX_SET_X connection_17 {
-			bendpoints (30, 0)
-		}
-		inPin INDEX_GET_X outPin sequenceCall {
-			inPin connection_18
-		}
-	}
-	complexIdentifier vectOps at (381, 171) size (7, 5) {
-		label at (0, 1)
-		methodCall vectorOperations.vectOps.getPoint {
-			argumentPin x at (left, 0) connection_69 {
-				bendpoints (50, 0), (50, 30)
-			}
-			argumentPin y at (left, 1) connection_70 {
-				bendpoints (50, 0), (50, -50)
-			}
-			returnPin at (right, 0) {
-				connection_72
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-	}
-	complexIdentifier Route at (241, 21) size (14, 6) {
-		label at (0, 1)
-		methodCall myCar.Route.distanceFocuspointEnd {
-			argumentPin arg at (left, 0) connection_86
-			returnPin at (right, 0) {
-				connection_88
-			}
-			sequenceCall at (0, 6) {
-				inPin
-			}
-		}
-	}
-	methodArgumentIdentifier calc.arg at (111, 25) {
+	methodArgumentIdentifier calc.arg at (41, 335) {
 		label at (0, -1)
 		outPin {
-			connection_86
+			connection_5
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier lastElement at (551, 25) {
-		label at (0, -1)
-		inPin connection_88
-		outPin sequenceCall {
-			inPin connection_87
+	simpleIdentifier focuspoint at (501, 181) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Route.focuspoint) {
+			argumentPin at (left, 0) connection_9 {
+				bendpoints (40, 0), (40, 20)
+			}
+			sequenceCall at (-50, -28) {
+				inPin connection_8
+			}
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }
