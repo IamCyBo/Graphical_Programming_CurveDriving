@@ -11,7 +11,7 @@ blockdiagramSpecification Main {
 			bendpoints (130, 0)
 		}
 		outPin {
-			connection_69
+			connection_19
 		}
 		sequenceCall {
 			inPin
@@ -29,7 +29,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	methodArgumentIdentifier calc.arg at (111, 275) {
+	methodArgumentIdentifier calc.arg at (111, 355) {
 		label at (0, -1)
 		outPin {
 			connection_6
@@ -47,16 +47,14 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier focuspoint at (541, 151) {
+	simpleIdentifier focuspoint at (431, 121) {
 		label at (0, 1)
-		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Route.focuspoint) {
-			argumentPin at (left, 0) connection_72
-			sequenceCall at (-50, -28) {
-				inPin connection_71
-			}
+		inPin connection_19
+		inPin INDEX_SET_X connection_17 {
+			bendpoints (30, 0)
 		}
-		sequenceCall {
-			inPin
+		inPin INDEX_GET_X outPin sequenceCall {
+			inPin connection_18
 		}
 	}
 	complexIdentifier vectOps at (381, 171) size (7, 5) {

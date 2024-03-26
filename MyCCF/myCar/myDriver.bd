@@ -1,4 +1,5 @@
 classType myCar.myDriver
+
 blockdiagramSpecification calc_spec {
 	methodBody calc {
 		outPin active {
