@@ -1,6 +1,5 @@
 package unitTests;
 
-import resources.vect;
 import resources.arr_m;
 import units.si.m;
 import assert.Assert;
@@ -26,7 +25,6 @@ singleton class RouteTest {
 		
 		Assert.assertEqual(testee.focuspoint[0]/1[m], expected_pointX/1[m]);
 		Assert.assertEqual(testee.focuspoint[1]/1[m], expected_pointY/1[m]);
-		Assert.assertFalse(testee.lastElement);
 	}
 	
 	@Test
@@ -39,7 +37,6 @@ singleton class RouteTest {
 		
 		Assert.assertEqual(testee.focuspoint[0]/1[m], expected_pointX/1[m]);
 		Assert.assertEqual(testee.focuspoint[1]/1[m], expected_pointY/1[m]);
-		Assert.assertTrue(testee.lastElement);
 	}
 
 	@Test

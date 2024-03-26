@@ -2,7 +2,7 @@ classType myCar.Route
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_18, connection_20
+			connection_71, connection_87
 		}
 	}
 	simpleIdentifier x at (241, 131) {
@@ -23,7 +23,7 @@ blockdiagramSpecification Main {
 			bendpoints (130, 0)
 		}
 		outPin {
-			connection_21
+			connection_70
 		}
 		sequenceCall {
 			inPin
@@ -32,7 +32,7 @@ blockdiagramSpecification Main {
 	methodArgumentIdentifier calc.arg at (111, 355) {
 		label at (0, -1)
 		outPin {
-			connection_65, connection_6
+			connection_6
 		}
 		sequenceCall {
 			inPin
@@ -57,26 +57,49 @@ blockdiagramSpecification Main {
 			inPin connection_18
 		}
 	}
-	literal Numeric "0" at (371, 213) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_17
-		}
-	}
-	simpleIdentifier focuspoint at (421, 291) {
+	complexIdentifier vectOps at (381, 171) size (7, 5) {
 		label at (0, 1)
-		inPin connection_21
-		inPin INDEX_SET_X connection_22 {
-			bendpoints (30, 0)
-		}
-		inPin INDEX_GET_X outPin sequenceCall {
-			inPin connection_20
+		methodCall vectorOperations.vectOps.getPoint {
+			argumentPin x at (left, 0) connection_69 {
+				bendpoints (50, 0), (50, 30)
+			}
+			argumentPin y at (left, 1) connection_70 {
+				bendpoints (50, 0), (50, -50)
+			}
+			returnPin at (right, 0) {
+				connection_72
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
-	literal Numeric "1" at (361, 393) size (49, 0) {
-		label at (0, 4)
+	complexIdentifier Route at (241, 21) size (14, 6) {
+		label at (0, 1)
+		methodCall myCar.Route.distanceFocuspointEnd {
+			argumentPin arg at (left, 0) connection_86
+			returnPin at (right, 0) {
+				connection_88
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	methodArgumentIdentifier calc.arg at (111, 25) {
+		label at (0, -1)
 		outPin {
-			connection_22
+			connection_86
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier lastElement at (551, 25) {
+		label at (0, -1)
+		inPin connection_88
+		outPin sequenceCall {
+			inPin connection_87
 		}
 	}
 }
