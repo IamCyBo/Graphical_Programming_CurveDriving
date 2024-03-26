@@ -1,0 +1,333 @@
+classType myCar.Control
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_9, connection_11, connection_3, connection_71, connection_80, connection_70, connection_75, connection_45, connection_43, connection_5
+		}
+	}
+	complexIdentifier vectOps at (381, 301) size (13, 5) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.length {
+			argumentPin v_in at (left, 1) connection_49 {
+				bendpoints (0, 70), (-100, 70)
+			}
+			returnPin at (right, 1) {
+				connection_6
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	complexIdentifier Route at (131, 301) size (15, 7) {
+		label at (0, 1)
+		methodCall myCar.Route.calc {
+			argumentPin arg at (left, 2) connection_4
+			sequenceCall at (-50, -30) {
+				inPin connection_3
+			}
+		}
+		elementCall (myCar.Route.focuspoint) {
+			returnPin at (right, 2) {
+				connection_18
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier focuspointIndex at (61, 325) {
+		label at (-50, 9)
+		inPin outPin {
+			connection_4
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier distance2focuspoint at (531, 315) {
+		label at (0, -1)
+		inPin connection_6
+		outPin sequenceCall {
+			inPin connection_5
+		}
+	}
+	simpleIdentifier distance2focuspoint at (71, 445) {
+		label at (0, -1)
+		inPin outPin {
+			connection_7
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	less at (231, 446) {
+		inPin connection_7
+		inPin connection_8 {
+			bendpoints (100, 0)
+		}
+		outPin {
+			connection_10
+		}
+	}
+	simpleIdentifier proximity at (91, 485) {
+		label at (0, -1)
+		outPin {
+			connection_8
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier trigger at (351, 441) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
+			argumentPin signal at (left, 1) connection_10
+			sequenceCall at (-40, -44) {
+				inPin connection_9
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeRising.value {
+			returnPin at (right, 1) {
+				connection_12
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	if at (451, 451) {
+		inPin connection_12
+		ifControlFlowOutPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin connection_11
+		}
+	}
+	simpleIdentifier focuspointIndex at (581, 505) {
+		label at (-50, 9)
+		inPin connection_16
+		outPin {
+			connection_14
+		}
+		sequenceCall {
+			inPin connection_15 {
+				bendpoints (70, 0)
+			}
+		}
+	}
+	addition at (521, 496) {
+		inPin connection_13
+		inPin connection_14 {
+			bendpoints (30, 0), (30, 30), (-110, 30)
+		}
+		outPin {
+			connection_16
+		}
+	}
+	literal Numeric "1" at (411, 493) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_13
+		}
+	}
+	simpleIdentifier resources.CarMessages.mybearing at (581, 245) {
+		label at (0, -1)
+		outPin {
+			connection_25
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier vectOps at (561, 161) size (12, 6) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.angle {
+			argumentPin vectA at (left, 1) connection_69
+			argumentPin vectB at (left, 3) connection_68 {
+				bendpoints (0, 30)
+			}
+			returnPin at (right, 2) {
+				connection_24
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	complexIdentifier vectOps at (321, 151) size (14, 5) {
+		label at (20, 1)
+		methodCall vectorOperations.vectOps.getVect {
+			argumentPin pointA at (left, 0) connection_21 {
+				bendpoints (0, 40)
+			}
+			argumentPin pointB at (left, 2) connection_18 {
+				bendpoints (10, 0), (10, -150)
+			}
+			returnPin at (right, 1) {
+				connection_68, connection_49
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	complexIdentifier vectOps at (151, 111) size (14, 4) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.getPoint {
+			argumentPin x at (left, 0) connection_19
+			argumentPin y at (left, 1) connection_20
+			returnPin at (right, 0) {
+				connection_21
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.x at (101, 105) {
+		label at (0, -1)
+		outPin {
+			connection_19
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.y at (101, 135) {
+		label at (0, -1)
+		outPin {
+			connection_20
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier tmp at (491, 101) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.tmp) {
+			returnPin at (right, 0) {
+				connection_69
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (691, 196) {
+		inPin connection_24
+		inPin connection_25 {
+			bendpoints (70, 0)
+		}
+		outPin {
+			connection_72, connection_42
+		}
+	}
+	complexIdentifier Logger_instance at (871, 81) size (8, 8) {
+		label at (0, 1)
+		methodCall myCar.Logger.calc {
+			argumentPin t at (left, 0) connection_46 {
+				bendpoints (10, 0), (10, -20), (-60, -20)
+			}
+			argumentPin x at (left, 2) connection_38 {
+				bendpoints (20, 0)
+			}
+			argumentPin y at (left, 4) connection_39
+			argumentPin z at (left, 6) connection_42 {
+				bendpoints (0, 70), (40, 70), (40, -60)
+			}
+			sequenceCall at (-50, -30) {
+				inPin connection_45
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.x at (741, 95) {
+		label at (0, -1)
+		outPin {
+			connection_40
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.y at (741, 125) {
+		label at (0, -1)
+		outPin {
+			connection_41
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	unitConversion at (801, 91) {
+		inPin connection_40
+		outPin {
+			connection_38
+		}
+		inputType units.si.m outputType real
+	}
+	unitConversion at (801, 121) {
+		inPin connection_41
+		outPin {
+			connection_39
+		}
+		inputType units.si.m outputType real
+	}
+	simpleIdentifier str at (871, 25) {
+		label at (0, -1)
+		inPin outPin {
+			connection_46, connection_44
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.steering at (951, 25) {
+		label at (0, -1)
+		inPin connection_44
+		sequenceCall {
+			inPin connection_43
+		}
+	}
+	complexIdentifier SteeringCtrl at (821, 281) size (14, 5) {
+		label at (0, 1)
+		methodCall myCar.SteeringCtrl.calc {
+			methodVoidPin at (top, 0) sequenceCall at (6, -30) {
+				inPin connection_70
+			}
+		}
+		elementCall (myCar.SteeringCtrl.str) {
+			argumentPin at (left, 2) connection_81 {
+				bendpoints (0, 80), (-280, 80), (-280, 20)
+			}
+			returnPin at (right, 0) {
+				connection_76
+			}
+			sequenceCall at (-40, 16) {
+				inPin connection_80
+			}
+		}
+		elementCall (myCar.SteeringCtrl.delta) {
+			argumentPin at (left, 0) connection_72 {
+				bendpoints (0, 70), (20, 70), (20, 80)
+			}
+			sequenceCall at (-30, -34) {
+				inPin connection_71
+			}
+		}
+	}
+	simpleIdentifier str at (991, 285) {
+		label at (0, -1)
+		inPin connection_76
+		outPin {
+			connection_81
+		}
+		sequenceCall {
+			inPin connection_75
+		}
+	}
+}

@@ -45,13 +45,13 @@ class vectOps {
 	// Calculates the scalar product of the two given vectors and returns it as a real value
 	// The scalar product is calculated using A1*B1 + A2*B2
 	public real scalar(vect vectA, vect vectB){
-		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m^2];
+		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m ^2];
 	}
 	
 	// Calculates the cross Product of two vektors and returns it as a real value
 	// The cross prduct is calulated by A1*B2-B1*A2
 	public real crossProduct(vect pointA, vect pointB){
-		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m^2];
+		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m ^2];
 	}
 		
 	// Calculates the angle between two vectors and returns it in rad
