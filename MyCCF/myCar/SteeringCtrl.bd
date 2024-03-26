@@ -2,7 +2,7 @@ classType myCar.SteeringCtrl
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_3
+			connection_64
 		}
 	}
 	lessOrEqual at (531, 176) {
@@ -74,7 +74,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier dstr at (311, 165) {
 		label at (0, -1)
 		outPin {
-			connection_20
+			connection_74, connection_20
 		}
 		sequenceCall {
 			inPin
@@ -165,13 +165,15 @@ blockdiagramSpecification Main {
 			connection_30
 		}
 		sequenceCall {
-			inPin connection_3
+			inPin connection_3 {
+				bendpoints (-280, 0)
+			}
 		}
 	}
-	simpleIdentifier ref at (91, 45) {
+	simpleIdentifier delta at (91, 45) {
 		label at (0, -1)
 		inPin outPin {
-			connection_31, connection_28
+			connection_31, connection_61, connection_28
 		}
 		sequenceCall {
 			inPin
@@ -218,13 +220,81 @@ blockdiagramSpecification Main {
 			inPin connection_37
 		}
 	}
-	simpleIdentifier ref at (431, 315) {
+	simpleIdentifier delta at (431, 315) {
 		label at (0, -1)
 		inPin outPin {
 			connection_38
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	absolute at (191, -9) {
+		inPin connection_61 {
+			bendpoints (50, 0)
+		}
+		outPin {
+			connection_73
+		}
+	}
+	ifElse at (511, -19) {
+		inPin connection_70
+		ifControlFlowOutPin {
+			connection_66
+		}
+		elseControlFlowOutPin {
+			connection_3
+		}
+		sequenceCall {
+			inPin connection_64
+		}
+	}
+	simpleIdentifier str at (731, 25) {
+		label at (0, -1)
+		inPin connection_67
+		outPin {
+			connection_68
+		}
+		sequenceCall {
+			inPin connection_66 {
+				bendpoints (160, 0)
+			}
+		}
+	}
+	simpleIdentifier delta at (581, 15) {
+		label at (0, -1)
+		inPin outPin {
+			connection_69
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	addition at (671, 16) {
+		inPin connection_69
+		inPin connection_68 {
+			bendpoints (0, 30), (-110, 30)
+		}
+		outPin {
+			connection_67
+		}
+	}
+	between at (381, -24) {
+		inPin connection_74 {
+			bendpoints (10, 0), (10, -190)
+		}
+		inPin connection_73 {
+			bendpoints (0, -10)
+		}
+		inPin connection_72
+		outPin {
+			connection_70
+		}
+	}
+	literal Numeric "0.0" at (281, -7) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_72
 		}
 	}
 }

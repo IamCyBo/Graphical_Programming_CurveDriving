@@ -311,7 +311,7 @@ blockdiagramSpecification Main {
 				inPin connection_80
 			}
 		}
-		elementCall (myCar.SteeringCtrl.ref) {
+		elementCall (myCar.SteeringCtrl.delta) {
 			argumentPin at (left, 0) connection_72 {
 				bendpoints (0, 70), (20, 70), (20, 80)
 			}

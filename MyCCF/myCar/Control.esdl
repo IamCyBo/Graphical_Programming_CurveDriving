@@ -18,19 +18,18 @@ writes CarMessages.steering {
 	EdgeRising ^trigger;
 	arr_m tmp[2] = {1.0[m], 0.0[m]};
 	real str = 0.0;
-	characteristic real dstr = 0.01;
 	Logger Logger_instance;
 	SteeringCtrl SteeringCtrl;
 
 	@thread
-	@generated("blockdiagram", "2928e123")
+	@generated("blockdiagram", "c2758e1d")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
 			focuspointIndex = (1 + focuspointIndex); // Main/calc 2/if-then 1
 		} // Main/calc 2
 		Route.calc(focuspointIndex); // Main/calc 3
-		SteeringCtrl.ref = (vectOps.angle(tmp, vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)) - CarMessages.mybearing); // Main/calc 4
+		SteeringCtrl.^delta = (vectOps.angle(tmp, vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)) - CarMessages.mybearing); // Main/calc 4
 		SteeringCtrl.str = str; // Main/calc 5
 		SteeringCtrl.calc(); // Main/calc 6
 		str = SteeringCtrl.str; // Main/calc 7
