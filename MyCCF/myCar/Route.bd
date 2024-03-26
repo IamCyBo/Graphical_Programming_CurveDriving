@@ -5,10 +5,10 @@ blockdiagramSpecification Main {
 			connection_18, connection_20
 		}
 	}
-	simpleIdentifier x at (211, 121) {
+	simpleIdentifier x at (241, 131) {
 		label at (-40, -69)
 		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_7 {
-			bendpoints (100, 0)
+			bendpoints (130, 0)
 		}
 		outPin {
 			connection_19
@@ -17,10 +17,10 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier y at (221, 291) {
+	simpleIdentifier y at (241, 221) {
 		label at (-40, -69)
 		inPin inPin INDEX_SET_X inPin INDEX_GET_X connection_6 {
-			bendpoints (110, 0)
+			bendpoints (130, 0)
 		}
 		outPin {
 			connection_21
@@ -32,7 +32,7 @@ blockdiagramSpecification Main {
 	methodArgumentIdentifier calc.arg at (111, 355) {
 		label at (0, -1)
 		outPin {
-			connection_6
+			connection_65, connection_6
 		}
 		sequenceCall {
 			inPin

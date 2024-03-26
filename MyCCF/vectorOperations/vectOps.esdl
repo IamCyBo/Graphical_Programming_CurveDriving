@@ -8,7 +8,6 @@ class vectOps {
 	private MathLib lib;
 	
 	private vect vect_tmp = {0[m]};
-	real pi = 3.141592653;
 	
 	// Creates a origin vector to point given by x and y
 	public vect getPoint(m x, m y){
@@ -27,13 +26,17 @@ class vectOps {
 
 	// Calculates the length of a vector and returns it as a real value
 	// The length of the vector is calculated using the pythagorean theorem: sqrt(x^2 + y^2)
-	public real length(vect v_in) {
-		return lib.sqrt((v_in[0] * v_in[0] + v_in[1] * v_in[1]) / 1[m ^ 2]);
+	public m length(vect v_in) {
+		return lib.sqrt((v_in[0] * v_in[0] + v_in[1] * v_in[1]) / 1[m ^ 2]) *1[m];
 	}
 	
 	// Normalizes the given vector by dividing by it's length
-	public vect norm(vect v_in){
-		real size = length(v_in);
+	public vect norm(vect v_in) {
+		real size = length(v_in)/1[m];
+		if (size == 0){
+			vect_tmp = v_in;
+			return vect_tmp;
+		}
 		vect_tmp[0] = v_in[0]/size;
 		vect_tmp[1] = v_in[1]/size;
 		return vect_tmp;
@@ -45,8 +48,13 @@ class vectOps {
 		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m ^2];
 	}
 	
-	// Calculates the angle between two vectors and returns it in rad in interval [-pi;pi]
-	// The angle is calculated by using acos((A*B)/(|A|*|B|))
+	// Calculates the cross Product of two vektors and returns it as a real value
+	// The cross prduct is calulated by A1*B2-B1*A2
+	public real crossProduct(vect pointA, vect pointB){
+		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m ^2];
+	}
+		
+	// Calculates the angle between two vectors and returns it in rad
 	public real angle(vect vectA, vect vectB){
 		real cross = crossProduct(vectA, vectB);
 		real scal = scalar(vectA, vectB);
@@ -54,31 +62,35 @@ class vectOps {
 		return lib.atan2(cross, scal);
 	}
 	
-	// Calculates the cross Product of two vektors and returns it as a real value
-	// The cross prduct is calulated by A1*B2-B1*A2
-	public real crossProduct(vect pointA, vect pointB){
-		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m ^2];
-	}
-	
 	// Calculates the distance between a Point and a Line Segment and returns it in m
 	// The distance is either the distance from the Point to the segment start/end
 	// and otherwise calculated by abs(crossproduct(AB/AP))/length(vect(AB,AP))
-	public m distancePointSegment(vect point, vect segA, vect segB){		
+	public m distancePointSegment(vect point, vect segA, vect segB){
+		vect seg_dir;
+		real projection_length;
+		vect orthogonal_vect;
+				
 		vect AB = getVect(segA, segB);
-		vect BP = getVect(segB, point);
 		vect AP = getVect(segA, point);
+		vect BP = getVect(segB, point);
 		
-		real scalar_ABBP = scalar(AB, BP);
-		real scalar_ABAP = scalar(AB, AP);
+		m seg_length = length(AB);
+		if (seg_length == 0[m]) {
+			return length(AP);
+		}
 		
-		if (scalar_ABBP > 0){
-			return length(BP)*1[m];
+		seg_dir = norm(AB);
+		projection_length = scalar(AP, seg_dir);
+		
+		if (projection_length < 0) {
+			return length(AP);
 		}
-		else if (scalar_ABAP < 0){
-			return length(AP)*1[m];
+		if (projection_length > seg_length/1[m]) {
+			return length(BP);
 		}
-		else {
-			return abs(crossProduct(AB, AP))/length(getVect(AB, AP)) *1[m];
-		}
+		seg_dir[0] = seg_dir[0] * projection_length;
+		seg_dir[1] = seg_dir[1] * projection_length;
+		orthogonal_vect = getVect(AP, seg_dir);
+		return length(orthogonal_vect);
 	}
 }

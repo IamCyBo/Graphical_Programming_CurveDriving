@@ -1,26 +1,12 @@
 classType myCar.myDriver
-blockdiagramSpecification Main {
+
+blockdiagramSpecification calc_spec {
 	methodBody calc {
 		outPin active {
-			connection_6
-		}
-	}
-	literal unit units.common.kmph "60" at (181, 193) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_1
-		}
-	}
-	subtraction at (281, 196) {
-		inPin connection_1
-		inPin connection_2 {
-			bendpoints (80, 0)
-		}
-		outPin {
 			connection_3
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (161, 255) {
+	simpleIdentifier resources.CarMessages.v at (51, 105) {
 		label at (0, -1)
 		outPin {
 			connection_2
@@ -29,85 +15,30 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	multiplication at (361, 106) {
-		inPin connection_4 {
-			bendpoints (90, 0)
-		}
-		inPin connection_3 {
-			bendpoints (0, -80)
-		}
-		outPin {
-			connection_5
-		}
-	}
-	literal Numeric "2000" at (221, 93) size (49, 0) {
+	literal unit units.common.kmph "60" at (51, 63) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_4
+			connection_1
 		}
 	}
-	unitConversion at (431, 111) {
-		inPin connection_5
-		outPin {
-			connection_9, connection_8
-		}
-		inputType units.common.kmph outputType real
-	}
-	simpleIdentifier resources.CarMessages.power at (541, 115) {
-		label at (0, -1)
-		inPin connection_8
-		sequenceCall {
-			inPin connection_7 {
-				bendpoints (0, -120), (-160, -120)
+	complexIdentifier driverTemplate_instance at (141, 61) size (14, 8) {
+		label at (-20, 41)
+		methodCall components.driverTemplate.power {
+			argumentPin vSoll at (left, 0) connection_1
+			argumentPin vIst at (left, 4) connection_2
+			returnPin at (right, 0) {
+				connection_4
+			}
+			sequenceCall {
+				inPin
 			}
 		}
 	}
-	ifElse at (641, 181) {
-		inPin connection_11 {
-			bendpoints (60, 0)
-		}
-		ifControlFlowOutPin {
-			connection_7
-		}
-		elseControlFlowOutPin {
-			connection_12
-		}
-		sequenceCall {
-			inPin connection_6
-		}
-	}
-	greaterOrEqual at (541, 166) {
-		inPin connection_9 {
-			bendpoints (30, 0), (30, 50)
-		}
-		inPin connection_10 {
-			bendpoints (10, 0)
-		}
-		outPin {
-			connection_11
-		}
-	}
-	literal Numeric "0.0" at (481, 193) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_10
-		}
-	}
-	simpleIdentifier resources.CarMessages.power at (701, 245) {
+	simpleIdentifier resources.CarMessages.power at (321, 65) {
 		label at (0, -1)
-		inPin connection_13 {
-			bendpoints (100, 0)
-		}
+		inPin connection_4
 		sequenceCall {
-			inPin connection_12 {
-				bendpoints (30, 0)
-			}
-		}
-	}
-	literal Numeric "0.0" at (551, 263) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_13
+			inPin connection_3
 		}
 	}
 }
