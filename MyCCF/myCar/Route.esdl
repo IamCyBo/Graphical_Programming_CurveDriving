@@ -15,9 +15,9 @@ class Route {
 	@get
 	boolean lastElement;
 
-	@generated("blockdiagram", "3fca29ef")
+	@generated("blockdiagram", "99efe8dc")
 	public void calc(integer in arg) {
-		lastElement = (y.length() == arg); // Main/calc 1
+		lastElement = (integer((y.length() - integer(1))) == arg); // Main/calc 1
 		focuspoint = vectOps.getPoint(x[arg], y[arg]); // Main/calc 2
 	}
 

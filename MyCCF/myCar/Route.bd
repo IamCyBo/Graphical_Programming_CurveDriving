@@ -73,21 +73,21 @@ blockdiagramSpecification Main {
 			bendpoints (50, 0), (50, 30)
 		}
 		outPin {
-			connection_73
+			connection_74
 		}
 	}
-	equal at (501, 286) {
-		inPin connection_73 {
-			bendpoints (40, 0), (40, 10)
+	equal at (601, 316) {
+		inPin connection_77 {
+			bendpoints (40, 0)
 		}
 		inPin connection_65 {
-			bendpoints (130, 0), (130, 30)
+			bendpoints (130, 0), (130, 60)
 		}
 		outPin {
 			connection_68
 		}
 	}
-	simpleIdentifier lastElement at (601, 295) {
+	simpleIdentifier lastElement at (691, 325) {
 		label at (0, -1)
 		inPin connection_68
 		outPin sequenceCall {
@@ -109,6 +109,35 @@ blockdiagramSpecification Main {
 			sequenceCall {
 				inPin
 			}
+		}
+	}
+	subtraction at (461, 286) {
+		inPin connection_74 {
+			bendpoints (40, 0)
+		}
+		inPin connection_79 {
+			bendpoints (30, 0)
+		}
+		outPin {
+			connection_76
+		}
+	}
+	literal Numeric "1" at (311, 313) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_78
+		}
+	}
+	typeConverter integer at (521, 291) {
+		inPin connection_76
+		outPin {
+			connection_77
+		}
+	}
+	typeConverter integer at (391, 311) {
+		inPin connection_78
+		outPin {
+			connection_79
 		}
 	}
 }
