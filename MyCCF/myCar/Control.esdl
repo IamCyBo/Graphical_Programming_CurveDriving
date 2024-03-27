@@ -25,11 +25,11 @@ writes CarMessages.steering, CarMessages.power, CarMessages.brake {
 	SteeringCtrl SteeringCtrl;
 	vect currenPos;
 	m distance2end = 0.0[m];
-	kmph TODO_vsoll = 0.0[kmph];
+	kmph target_vel = 0.0[kmph];
 	velocityController velocityController_instance;
 
 	@thread
-	@generated("blockdiagram", "9108815f")
+	@generated("blockdiagram", "456a43ef")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -45,12 +45,12 @@ writes CarMessages.steering, CarMessages.power, CarMessages.brake {
 		distance2focuspoint = vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 10
 		distance2end = (distance2focuspoint + Route.distanceFocusEnd); // Main/calc 11
 		if (distance2end <= 33.5[m]) {
-			TODO_vsoll = 0.0[kmph]; // Main/calc 12/if-then 1
+			target_vel = 0.0[kmph]; // Main/calc 12/if-then 1
 		} else {
-			TODO_vsoll = 60[kmph]; // Main/calc 12/if-else 1
+			target_vel = 60[kmph]; // Main/calc 12/if-else 1
 		} // Main/calc 12
-		velocityController_instance.calc(TODO_vsoll, CarMessages.v); // Main/calc 13
-		CarMessages.brake = velocityController_instance.brake; // Main/calc 14
-		CarMessages.power = velocityController_instance.power; // Main/calc 15
+		velocityController_instance.calc(target_vel, CarMessages.v); // Main/calc 13
+		CarMessages.power = velocityController_instance.power; // Main/calc 14
+		CarMessages.brake = velocityController_instance.brake; // Main/calc 15
 	}
 }

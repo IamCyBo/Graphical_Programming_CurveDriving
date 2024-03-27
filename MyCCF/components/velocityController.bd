@@ -31,8 +31,8 @@ blockdiagramSpecification Main {
 			connection_143
 		}
 	}
-	methodArgumentIdentifier calc.vSoll at (171, 255) {
-		label at (0, -1)
+	methodArgumentIdentifier calc.target_velocity at (171, 255) {
+		label at (-50, -1)
 		outPin {
 			connection_11
 		}
@@ -40,8 +40,8 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	methodArgumentIdentifier calc.vIst at (171, 295) {
-		label at (0, -1)
+	methodArgumentIdentifier calc.current_velocity at (171, 295) {
+		label at (-50, -1)
 		outPin {
 			connection_12
 		}
@@ -51,10 +51,10 @@ blockdiagramSpecification Main {
 	}
 	subtraction at (261, 266) {
 		inPin connection_11 {
-			bendpoints (0, 10)
+			bendpoints (50, 0)
 		}
 		inPin connection_12 {
-			bendpoints (0, -10)
+			bendpoints (50, 0)
 		}
 		outPin {
 			connection_13
