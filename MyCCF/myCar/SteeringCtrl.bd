@@ -2,299 +2,166 @@ classType myCar.SteeringCtrl
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_64
+			connection_85, connection_77
 		}
 	}
-	lessOrEqual at (531, 176) {
-		inPin connection_6
-		inPin connection_19 {
-			bendpoints (0, -10)
-		}
-		outPin {
-			connection_4
-		}
-	}
-	greater at (211, 46) {
-		inPin connection_28
-		inPin connection_29 {
-			bendpoints (70, 0)
-		}
-		outPin {
-			connection_5
-		}
-	}
-	addition at (381, 166) {
-		inPin connection_20
-		inPin connection_24 {
-			bendpoints (50, 0), (50, 30), (-430, 30)
-		}
-		outPin {
-			connection_8, connection_6
-		}
-	}
-	subtraction at (361, 476) {
-		inPin connection_23 {
-			bendpoints (30, 0), (30, 40), (-570, 40), (-570, -10)
-		}
-		inPin connection_12
-		outPin {
-			connection_11, connection_9
-		}
-	}
-	simpleIdentifier dstr at (301, 495) {
-		label at (0, -1)
-		outPin {
-			connection_12
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	greaterOrEqual at (541, 396) {
-		inPin connection_9 {
-			bendpoints (40, 0), (40, -90)
-		}
-		inPin connection_16
-		outPin {
-			connection_13
-		}
-	}
-	literal Numeric "-0.5" at (461, 413) size (49, 0) {
+	literal Numeric "0.5" at (111, 313) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_16, connection_15
+			connection_71
 		}
 	}
-	literal Numeric "0.5" at (471, 203) size (49, 0) {
-		label at (0, 4)
+	minimum at (351, 86) size (2, 4) {
+		inPin connection_80
+		inPin connection_66
 		outPin {
-			connection_19, connection_18
+			connection_79
 		}
 	}
-	simpleIdentifier dstr at (311, 165) {
-		label at (0, -1)
-		outPin {
-			connection_74, connection_20
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	ifElse at (651, 381) {
-		inPin connection_13 {
-			bendpoints (70, 0)
-		}
-		ifControlFlowOutPin {
-			connection_21
-		}
-		elseControlFlowOutPin {
-			connection_22
-		}
-		sequenceCall {
-			inPin connection_1 {
-				bendpoints (0, 40)
-			}
-		}
-	}
-	simpleIdentifier str at (631, 205) {
-		label at (0, -1)
-		inPin connection_18 {
-			bendpoints (0, 20), (90, 20), (90, 0)
-		}
-		outPin sequenceCall at (0, -24) {
-			inPin connection_26
-		}
-	}
-	simpleIdentifier str at (711, 455) {
-		label at (0, -1)
-		inPin connection_15 {
-			bendpoints (20, 0), (20, 40)
-		}
-		outPin sequenceCall {
-			inPin connection_22 {
-				bendpoints (0, 20)
-			}
-		}
-	}
-	simpleIdentifier str at (801, 485) {
-		label at (0, -1)
-		inPin connection_11
-		outPin {
-			connection_23
-		}
-		sequenceCall at (-10, -24) {
-			inPin connection_21 {
-				bendpoints (90, 0)
-			}
-		}
-	}
-	simpleIdentifier str at (761, 235) {
-		label at (0, -1)
-		inPin connection_8 {
-			bendpoints (0, 60)
+	absolute at (261, 81) {
+		inPin connection_123 {
+			bendpoints (110, 0)
 		}
 		outPin {
-			connection_24
-		}
-		sequenceCall {
-			inPin connection_25 {
-				bendpoints (50, 0), (50, 140)
-			}
+			connection_80
 		}
 	}
-	ifElse at (611, 71) {
-		inPin connection_4 {
-			bendpoints (0, -110)
-		}
-		ifControlFlowOutPin {
-			connection_25
-		}
-		elseControlFlowOutPin {
-			connection_26
-		}
-		sequenceCall {
-			inPin connection_2
-		}
-	}
-	ifElse at (261, 51) {
-		inPin connection_5
-		ifControlFlowOutPin {
-			connection_2
-		}
-		elseControlFlowOutPin {
-			connection_30
-		}
-		sequenceCall {
-			inPin connection_3 {
-				bendpoints (-280, 0)
-			}
-		}
-	}
-	simpleIdentifier delta at (91, 45) {
+	simpleIdentifier dstr at (261, 115) {
 		label at (0, -1)
-		inPin outPin {
-			connection_31, connection_61, connection_28
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier str at (91, 75) {
-		label at (0, -1)
-		inPin outPin {
-			connection_33, connection_29
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	ifElse at (311, 291) {
-		inPin connection_34
-		ifControlFlowOutPin {
-			connection_37
-		}
-		elseControlFlowOutPin {
-			connection_1
-		}
-		sequenceCall {
-			inPin connection_30 {
-				bendpoints (0, 190)
-			}
-		}
-	}
-	equal at (221, 286) {
-		inPin connection_31 {
-			bendpoints (30, 0), (30, 240)
-		}
-		inPin connection_33 {
-			bendpoints (0, 230)
-		}
 		outPin {
-			connection_34
-		}
-	}
-	simpleIdentifier str at (581, 315) {
-		label at (0, -1)
-		inPin connection_38
-		outPin sequenceCall {
-			inPin connection_37
-		}
-	}
-	simpleIdentifier delta at (431, 315) {
-		label at (0, -1)
-		inPin outPin {
-			connection_38
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	absolute at (191, -9) {
-		inPin connection_61 {
-			bendpoints (50, 0)
-		}
-		outPin {
-			connection_73
-		}
-	}
-	ifElse at (511, -19) {
-		inPin connection_70
-		ifControlFlowOutPin {
 			connection_66
 		}
-		elseControlFlowOutPin {
-			connection_3
-		}
 		sequenceCall {
-			inPin connection_64
+			inPin
 		}
 	}
-	simpleIdentifier str at (731, 25) {
-		label at (0, -1)
-		inPin connection_67
-		outPin {
-			connection_68
-		}
-		sequenceCall {
-			inPin connection_66 {
-				bendpoints (160, 0)
-			}
-		}
-	}
-	simpleIdentifier delta at (581, 15) {
+	simpleIdentifier str at (31, 275) {
 		label at (0, -1)
 		inPin outPin {
-			connection_69
+			connection_72, connection_67
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	addition at (671, 16) {
-		inPin connection_69
-		inPin connection_68 {
-			bendpoints (0, 30), (-110, 30)
-		}
-		outPin {
-			connection_67
-		}
-	}
-	between at (381, -24) {
-		inPin connection_74 {
-			bendpoints (10, 0), (10, -190)
-		}
-		inPin connection_73 {
-			bendpoints (0, -10)
-		}
-		inPin connection_72
+	absolute at (121, 271) {
+		inPin connection_67
 		outPin {
 			connection_70
 		}
 	}
-	literal Numeric "0.0" at (281, -7) size (49, 0) {
-		label at (0, 4)
+	minimum at (221, 286) {
+		inPin connection_70 {
+			bendpoints (60, 0)
+		}
+		inPin connection_71 {
+			bendpoints (60, 0)
+		}
 		outPin {
-			connection_72
+			connection_76
+		}
+	}
+	complexIdentifier Signum_instance at (221, 231) size (4, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Nonlinears.Signum.value {
+			argumentPin x at (left, 1) connection_72 {
+				bendpoints (20, 0), (20, -30)
+			}
+			returnPin at (right, 1) {
+				connection_75
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier str at (441, 265) {
+		label at (0, -1)
+		inPin connection_78
+		outPin sequenceCall {
+			inPin connection_77
+		}
+	}
+	multiplication at (361, 256) {
+		inPin connection_75 {
+			bendpoints (90, 0)
+		}
+		inPin connection_76 {
+			bendpoints (100, 0)
+		}
+		outPin {
+			connection_78
+		}
+	}
+	addition at (661, 86) {
+		inPin connection_90
+		inPin connection_105
+		outPin {
+			connection_86
+		}
+	}
+	multiplication at (491, 76) {
+		inPin connection_82 {
+			bendpoints (90, 0), (90, 40)
+		}
+		inPin connection_79
+		outPin {
+			connection_90
+		}
+	}
+	complexIdentifier Signum_instance at (281, 21) size (4, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Nonlinears.Signum.value {
+			argumentPin x at (left, 1) connection_124 {
+				bendpoints (40, 0), (40, -60)
+			}
+			returnPin at (right, 1) {
+				connection_82
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier str at (741, 95) {
+		label at (0, -1)
+		inPin connection_86
+		outPin sequenceCall {
+			inPin connection_85
+		}
+	}
+	simpleIdentifier str at (581, 105) {
+		label at (0, -1)
+		inPin outPin {
+			connection_105
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier delta at (41, 85) {
+		label at (-40, -21)
+		inPin outPin {
+			connection_121
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier str at (41, 105) {
+		label at (0, -1)
+		inPin outPin {
+			connection_122
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (111, 86) {
+		inPin connection_121
+		inPin connection_122
+		outPin {
+			connection_124, connection_123
 		}
 	}
 }
