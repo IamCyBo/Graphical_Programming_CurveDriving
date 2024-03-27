@@ -1,6 +1,7 @@
 package vectorOperations;
 
 import SystemLib.Math.MathLib;
+import SystemLib.Nonlinears.Signum;
 import resources.vect;
 import units.si.m;
 
@@ -8,6 +9,9 @@ class vectOps {
 	private MathLib lib;
 	
 	private vect vect_tmp = {0[m]};
+	
+	private real pi = 3.1415926536;
+	private Signum sign;
 	
 	// Creates a origin vector to point given by x and y
 	public vect getPoint(m x, m y){
@@ -48,8 +52,8 @@ class vectOps {
 		return (vectA[0]*vectB[0] + vectA[1]*vectB[1])/1[m ^2];
 	}
 	
-	// Calculates the cross Product of two vektors and returns it as a real value
-	// The cross prduct is calulated by A1*B2-B1*A2
+	// Calculates the cross Product of two vectors and returns it as a real value
+	// The cross product is calculated by A1*B2-B1*A2
 	public real crossProduct(vect pointA, vect pointB){
 		return (pointA[0]*pointB[1] - pointB[0]*pointA[1]) /1[m ^2];
 	}
@@ -60,6 +64,17 @@ class vectOps {
 		real scal = scalar(vectA, vectB);
 		
 		return lib.atan2(cross, scal);
+	}
+	
+	// Calculates the difference between two angles, result is in [-pi;pi]
+	public real angleDiff(real alpha, real beta){
+		real diff = alpha - beta;
+		if(abs(diff) > pi){
+			return -2 * sign.value(diff) * pi + diff;
+		}
+		else{
+			return diff;
+		}
 	}
 	
 	// Calculates the distance between a Point and a Line Segment and returns it in m

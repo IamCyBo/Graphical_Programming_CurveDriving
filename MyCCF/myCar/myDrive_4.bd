@@ -2,7 +2,7 @@ classType myCar.myDrive_4
 blockdiagramSpecification Main {
 	methodBody move {
 		outPin active {
-			connection_2, connection_11, connection_16, connection_48, connection_36, connection_29, connection_56, connection_101, connection_102, connection_104, connection_106, connection_112, connection_119
+			connection_2, connection_11, connection_48, connection_36, connection_29, connection_112, connection_56, connection_16, connection_101, connection_102, connection_104, connection_106
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -310,27 +310,21 @@ blockdiagramSpecification Main {
 	simpleIdentifier x at (881, 205) {
 		label at (0, -1)
 		inPin connection_105
-		outPin {
-			connection_122
-		}
-		sequenceCall {
+		outPin sequenceCall {
 			inPin connection_104
 		}
 	}
 	simpleIdentifier y at (821, 245) {
 		label at (0, -1)
 		inPin connection_107
-		outPin {
-			connection_121
-		}
-		sequenceCall {
+		outPin sequenceCall {
 			inPin connection_106
 		}
 	}
 	methodArgumentIdentifier move.mydt at (541, 255) {
 		label at (0, -1)
 		outPin {
-			connection_123, connection_98
+			connection_98
 		}
 		sequenceCall {
 			inPin
@@ -350,10 +344,7 @@ blockdiagramSpecification Main {
 		inPin connection_103 {
 			bendpoints (0, -10)
 		}
-		outPin {
-			connection_118
-		}
-		sequenceCall {
+		outPin sequenceCall {
 			inPin connection_102
 		}
 	}
@@ -439,48 +430,5 @@ blockdiagramSpecification Main {
 		outPin sequenceCall at (-10, -14) {
 			inPin connection_114
 		}
-	}
-	complexIdentifier Logger at (1011, 191) size (8, 8) {
-		label at (0, 1)
-		methodCall myCar.Logger.calc {
-			argumentPin t at (left, 0) connection_118 {
-				bendpoints (150, 0)
-			}
-			argumentPin x at (left, 2) connection_116 {
-				bendpoints (10, 0)
-			}
-			argumentPin y at (left, 4) connection_117 {
-				bendpoints (40, 0)
-			}
-			argumentPin z at (left, 6) connection_120 {
-				bendpoints (20, 0)
-			}
-			sequenceCall at (-70, -30) {
-				inPin connection_119
-			}
-		}
-	}
-	unitConversion at (921, 241) {
-		inPin connection_121
-		outPin {
-			connection_117
-		}
-		inputType units.si.m outputType real
-	}
-	unitConversion at (951, 201) {
-		inPin connection_122
-		outPin {
-			connection_116
-		}
-		inputType units.si.m outputType real
-	}
-	unitConversion at (941, 281) {
-		inPin connection_123 {
-			bendpoints (0, 30)
-		}
-		outPin {
-			connection_120
-		}
-		inputType units.si.s outputType real
 	}
 }

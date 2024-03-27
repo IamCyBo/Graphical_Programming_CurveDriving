@@ -81,24 +81,23 @@ class myDrive_4 {
 	real bearing;
 	Logger Logger;
 
-	@generated("blockdiagram", "49934c6a")
+	@generated("blockdiagram", "2dcbad71")
 	public void move(real in powerCtrl, real in brakeCtrl, s in mydt, mps2 in myg, real in ^delta) {
 		if (dist > TrackSize) {
 			dist = 0.0[m]; // Main/move 1/if-then 1
 		} // Main/move 1
 		momentum = EngineMomentum.getAt(powerCtrl, v); // Main/move 2
-		dist = (ds + dist); // Main/move 3
-		dh = (h - Landscape.getAt(dist)); // Main/move 4
-		h = Landscape.getAt(dist); // Main/move 5
-		v = (((BrakeMomentum.getAt(brakeCtrl) + momentum + AirFriction.getAt(v) + (myg * (dh / ds))) * mydt) + v); // Main/move 6
-		ds = (v * mydt); // Main/move 7
-		MyTurn_instance.move(^delta, v, mydt); // Main/move 8
-		bearing = MyTurn_instance.bearing; // Main/move 9
-		x = MyTurn_instance.x; // Main/move 10
-		y = MyTurn_instance.y; // Main/move 11
+		dh = (h - Landscape.getAt(dist)); // Main/move 3
+		h = Landscape.getAt(dist); // Main/move 4
+		v = (((BrakeMomentum.getAt(brakeCtrl) + momentum + AirFriction.getAt(v) + (myg * (dh / ds))) * mydt) + v); // Main/move 5
 		if (v < 0.0[kmph]) {
-			v = 0.0[kmph]; // Main/move 12/if-then 1
-		} // Main/move 12
-		Logger.calc(bearing, x / 1.0[m], y / 1.0[m], mydt / 1.0[s]); // Main/move 13
+			v = 0.0[kmph]; // Main/move 6/if-then 1
+		} // Main/move 6
+		ds = (v * mydt); // Main/move 7
+		dist = (ds + dist); // Main/move 8
+		MyTurn_instance.move(^delta, v, mydt); // Main/move 9
+		bearing = MyTurn_instance.bearing; // Main/move 10
+		x = MyTurn_instance.x; // Main/move 11
+		y = MyTurn_instance.y; // Main/move 12
 	}
 }
