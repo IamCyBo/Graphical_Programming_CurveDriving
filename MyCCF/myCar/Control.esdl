@@ -7,10 +7,11 @@ import units.si.m;
 import vectorOperations.vectOps;
 import resources.vect;
 import units.common.kmph;
+import components.velocityController;
 
 singleton class Control
-reads CarMessages.mybearing, CarMessages.x, CarMessages.y
-writes CarMessages.steering {
+reads CarMessages.mybearing, CarMessages.x, CarMessages.y, CarMessages.v
+writes CarMessages.steering, CarMessages.power, CarMessages.brake {
 
 	vectOps vectOps;
 	Route Route;
@@ -25,9 +26,10 @@ writes CarMessages.steering {
 	vect currenPos;
 	m distance2end = 0.0[m];
 	kmph TODO_vsoll = 0.0[kmph];
+	velocityController velocityController_instance;
 
 	@thread
-	@generated("blockdiagram", "b88b5e3b")
+	@generated("blockdiagram", "9108815f")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -47,5 +49,8 @@ writes CarMessages.steering {
 		} else {
 			TODO_vsoll = 60[kmph]; // Main/calc 12/if-else 1
 		} // Main/calc 12
+		velocityController_instance.calc(TODO_vsoll, CarMessages.v); // Main/calc 13
+		CarMessages.brake = velocityController_instance.brake; // Main/calc 14
+		CarMessages.power = velocityController_instance.power; // Main/calc 15
 	}
 }

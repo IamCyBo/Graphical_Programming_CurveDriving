@@ -2,7 +2,7 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_9, connection_11, connection_3, connection_71, connection_80, connection_70, connection_75, connection_45, connection_43, connection_5, connection_91, connection_97
+			connection_9, connection_11, connection_3, connection_71, connection_80, connection_70, connection_75, connection_45, connection_43, connection_5, connection_91, connection_97, connection_106, connection_108, connection_110
 		}
 	}
 	complexIdentifier vectOps at (381, 281) size (13, 5) {
@@ -421,6 +421,70 @@ blockdiagramSpecification Main {
 		label at (0, 4)
 		outPin {
 			connection_102
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (881, 545) {
+		label at (0, -1)
+		outPin {
+			connection_105
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier velocityController_instance at (1171, 441) size (14, 8) {
+		label at (0, 1)
+		methodCall components.velocityController.calc {
+			argumentPin vSoll at (left, 0) connection_107
+			argumentPin vIst at (left, 1) connection_105 {
+				bendpoints (240, 0)
+			}
+			sequenceCall at (-60, -30) {
+				inPin connection_106
+			}
+		}
+		elementCall (components.velocityController.power) {
+			returnPin at (right, 0) {
+				connection_111
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (components.velocityController.brake) {
+			returnPin at (right, 1) {
+				connection_109
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier TODO_vsoll at (1091, 445) {
+		label at (0, -1)
+		inPin outPin {
+			connection_107
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.power at (1211, 285) {
+		label at (0, -1)
+		inPin connection_111 {
+			bendpoints (0, -80), (-110, -80)
+		}
+		sequenceCall {
+			inPin connection_110
+		}
+	}
+	simpleIdentifier resources.CarMessages.brake at (1331, 285) {
+		label at (0, -1)
+		inPin connection_109 {
+			bendpoints (10, 0)
+		}
+		sequenceCall {
+			inPin connection_108
 		}
 	}
 }
