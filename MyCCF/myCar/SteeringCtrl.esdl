@@ -10,11 +10,11 @@ class SteeringCtrl {
 	real str = 0.0;
 	@set
 	real ^delta = 0.0;
-	Signum Signum_instance;
+	Signum Signum;
 
-	@generated("blockdiagram", "b8467dbf")
+	@generated("blockdiagram", "e01e6f78")
 	public void calc() {
-		str = ((Signum_instance.value((^delta - str)) * min(abs((^delta - str)), dstr)) + str); // Main/calc 1
-		str = (Signum_instance.value(str) * min(abs(str), 0.5)); // Main/calc 2
+		str = ((Signum.value((^delta - str)) * min(abs((^delta - str)), dstr)) + str); // Main/calc 1
+		str = (Signum.value(str) * min(abs(str), 0.5)); // Main/calc 2
 	}
 }

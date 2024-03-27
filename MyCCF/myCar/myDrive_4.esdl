@@ -81,6 +81,7 @@ class myDrive_4 {
 	real bearing;
 	Logger Logger;
 
+
 	@generated("blockdiagram", "eaab4e38")
 	public void move(real in powerCtrl, real in brakeCtrl, s in mydt, mps2 in myg, real in ^delta) {
 		if (dist > TrackSize) {
