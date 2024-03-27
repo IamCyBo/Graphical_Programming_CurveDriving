@@ -4,7 +4,7 @@ import SystemLib.Nonlinears.Signum;
 
 class SteeringCtrl {
 
-	characteristic real dstr = 0.2;
+	characteristic real dstr = 0.01;
 	@get
 	@set
 	real str = 0.0;

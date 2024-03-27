@@ -6,10 +6,12 @@ import resources.arr_m;
 import units.si.m;
 import vectorOperations.vectOps;
 import resources.DriverMessages;
+import units.common.kmph;
+import components.velocityController;
 
 singleton class Control
-reads CarMessages.mybearing, CarMessages.x, CarMessages.y
-writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route {
+reads CarMessages.mybearing, CarMessages.x, CarMessages.y, CarMessages.v
+writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route, CarMessages.power, CarMessages.brake {
 
 	vectOps vectOps;
 	Route Route;
@@ -21,13 +23,11 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route 
 	real str = 0.0;
 	Logger Logger;
 	SteeringCtrl SteeringCtrl;
-	vect currenPos;
-	m distance2end = 0.0[m];
 	kmph target_vel = 0.0[kmph];
 	velocityController velocityController_instance;
 
 	@thread
-	@generated("blockdiagram", "1426e39d")
+	@generated("blockdiagram", "c6feba1c")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -43,5 +43,13 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route 
 		distance2focuspoint = vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 10
 		DriverMessages.dist2End = (distance2focuspoint + Route.distanceFocusEnd); // Main/calc 11
 		DriverMessages.dist2Route = Route.point_distance(vectOps.getPoint(CarMessages.x, CarMessages.y)); // Main/calc 12
+		if ((distance2focuspoint + Route.distanceFocusEnd) <= 35[m]) {
+			target_vel = 0.0[kmph]; // Main/calc 13/if-then 1
+		} else {
+			target_vel = 60[kmph]; // Main/calc 13/if-else 1
+		} // Main/calc 13
+		velocityController_instance.calc(target_vel, CarMessages.v); // Main/calc 14
+		CarMessages.brake = velocityController_instance.brake; // Main/calc 15
+		CarMessages.power = velocityController_instance.power; // Main/calc 16
 	}
 }
