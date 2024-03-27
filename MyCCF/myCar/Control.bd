@@ -2,10 +2,10 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_9, connection_11, connection_3, connection_71, connection_80, connection_70, connection_75, connection_45, connection_43, connection_5
+			connection_9, connection_11, connection_3, connection_71, connection_80, connection_70, connection_75, connection_45, connection_43, connection_5, connection_91, connection_97
 		}
 	}
-	complexIdentifier vectOps at (381, 301) size (13, 5) {
+	complexIdentifier vectOps at (381, 281) size (13, 5) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.length {
 			argumentPin v_in at (left, 1) connection_49 {
@@ -35,6 +35,14 @@ blockdiagramSpecification Main {
 				inPin
 			}
 		}
+		elementCall (myCar.Route.distanceFocusEnd) {
+			returnPin at (right, 5) {
+				connection_90
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
 	}
 	simpleIdentifier focuspointIndex at (61, 325) {
 		label at (-50, 9)
@@ -45,10 +53,15 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier distance2focuspoint at (531, 315) {
-		label at (0, -1)
-		inPin connection_6
-		outPin sequenceCall {
+	simpleIdentifier distance2focuspoint at (531, 345) {
+		label at (-40, -1)
+		inPin connection_6 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_89
+		}
+		sequenceCall {
 			inPin connection_5
 		}
 	}
@@ -159,8 +172,8 @@ blockdiagramSpecification Main {
 	complexIdentifier vectOps at (321, 151) size (14, 5) {
 		label at (20, 1)
 		methodCall vectorOperations.vectOps.getVect {
-			argumentPin pointA at (left, 0) connection_21 {
-				bendpoints (0, 40)
+			argumentPin pointA at (left, 0) connection_88 {
+				bendpoints (40, 0), (40, 40)
 			}
 			argumentPin pointB at (left, 2) connection_18 {
 				bendpoints (10, 0), (10, -150)
@@ -173,20 +186,20 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier vectOps at (151, 111) size (14, 4) {
+	complexIdentifier vectOps at (81, 111) size (14, 4) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.getPoint {
 			argumentPin x at (left, 0) connection_19
 			argumentPin y at (left, 1) connection_20
 			returnPin at (right, 0) {
-				connection_21
+				connection_88
 			}
 			sequenceCall {
 				inPin
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.x at (101, 105) {
+	simpleIdentifier resources.CarMessages.x at (31, 105) {
 		label at (0, -1)
 		outPin {
 			connection_19
@@ -195,7 +208,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.y at (101, 135) {
+	simpleIdentifier resources.CarMessages.y at (31, 135) {
 		label at (0, -1)
 		outPin {
 			connection_20
@@ -328,6 +341,86 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin connection_75
+		}
+	}
+	addition at (601, 346) {
+		inPin connection_89
+		inPin connection_90 {
+			bendpoints (120, 0), (120, 10)
+		}
+		outPin {
+			connection_92
+		}
+	}
+	simpleIdentifier distance2end at (661, 395) {
+		label at (0, -1)
+		inPin connection_92 {
+			bendpoints (20, 0)
+		}
+		outPin {
+			connection_95
+		}
+		sequenceCall {
+			inPin connection_91
+		}
+	}
+	literal unit units.si.m "33.5" at (671, 433) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_96
+		}
+	}
+	lessOrEqual at (771, 406) {
+		inPin connection_95 {
+			bendpoints (60, 0)
+		}
+		inPin connection_96 {
+			bendpoints (0, -10)
+		}
+		outPin {
+			connection_98
+		}
+	}
+	ifElse at (831, 411) {
+		inPin connection_98
+		ifControlFlowOutPin {
+			connection_99
+		}
+		elseControlFlowOutPin {
+			connection_101
+		}
+		sequenceCall {
+			inPin connection_97
+		}
+	}
+	literal unit units.common.kmph "0.0" at (881, 443) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_100
+		}
+	}
+	simpleIdentifier TODO_vsoll at (971, 445) {
+		label at (0, -1)
+		inPin connection_100
+		outPin sequenceCall {
+			inPin connection_99 {
+				bendpoints (0, 10)
+			}
+		}
+	}
+	simpleIdentifier TODO_vsoll at (971, 495) {
+		label at (0, -1)
+		inPin connection_102
+		outPin sequenceCall {
+			inPin connection_101 {
+				bendpoints (0, 30)
+			}
+		}
+	}
+	literal unit units.common.kmph "60" at (881, 493) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_102
 		}
 	}
 }
