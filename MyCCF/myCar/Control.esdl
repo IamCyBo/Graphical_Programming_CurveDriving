@@ -5,6 +5,8 @@ import resources.CarMessages;
 import resources.arr_m;
 import units.si.m;
 import vectorOperations.vectOps;
+import resources.vect;
+import units.common.kmph;
 
 singleton class Control
 reads CarMessages.mybearing, CarMessages.x, CarMessages.y
@@ -20,9 +22,12 @@ writes CarMessages.steering {
 	real str = 0.0;
 	Logger Logger_instance;
 	SteeringCtrl SteeringCtrl;
+	vect currenPos;
+	m distance2end = 0.0[m];
+	kmph TODO_vsoll = 0.0[kmph];
 
 	@thread
-	@generated("blockdiagram", "c2758e1d")
+	@generated("blockdiagram", "b88b5e3b")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -36,5 +41,11 @@ writes CarMessages.steering {
 		Logger_instance.calc(str, CarMessages.x / 1.0[m], CarMessages.y / 1.0[m], (vectOps.angle(tmp, vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)) - CarMessages.mybearing)); // Main/calc 8
 		CarMessages.steering = str; // Main/calc 9
 		distance2focuspoint = vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 10
+		distance2end = (distance2focuspoint + Route.distanceFocusEnd); // Main/calc 11
+		if (distance2end <= 33.5[m]) {
+			TODO_vsoll = 0.0[kmph]; // Main/calc 12/if-then 1
+		} else {
+			TODO_vsoll = 60[kmph]; // Main/calc 12/if-else 1
+		} // Main/calc 12
 	}
 }
