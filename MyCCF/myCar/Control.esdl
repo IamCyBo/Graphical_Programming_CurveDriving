@@ -21,6 +21,10 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route 
 	real str = 0.0;
 	Logger Logger;
 	SteeringCtrl SteeringCtrl;
+	vect currenPos;
+	m distance2end = 0.0[m];
+	kmph target_vel = 0.0[kmph];
+	velocityController velocityController_instance;
 
 	@thread
 	@generated("blockdiagram", "1426e39d")

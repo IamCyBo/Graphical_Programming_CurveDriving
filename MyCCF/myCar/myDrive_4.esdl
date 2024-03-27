@@ -81,7 +81,8 @@ class myDrive_4 {
 	real bearing;
 	Logger Logger;
 
-	@generated("blockdiagram", "2dcbad71")
+
+	@generated("blockdiagram", "eaab4e38")
 	public void move(real in powerCtrl, real in brakeCtrl, s in mydt, mps2 in myg, real in ^delta) {
 		if (dist > TrackSize) {
 			dist = 0.0[m]; // Main/move 1/if-then 1
@@ -99,5 +100,6 @@ class myDrive_4 {
 		bearing = MyTurn_instance.bearing; // Main/move 10
 		x = MyTurn_instance.x; // Main/move 11
 		y = MyTurn_instance.y; // Main/move 12
+		Logger.calc(bearing, x / 1.0[m], y / 1.0[m], mydt / 1.0[s]); // Main/move 13
 	}
 }

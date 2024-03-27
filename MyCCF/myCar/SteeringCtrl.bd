@@ -59,8 +59,8 @@ blockdiagramSpecification Main {
 		outPin {
 			connection_97
 		}
-		sequenceCall {
-			inPin
+		outPin {
+			connection_76
 		}
 	}
 	multiplication at (591, 66) {
