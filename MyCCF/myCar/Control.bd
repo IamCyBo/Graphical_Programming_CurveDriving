@@ -350,12 +350,12 @@ blockdiagramSpecification Main {
 	}
 	complexIdentifier SteeringCtrl at (961, 261) size (14, 8) {
 		label at (0, 1)
-		methodCall myCar.SteeringCtrl.calc {
+		methodCall components.SteeringCtrl.calc {
 			methodVoidPin at (top, 0) sequenceCall at (16, -20) {
 				inPin connection_102
 			}
 		}
-		elementCall (myCar.SteeringCtrl.str) {
+		elementCall (components.SteeringCtrl.str) {
 			argumentPin at (left, 4) connection_108 {
 				bendpoints (0, 120), (-260, 120), (-260, 40)
 			}
@@ -366,7 +366,7 @@ blockdiagramSpecification Main {
 				inPin connection_107
 			}
 		}
-		elementCall (myCar.SteeringCtrl.delta) {
+		elementCall (components.SteeringCtrl.delta) {
 			argumentPin at (left, 1) connection_147
 			sequenceCall at (-40, -34) {
 				inPin connection_146
@@ -391,7 +391,7 @@ blockdiagramSpecification Main {
 		}
 	}
 	literal unit units.si.m "35" at (671, 453) size (49, 0) {
-		label at (0, 4)
+		label at (30, -16)
 		outPin {
 			connection_148
 		}
@@ -447,7 +447,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier target_vel at (41, 525) {
+	simpleIdentifier target_vel at (51, 605) {
 		label at (0, -1)
 		inPin outPin {
 			connection_156
@@ -456,27 +456,25 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier velocityController_instance at (151, 521) size (14, 8) {
+	complexIdentifier velocityController at (161, 591) size (14, 8) {
 		label at (0, 1)
-		methodCall components.velocityController.calc {
-			argumentPin target_velocity at (left, 0) connection_156
-			argumentPin current_velocity at (left, 1) connection_158 {
-				bendpoints (60, 0)
-			}
+		methodCall components.VelocityCtrl.calc {
+			argumentPin target_velocity at (left, 1) connection_156
+			argumentPin current_velocity at (left, 5) connection_158
 			sequenceCall at (-60, -28) {
 				inPin connection_157
 			}
 		}
-		elementCall (components.velocityController.power) {
-			returnPin at (right, 0) {
+		elementCall (components.VelocityCtrl.power) {
+			returnPin at (right, 1) {
 				connection_162
 			}
 			sequenceCall {
 				inPin
 			}
 		}
-		elementCall (components.velocityController.brake) {
-			returnPin at (right, 1) {
+		elementCall (components.VelocityCtrl.brake) {
+			returnPin at (right, 5) {
 				connection_160
 			}
 			sequenceCall {
@@ -484,7 +482,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (41, 565) {
+	simpleIdentifier resources.CarMessages.v at (51, 645) {
 		label at (0, -1)
 		outPin {
 			connection_158
@@ -493,18 +491,16 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (361, 525) {
+	simpleIdentifier resources.CarMessages.power at (321, 605) {
 		label at (0, -1)
 		inPin connection_162
 		sequenceCall {
 			inPin connection_161
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (361, 555) {
+	simpleIdentifier resources.CarMessages.brake at (381, 645) {
 		label at (0, -1)
-		inPin connection_160 {
-			bendpoints (60, 0)
-		}
+		inPin connection_160
 		sequenceCall {
 			inPin connection_159
 		}

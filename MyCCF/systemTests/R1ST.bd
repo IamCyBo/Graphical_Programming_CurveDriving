@@ -72,7 +72,7 @@ blockdiagramSpecification Main {
 			connection_20
 		}
 	}
-	complexIdentifier StopWatch_instance at (201, 511) size (6, 4) backgroundColor #ffffff {
+	complexIdentifier StopWatch at (201, 511) size (6, 4) backgroundColor #ffffff {
 		label at (-120, -109)
 		methodCall SystemLib.CounterTimer.StopWatch.value {
 			returnPin at (right, 1) {
@@ -83,20 +83,20 @@ blockdiagramSpecification Main {
 			}
 		}
 		methodCall SystemLib.CounterTimer.StopWatch.compute {
-			methodVoidPin at (left, 1) sequenceCall at (60, 36) {
+			methodVoidPin at (bottom, 2) sequenceCall at (-24, 11) {
 				inPin connection_28
 			}
 		}
 		methodCall SystemLib.CounterTimer.StopWatch.reset {
-			methodVoidPin at (bottom, 2) sequenceCall at (-14, 21) {
+			methodVoidPin at (top, 1) sequenceCall at (-24, -30) {
 				inPin connection_29 {
-					bendpoints (0, -40), (-260, -40), (-260, 520)
+					bendpoints (0, -40), (-260, -40), (-260, 440), (-100, 440)
 				}
 			}
 		}
 	}
-	simpleIdentifier T_1D_REAL_instance at (291, 361) {
-		label at (-70, 71)
+	simpleIdentifier T_1D_REAL_TEST at (291, 361) {
+		label at (-50, -59)
 		inPin connection_30 {
 			bendpoints (0, -150)
 		}
@@ -154,11 +154,11 @@ blockdiagramSpecification Main {
 		inPin connection_49
 		sequenceCall {
 			inPin connection_48 {
-				bendpoints (450, 0)
+				bendpoints (230, 0), (230, -330), (450, -330)
 			}
 		}
 	}
-	simpleIdentifier T_1D_REAL_instance_2 at (291, 511) {
+	simpleIdentifier T_1D_REAL_END at (291, 511) {
 		label at (0, 1)
 		inPin connection_41
 		outPin {
@@ -191,7 +191,7 @@ blockdiagramSpecification Main {
 		inPin connection_47
 		sequenceCall {
 			inPin connection_46 {
-				bendpoints (450, 0)
+				bendpoints (260, 0), (260, -230)
 			}
 		}
 	}
@@ -201,13 +201,13 @@ blockdiagramSpecification Main {
 			connection_47
 		}
 	}
-	complexIdentifier EdgeFalling_instance at (171, 41) size (3, 3) backgroundColor #ffffff {
-		label at (0, 1)
+	complexIdentifier EdgeFalling at (171, 51) size (3, 3) backgroundColor #ffffff {
+		label at (10, 11)
 		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
 			argumentPin signal at (left, 1) connection_58 {
-				bendpoints (50, 0)
+				bendpoints (60, 0)
 			}
-			sequenceCall at (10, -54) {
+			sequenceCall at (-50, -24) {
 				inPin connection_57
 			}
 		}
@@ -220,11 +220,11 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier EdgeRising_instance at (171, 101) size (3, 3) backgroundColor #ffffff {
-		label at (0, 1)
+	complexIdentifier EdgeRising at (171, 121) size (3, 3) backgroundColor #ffffff {
+		label at (-50, 11)
 		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
 			argumentPin signal at (left, 1) connection_60 {
-				bendpoints (50, 0)
+				bendpoints (60, 0)
 			}
 			sequenceCall at (-30, 46) {
 				inPin connection_59
@@ -239,7 +239,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier cstart at (71, 85) {
+	simpleIdentifier cstart at (61, 105) {
 		label at (0, -1)
 		outPin {
 			connection_60, connection_58
@@ -249,7 +249,9 @@ blockdiagramSpecification Main {
 		}
 	}
 	if at (241, 51) {
-		inPin connection_64
+		inPin connection_64 {
+			bendpoints (0, -10)
+		}
 		ifControlFlowOutPin {
 			connection_29, connection_75, connection_80, connection_78, connection_82
 		}
@@ -266,7 +268,7 @@ blockdiagramSpecification Main {
 			inPin connection_67
 		}
 	}
-	if at (241, 111) {
+	if at (241, 131) {
 		inPin connection_70
 		ifControlFlowOutPin {
 			connection_71
@@ -279,7 +281,9 @@ blockdiagramSpecification Main {
 		label at (0, -1)
 		inPin connection_72
 		outPin sequenceCall at (-10, -44) {
-			inPin connection_71
+			inPin connection_71 {
+				bendpoints (100, 0)
+			}
 		}
 	}
 	literal Boolean "false" at (331, 73) size (49, 0) {
@@ -317,7 +321,7 @@ blockdiagramSpecification Main {
 		inPin connection_79
 		sequenceCall {
 			inPin connection_78 {
-				bendpoints (0, -30), (630, -30)
+				bendpoints (0, -30), (460, -30), (460, 320)
 			}
 		}
 	}
@@ -338,7 +342,7 @@ blockdiagramSpecification Main {
 		inPin connection_81
 		sequenceCall {
 			inPin connection_80 {
-				bendpoints (0, -30), (630, -30)
+				bendpoints (0, -30), (530, -30), (530, 270)
 			}
 		}
 	}

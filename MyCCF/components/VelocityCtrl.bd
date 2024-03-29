@@ -1,4 +1,4 @@
-classType components.velocityController
+classType components.VelocityCtrl
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
@@ -208,7 +208,7 @@ blockdiagramSpecification Main {
 			connection_145
 		}
 	}
-	complexIdentifier Limiter_instance_2 at (461, 281) size (6, 4) backgroundColor #ffffff {
+	complexIdentifier Limiter at (461, 281) size (6, 4) backgroundColor #ffffff {
 		label at (0, 1)
 		methodCall SystemLib.Nonlinears.Limiter.value {
 			argumentPin mn at (top, 0) connection_149 {
@@ -236,7 +236,7 @@ blockdiagramSpecification Main {
 			connection_158
 		}
 	}
-	complexIdentifier Limiter_instance_2 at (461, 421) size (6, 4) backgroundColor #ffffff {
+	complexIdentifier Limiter at (461, 421) size (6, 4) backgroundColor #ffffff {
 		label at (0, 1)
 		methodCall SystemLib.Nonlinears.Limiter.value {
 			argumentPin mn at (top, 0) connection_159 {

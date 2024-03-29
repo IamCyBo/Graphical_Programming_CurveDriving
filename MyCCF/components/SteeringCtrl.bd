@@ -1,4 +1,4 @@
-classType myCar.SteeringCtrl
+classType components.SteeringCtrl
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
@@ -52,15 +52,6 @@ blockdiagramSpecification Main {
 		}
 		outPin {
 			connection_96
-		}
-	}
-	simpleIdentifier dstr at (421, 175) {
-		label at (0, -1)
-		outPin {
-			connection_97
-		}
-		sequenceCall {
-			inPin
 		}
 	}
 	multiplication at (591, 66) {
@@ -167,11 +158,17 @@ blockdiagramSpecification Main {
 		inPin connection_96 {
 			bendpoints (90, 0)
 		}
-		inPin connection_97 {
-			bendpoints (70, 0)
+		inPin connection_100 {
+			bendpoints (20, 0)
 		}
 		outPin {
 			connection_98
+		}
+	}
+	literal Numeric "0.01" at (461, 163) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_100
 		}
 	}
 }
