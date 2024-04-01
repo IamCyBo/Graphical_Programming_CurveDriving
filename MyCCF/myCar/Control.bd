@@ -2,7 +2,7 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_9, connection_11, connection_3, connection_107, connection_146, connection_102, connection_105, connection_142, connection_43, connection_5, connection_90, connection_92, connection_150, connection_157, connection_159, connection_161
+			connection_9, connection_11, connection_3, connection_107, connection_146, connection_102, connection_105, connection_43, connection_5, connection_90, connection_183, connection_92, connection_193
 		}
 	}
 	complexIdentifier vectOps at (411, 301) size (13, 5) {
@@ -48,7 +48,7 @@ blockdiagramSpecification Main {
 				bendpoints (40, 0), (40, 110), (-90, 110)
 			}
 			returnPin at (right, 0) {
-				connection_93
+				connection_195, connection_93
 			}
 			sequenceCall at (0, 6) {
 				inPin
@@ -157,7 +157,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.CarMessages.mybearing at (581, 245) {
 		label at (0, -1)
 		outPin {
-			connection_145, connection_110
+			connection_145
 		}
 		sequenceCall {
 			inPin
@@ -255,11 +255,11 @@ blockdiagramSpecification Main {
 			argumentPin z at (left, 7) connection_143 {
 				bendpoints (0, -20)
 			}
-			argumentPin o at (left, 9) connection_110 {
-				bendpoints (70, 0), (70, -20), (260, -20)
+			argumentPin o at (left, 9) connection_194 {
+				bendpoints (50, 0)
 			}
 			sequenceCall at (-60, -30) {
-				inPin connection_142
+				inPin connection_193
 			}
 		}
 	}
@@ -329,7 +329,7 @@ blockdiagramSpecification Main {
 			bendpoints (0, 20)
 		}
 		outPin {
-			connection_149, connection_91
+			connection_184, connection_91
 		}
 	}
 	simpleIdentifier resources.DriverMessages.dist2End at (791, 355) {
@@ -390,119 +390,257 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	literal unit units.si.m "35" at (671, 453) size (49, 0) {
+	simpleIdentifier distance2end at (791, 415) {
+		label at (0, -1)
+		inPin connection_184 {
+			bendpoints (40, 0), (40, 60)
+		}
+		outPin sequenceCall {
+			inPin connection_183
+		}
+	}
+	unitConversion at (791, 231) {
+		inPin connection_195 {
+			bendpoints (0, -70)
+		}
+		outPin {
+			connection_194
+		}
+		inputType units.si.m outputType real
+	}
+}
+blockdiagramSpecification LateralAcc {
+	methodBody setTargetVel {
+		outPin active {
+			connection_163
+		}
+	}
+	lessOrEqual at (471, 96) {
+		inPin connection_192 {
+			bendpoints (100, 0)
+		}
+		inPin connection_167
+		outPin {
+			connection_164
+		}
+	}
+	literal unit units.common.kmph "0.0" at (631, 143) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_166
+		}
+	}
+	literal unit units.si.m "35" at (401, 113) size (49, 0) {
 		label at (30, -16)
 		outPin {
-			connection_148
+			connection_167
 		}
 	}
-	lessOrEqual at (741, 436) {
-		inPin connection_149 {
-			bendpoints (10, 0), (10, 80)
+	multiplication at (461, 236) {
+		inPin connection_180 {
+			bendpoints (40, 0)
 		}
-		inPin connection_148
+		inPin connection_181
 		outPin {
-			connection_151
+			connection_168
 		}
 	}
-	ifElse at (821, 441) {
-		inPin connection_151
-		ifControlFlowOutPin {
-			connection_152
+	multiplication at (541, 256) {
+		inPin connection_168 {
+			bendpoints (40, 0)
 		}
-		elseControlFlowOutPin {
-			connection_154
-		}
-		sequenceCall {
-			inPin connection_150
+		inPin connection_170
+		outPin {
+			connection_169
 		}
 	}
-	simpleIdentifier target_vel at (1011, 485) {
+	typeConverter real at (501, 301) {
+		inPin connection_172
+		outPin {
+			connection_170
+		}
+	}
+	multiplication at (771, 276) {
+		inPin connection_174 {
+			bendpoints (60, 0)
+		}
+		inPin connection_173 {
+			bendpoints (100, 0)
+		}
+		outPin {
+			connection_171
+		}
+	}
+	unitConversion at (441, 301) {
+		inPin connection_182
+		outPin {
+			connection_172
+		}
+		inputType units.si.m outputType real
+	}
+	literal unit units.common.kmph "3.6" at (621, 323) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_173
+		}
+	}
+	complexIdentifier MathLib_instance at (621, 261) size (8, 3) {
+		label at (0, 1)
+		methodCall SystemLib.Math.MathLib.sqrt {
+			argumentPin val at (left, 0) connection_169
+			returnPin at (right, 0) {
+				connection_174
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	literal unit units.common.kmph "60.0" at (771, 343) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_175
+		}
+	}
+	minimum at (871, 306) {
+		inPin connection_171 {
+			bendpoints (10, 0), (10, 20)
+		}
+		inPin connection_175 {
+			bendpoints (10, 0), (10, -20)
+		}
+		outPin {
+			connection_177
+		}
+	}
+	simpleIdentifier target_vel at (961, 305) {
 		label at (0, -1)
-		inPin connection_153
+		inPin connection_177 {
+			bendpoints (50, 0)
+		}
 		outPin sequenceCall {
-			inPin connection_152 {
+			inPin connection_179 {
+				bendpoints (0, 70), (380, 70)
+			}
+		}
+	}
+	simpleIdentifier target_vel at (741, 145) {
+		label at (0, -1)
+		inPin connection_166
+		outPin sequenceCall {
+			inPin connection_178 {
 				bendpoints (130, 0)
 			}
 		}
 	}
-	literal unit units.common.kmph "0.0" at (901, 483) size (49, 0) {
+	ifElse at (551, 101) {
+		inPin connection_164
+		ifControlFlowOutPin {
+			connection_178
+		}
+		elseControlFlowOutPin {
+			connection_179
+		}
+		sequenceCall {
+			inPin connection_163
+		}
+	}
+	literal Numeric "0.8" at (371, 223) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_153
+			connection_180
 		}
 	}
-	literal unit units.common.kmph "60" at (901, 553) size (49, 0) {
-		label at (0, 4)
+	simpleIdentifier g at (371, 255) {
+		label at (0, -1)
 		outPin {
-			connection_155
-		}
-	}
-	simpleIdentifier target_vel at (1011, 555) {
-		label at (0, -1)
-		inPin connection_155
-		outPin sequenceCall {
-			inPin connection_154 {
-				bendpoints (0, 60)
-			}
-		}
-	}
-	simpleIdentifier target_vel at (51, 605) {
-		label at (0, -1)
-		inPin outPin {
-			connection_156
+			connection_181
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	complexIdentifier velocityController at (161, 591) size (14, 8) {
+	simpleIdentifier resources.CarMessages.radius at (341, 305) {
+		label at (0, -1)
+		outPin {
+			connection_182
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier distance2end at (321, 75) {
+		label at (0, -1)
+		inPin outPin {
+			connection_192
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+}
+blockdiagramSpecification VelocityCtrl {
+	methodBody setPwrBrk {
+		outPin active {
+			connection_190, connection_186, connection_188
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (231, 235) {
+		label at (0, -1)
+		outPin {
+			connection_185
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier velocityController at (351, 181) size (14, 8) {
 		label at (0, 1)
 		methodCall components.VelocityCtrl.calc {
-			argumentPin target_velocity at (left, 1) connection_156
-			argumentPin current_velocity at (left, 5) connection_158
-			sequenceCall at (-60, -28) {
-				inPin connection_157
+			argumentPin target_velocity at (left, 1) connection_191
+			argumentPin current_velocity at (left, 5) connection_185
+			sequenceCall at (-70, -30) {
+				inPin connection_190
 			}
 		}
 		elementCall (components.VelocityCtrl.power) {
 			returnPin at (right, 1) {
-				connection_162
+				connection_187
 			}
-			sequenceCall {
+			sequenceCall at (0, 0) {
 				inPin
 			}
 		}
 		elementCall (components.VelocityCtrl.brake) {
 			returnPin at (right, 5) {
-				connection_160
+				connection_189
 			}
-			sequenceCall {
+			sequenceCall at (0, 0) {
 				inPin
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (51, 645) {
+	simpleIdentifier target_vel at (231, 195) {
 		label at (0, -1)
-		outPin {
-			connection_158
+		inPin outPin {
+			connection_191
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (321, 605) {
+	simpleIdentifier resources.CarMessages.brake at (561, 235) {
 		label at (0, -1)
-		inPin connection_162
+		inPin connection_189
 		sequenceCall {
-			inPin connection_161
+			inPin connection_188
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (381, 645) {
+	simpleIdentifier resources.CarMessages.power at (501, 195) {
 		label at (0, -1)
-		inPin connection_160
+		inPin connection_187
 		sequenceCall {
-			inPin connection_159
+			inPin connection_186
 		}
 	}
 }

@@ -2,7 +2,7 @@ classType myCar.myDrive_4
 blockdiagramSpecification Main {
 	methodBody move {
 		outPin active {
-			connection_2, connection_11, connection_48, connection_36, connection_29, connection_112, connection_56, connection_16, connection_101, connection_102, connection_104, connection_106
+			connection_2, connection_11, connection_48, connection_36, connection_29, connection_112, connection_56, connection_16, connection_101, connection_102, connection_104, connection_106, connection_118
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -307,9 +307,11 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier x at (881, 205) {
+	simpleIdentifier x at (881, 215) {
 		label at (0, -1)
-		inPin connection_105
+		inPin connection_105 {
+			bendpoints (0, -10)
+		}
 		outPin sequenceCall {
 			inPin connection_104
 		}
@@ -361,7 +363,7 @@ blockdiagramSpecification Main {
 			}
 		}
 		elementCall (myCar.MyTurn.x) {
-			returnPin at (right, 1) {
+			returnPin at (right, 3) {
 				connection_105
 			}
 			sequenceCall at (0, 0) {
@@ -377,8 +379,16 @@ blockdiagramSpecification Main {
 			}
 		}
 		elementCall (myCar.MyTurn.bearing) {
-			returnPin at (top, 8) {
+			returnPin at (top, 6) {
 				connection_103
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		elementCall (myCar.MyTurn.radius) {
+			returnPin at (right, 1) {
+				connection_119
 			}
 			sequenceCall at (0, 0) {
 				inPin
@@ -429,6 +439,15 @@ blockdiagramSpecification Main {
 		}
 		outPin sequenceCall at (-10, -14) {
 			inPin connection_114
+		}
+	}
+	simpleIdentifier radius at (891, 145) {
+		label at (0, -1)
+		inPin connection_119 {
+			bendpoints (0, -10), (70, -10), (70, -60)
+		}
+		outPin sequenceCall {
+			inPin connection_118
 		}
 	}
 }

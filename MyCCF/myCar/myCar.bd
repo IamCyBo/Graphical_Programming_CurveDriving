@@ -2,7 +2,7 @@ classType myCar.myCar
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_58, connection_54, connection_45, connection_40, connection_24, connection_19
+			connection_58, connection_54, connection_45, connection_40, connection_24, connection_19, connection_63
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (611, 175) {
@@ -12,14 +12,14 @@ blockdiagramSpecification Main {
 			inPin connection_19
 		}
 	}
-	simpleIdentifier resources.CarMessages.x at (611, 75) {
+	simpleIdentifier resources.CarMessages.x at (611, 95) {
 		label at (0, -1)
 		inPin connection_41
 		sequenceCall at (-10, -14) {
 			inPin connection_40
 		}
 	}
-	simpleIdentifier resources.CarMessages.y at (611, 125) {
+	simpleIdentifier resources.CarMessages.y at (611, 135) {
 		label at (0, -1)
 		inPin connection_25
 		sequenceCall at (-10, -14) {
@@ -98,7 +98,7 @@ blockdiagramSpecification Main {
 			}
 		}
 		elementCall (myCar.myDrive_4.x) {
-			returnPin at (right, 1) {
+			returnPin at (right, 3) {
 				connection_41
 			}
 			sequenceCall {
@@ -106,7 +106,7 @@ blockdiagramSpecification Main {
 			}
 		}
 		elementCall (myCar.myDrive_4.y) {
-			returnPin at (right, 6) {
+			returnPin at (right, 7) {
 				connection_25
 			}
 			sequenceCall {
@@ -118,6 +118,14 @@ blockdiagramSpecification Main {
 				connection_31
 			}
 			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.radius) {
+			returnPin at (right, 0) {
+				connection_62
+			}
+			sequenceCall at (0, 0) {
 				inPin
 			}
 		}
@@ -146,6 +154,13 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.radius at (661, 65) {
+		label at (0, -1)
+		inPin connection_62
+		sequenceCall {
+			inPin connection_63
 		}
 	}
 }
