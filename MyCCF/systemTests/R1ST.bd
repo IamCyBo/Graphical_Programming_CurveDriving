@@ -1,17 +1,20 @@
 classType systemTests.R1ST
 blockdiagramSpecification Main {
 	methodBody calc {
-		outPin active {
-			connection_33, connection_44, connection_57, connection_59, connection_63, connection_69, connection_97
+		outPin {
+			connection_57, connection_59, connection_63, connection_69, connection_97
 		}
 	}
-	literal unit units.common.kmph "60" at (341, 263) size (49, 0) {
+	methodBody calc_2 {
+		outPin active
+	}
+	literal unit units.common.kmph "60" at (421, 363) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_9, connection_5
 		}
 	}
-	multiplication at (431, 286) {
+	multiplication at (511, 386) {
 		inPin connection_5 {
 			bendpoints (30, 0), (30, 20)
 		}
@@ -20,13 +23,13 @@ blockdiagramSpecification Main {
 			connection_22
 		}
 	}
-	literal Numeric "0.01" at (341, 303) size (49, 0) {
+	literal Numeric "0.01" at (421, 403) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_6
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (341, 225) {
+	simpleIdentifier resources.CarMessages.v at (421, 325) {
 		label at (0, -1)
 		outPin {
 			connection_50
@@ -35,7 +38,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	subtraction at (431, 226) {
+	subtraction at (511, 326) {
 		inPin connection_50
 		inPin connection_9 {
 			bendpoints (30, 0), (30, -20)
@@ -44,13 +47,13 @@ blockdiagramSpecification Main {
 			connection_10
 		}
 	}
-	absolute at (481, 231) {
+	absolute at (561, 331) {
 		inPin connection_10
 		outPin {
 			connection_21
 		}
 	}
-	if at (591, 261) {
+	if at (671, 361) {
 		inPin connection_20
 		ifControlFlowOutPin {
 			connection_37
@@ -61,7 +64,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	greater at (541, 256) {
+	greater at (621, 356) {
 		inPin connection_21 {
 			bendpoints (20, 0)
 		}
@@ -72,22 +75,24 @@ blockdiagramSpecification Main {
 			connection_20
 		}
 	}
-	literal Numeric "15.0" at (171, 473) size (49, 0) {
+	literal Numeric "15.0" at (251, 573) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_91
 		}
 	}
-	if at (481, 411) {
+	if at (561, 511) {
 		inPin connection_88
 		ifControlFlowOutPin {
 			connection_15
 		}
 		sequenceCall {
-			inPin connection_33
+			inPin connection_33 {
+				bendpoints (0, 40), (350, 40)
+			}
 		}
 	}
-	simpleIdentifier result at (851, 245) {
+	simpleIdentifier result at (931, 345) {
 		label at (0, -1)
 		inPin connection_38
 		outPin {
@@ -99,13 +104,13 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	literal Boolean "false" at (761, 243) size (49, 0) {
+	literal Boolean "false" at (841, 343) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_38
 		}
 	}
-	simpleIdentifier resources.TestMessages.r1st_success at (951, 245) {
+	simpleIdentifier resources.TestMessages.r1st_success at (1031, 345) {
 		label at (0, -1)
 		inPin connection_49
 		sequenceCall at (10, -24) {
@@ -114,16 +119,18 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	if at (481, 511) {
+	if at (561, 611) {
 		inPin connection_89
 		ifControlFlowOutPin {
 			connection_46, connection_48
 		}
 		sequenceCall {
-			inPin connection_44
+			inPin connection_44 {
+				bendpoints (0, 40), (350, 40)
+			}
 		}
 	}
-	simpleIdentifier resources.TestMessages.r1st_complete at (971, 295) {
+	simpleIdentifier resources.TestMessages.r1st_complete at (1051, 395) {
 		label at (0, -1)
 		inPin connection_47
 		sequenceCall {
@@ -132,13 +139,13 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	literal Boolean "true" at (761, 293) size (49, 0) {
+	literal Boolean "true" at (841, 393) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_47
 		}
 	}
-	complexIdentifier EdgeFalling_instance at (171, 11) size (3, 3) backgroundColor #ffffff {
+	complexIdentifier EdgeFalling_instance at (251, 111) size (3, 3) backgroundColor #ffffff {
 		label at (0, 1)
 		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
 			argumentPin signal at (left, 1) connection_58 {
@@ -157,7 +164,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier EdgeRising_instance at (171, 101) size (3, 3) backgroundColor #ffffff {
+	complexIdentifier EdgeRising_instance at (251, 201) size (3, 3) backgroundColor #ffffff {
 		label at (0, 1)
 		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
 			argumentPin signal at (left, 1) connection_60 {
@@ -176,7 +183,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier start at (71, 85) {
+	simpleIdentifier start at (151, 185) {
 		label at (0, -1)
 		outPin {
 			connection_60, connection_98, connection_58
@@ -185,7 +192,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	if at (241, 21) {
+	if at (321, 121) {
 		inPin connection_64
 		ifControlFlowOutPin {
 			connection_80, connection_92, connection_95
@@ -194,7 +201,7 @@ blockdiagramSpecification Main {
 			inPin connection_63
 		}
 	}
-	if at (241, 111) {
+	if at (321, 211) {
 		inPin connection_70
 		ifControlFlowOutPin {
 			connection_86, connection_90
@@ -203,13 +210,13 @@ blockdiagramSpecification Main {
 			inPin connection_69
 		}
 	}
-	literal Boolean "true" at (521, 133) size (49, 0) {
+	literal Boolean "true" at (601, 233) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_96
 		}
 	}
-	simpleIdentifier resources.TestMessages.r1st_complete at (591, 75) {
+	simpleIdentifier resources.TestMessages.r1st_complete at (671, 175) {
 		label at (0, -1)
 		inPin connection_93 {
 			bendpoints (0, 60)
@@ -220,13 +227,13 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	literal Boolean "false" at (451, 13) size (49, 0) {
+	literal Boolean "false" at (531, 113) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_93, connection_81
 		}
 	}
-	simpleIdentifier resources.TestMessages.r1st_success at (591, 15) {
+	simpleIdentifier resources.TestMessages.r1st_success at (671, 115) {
 		label at (0, -1)
 		inPin connection_81
 		sequenceCall {
@@ -235,7 +242,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier Timer_instance_2 at (201, 401) size (5, 3) backgroundColor #ffffff {
+	complexIdentifier Timer_instance_2 at (281, 501) size (5, 3) backgroundColor #ffffff {
 		label at (0, 1)
 		methodCall SystemLib.CounterTimer.Timer.begin {
 			argumentPin startTime at (top, 2) connection_87
@@ -259,7 +266,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier Timer_instance at (201, 501) size (5, 3) backgroundColor #ffffff {
+	complexIdentifier Timer_instance at (281, 601) size (5, 3) backgroundColor #ffffff {
 		label at (0, 1)
 		methodCall SystemLib.CounterTimer.Timer.begin {
 			argumentPin startTime at (top, 2) connection_91 {
@@ -285,13 +292,13 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	literal Numeric "5.0" at (171, 383) size (49, 0) {
+	literal Numeric "5.0" at (251, 483) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_87
 		}
 	}
-	simpleIdentifier result at (591, 135) {
+	simpleIdentifier result at (671, 235) {
 		label at (0, -1)
 		inPin connection_96
 		outPin sequenceCall {
@@ -300,12 +307,12 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	if at (71, 281) {
+	if at (151, 381) {
 		inPin connection_98 {
 			bendpoints (50, 0), (50, 30), (-40, 30)
 		}
 		ifControlFlowOutPin {
-			connection_84, connection_85
+			connection_84, connection_85, connection_33, connection_44
 		}
 		sequenceCall {
 			inPin connection_97
