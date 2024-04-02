@@ -2,7 +2,7 @@ classType systemTests.R1ST
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_33, connection_44, connection_57, connection_59, connection_63, connection_69, connection_97
+			connection_57, connection_59, connection_63, connection_69, connection_97
 		}
 	}
 	literal unit units.common.kmph "60" at (341, 263) size (49, 0) {
@@ -84,7 +84,9 @@ blockdiagramSpecification Main {
 			connection_15
 		}
 		sequenceCall {
-			inPin connection_33
+			inPin connection_33 {
+				bendpoints (0, 40), (350, 40)
+			}
 		}
 	}
 	simpleIdentifier result at (851, 245) {
@@ -120,7 +122,9 @@ blockdiagramSpecification Main {
 			connection_46, connection_48
 		}
 		sequenceCall {
-			inPin connection_44
+			inPin connection_44 {
+				bendpoints (0, 40), (350, 40)
+			}
 		}
 	}
 	simpleIdentifier resources.TestMessages.r1st_complete at (971, 295) {
@@ -305,7 +309,7 @@ blockdiagramSpecification Main {
 			bendpoints (50, 0), (50, 30), (-40, 30)
 		}
 		ifControlFlowOutPin {
-			connection_84, connection_85
+			connection_84, connection_85, connection_33, connection_44
 		}
 		sequenceCall {
 			inPin connection_97
