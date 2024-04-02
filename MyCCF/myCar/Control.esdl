@@ -25,9 +25,10 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	SteeringCtrl SteeringCtrl;
 	kmph target_vel = 0.0[kmph];
 	velocityController velocityController_instance;
+	characteristic kmph vsoll = 0.0[kmph];
 
 	@thread
-	@generated("blockdiagram", "c6feba1c")
+	@generated("blockdiagram", "f4287d69")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -48,8 +49,8 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		} else {
 			target_vel = 60[kmph]; // Main/calc 13/if-else 1
 		} // Main/calc 13
-		velocityController_instance.calc(target_vel, CarMessages.v); // Main/calc 14
-		CarMessages.brake = velocityController_instance.brake; // Main/calc 15
-		CarMessages.power = velocityController_instance.power; // Main/calc 16
+		CarMessages.brake = velocityController_instance.brake; // Main/calc 14
+		CarMessages.power = velocityController_instance.power; // Main/calc 15
+		velocityController_instance.calc(vsoll, CarMessages.v); // Main/calc 16
 	}
 }
