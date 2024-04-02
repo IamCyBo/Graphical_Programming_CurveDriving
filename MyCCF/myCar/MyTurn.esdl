@@ -12,15 +12,16 @@ class MyTurn {
 	@get
 	m y = 0.0 [m];
 	@get
-	real bearing = 0.0;
+	real bearing = 0.77;
 	@get
 	m radius = 0.0003 [m];
+	@get
+	mps2 acc = 0.0 [mps2];
 
 	characteristic m D = 2.85 [m];
 	m ds = 0.0 [m];
 	m dx = 0.0 [m];
 	m dy = 0.0 [m];
-	mps2 acc = 0.0 [mps2];
 	MathLib Lib;
 	real dpi = 6.28318531;
 	real pi = 3.141592653; 
@@ -40,9 +41,10 @@ class MyTurn {
 		y = y + dy;
 		
 		if(v > 0.0 [kmph]){
-			radius = (Lib.sqrt(Lib.pow(dx / 1.0[m], 2) + Lib.pow(dy / 1.0[m], 2)) / (2.0 * Lib.sin(abs(beta) / 2.0))) * 1.0 [m];
+			radius = 2.85 [m] / Lib.sin(abs(beta));
+			//radius = (Lib.sqrt(Lib.pow(dx / 1.0[m], 2) + Lib.pow(dy / 1.0[m], 2)) / (2.0 * Lib.sin(abs(beta) / 2.0))) * 1.0 [m];
 		}
-		// acc = Lib.pow(v * (5 / 18[kmph]), 2) * 1.0[mps2] * 1.0[m] / radius;	
+		acc = Lib.pow(v * (5 / 18[kmph]), 2) * 1.0[mps2] * 1.0[m] / radius;	
 		
 	}
 }

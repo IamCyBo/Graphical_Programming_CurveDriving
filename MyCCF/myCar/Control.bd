@@ -2,7 +2,7 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_9, connection_11, connection_3, connection_107, connection_146, connection_102, connection_105, connection_43, connection_5, connection_90, connection_183, connection_92, connection_193
+			connection_9, connection_11, connection_333, connection_323, connection_3, connection_345, connection_317, connection_107, connection_337, connection_146, connection_102, connection_105, connection_199, connection_43, connection_5, connection_90, connection_92, connection_258
 		}
 	}
 	complexIdentifier vectOps at (411, 301) size (13, 5) {
@@ -29,7 +29,7 @@ blockdiagramSpecification Main {
 		}
 		elementCall (myCar.Route.focuspoint) {
 			returnPin at (right, 2) {
-				connection_18
+				connection_308, connection_18
 			}
 			sequenceCall at (0, 0) {
 				inPin
@@ -77,7 +77,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier distance2focuspoint at (71, 445) {
 		label at (0, -1)
 		inPin outPin {
-			connection_7
+			connection_322, connection_7
 		}
 		sequenceCall {
 			inPin
@@ -105,7 +105,7 @@ blockdiagramSpecification Main {
 		label at (0, 1)
 		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
 			argumentPin signal at (left, 1) connection_10
-			sequenceCall at (-40, -44) {
+			sequenceCall at (-30, -44) {
 				inPin connection_9
 			}
 		}
@@ -121,7 +121,7 @@ blockdiagramSpecification Main {
 	if at (451, 451) {
 		inPin connection_12
 		ifControlFlowOutPin {
-			connection_15
+			connection_15, connection_335
 		}
 		sequenceCall {
 			inPin connection_11
@@ -163,15 +163,15 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier vectOps at (561, 161) size (12, 6) {
+	complexIdentifier vectOps at (561, 151) size (12, 6) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.angle {
 			argumentPin vectA at (left, 1) connection_69
 			argumentPin vectB at (left, 3) connection_68 {
-				bendpoints (0, 30)
+				bendpoints (0, 20)
 			}
 			returnPin at (right, 2) {
-				connection_144, connection_143
+				connection_144
 			}
 			sequenceCall {
 				inPin
@@ -188,7 +188,7 @@ blockdiagramSpecification Main {
 				bendpoints (10, 0), (10, -150)
 			}
 			returnPin at (right, 1) {
-				connection_68, connection_49
+				connection_68, connection_318, connection_49
 			}
 			sequenceCall {
 				inPin
@@ -201,7 +201,7 @@ blockdiagramSpecification Main {
 			argumentPin x at (left, 0) connection_19
 			argumentPin y at (left, 1) connection_20
 			returnPin at (right, 0) {
-				connection_87, connection_21
+				connection_87, connection_344, connection_21
 			}
 			sequenceCall {
 				inPin
@@ -252,14 +252,12 @@ blockdiagramSpecification Main {
 			argumentPin y at (left, 4) connection_97 {
 				bendpoints (40, 0)
 			}
-			argumentPin z at (left, 7) connection_143 {
-				bendpoints (0, -20)
-			}
+			argumentPin z at (left, 7) connection_200
 			argumentPin o at (left, 9) connection_194 {
 				bendpoints (50, 0)
 			}
 			sequenceCall at (-60, -30) {
-				inPin connection_193
+				inPin connection_199
 			}
 		}
 	}
@@ -329,7 +327,7 @@ blockdiagramSpecification Main {
 			bendpoints (0, 20)
 		}
 		outPin {
-			connection_184, connection_91
+			connection_281, connection_91
 		}
 	}
 	simpleIdentifier resources.DriverMessages.dist2End at (791, 355) {
@@ -377,36 +375,664 @@ blockdiagramSpecification Main {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.angleDiff {
 			argumentPin alpha at (left, 1) connection_144 {
-				bendpoints (0, -20), (30, -20), (30, 80)
+				bendpoints (0, -10), (30, -10), (30, 90)
 			}
 			argumentPin beta at (left, 3) connection_145 {
 				bendpoints (70, 0), (70, 40)
 			}
 			returnPin at (right, 2) {
-				connection_147
+				connection_301, connection_147
 			}
 			sequenceCall at (0, 6) {
 				inPin
 			}
 		}
 	}
-	simpleIdentifier distance2end at (791, 415) {
-		label at (0, -1)
-		inPin connection_184 {
-			bendpoints (40, 0), (40, 60)
-		}
-		outPin sequenceCall {
-			inPin connection_183
-		}
-	}
-	unitConversion at (791, 231) {
+	unitConversion at (791, 221) {
 		inPin connection_195 {
-			bendpoints (0, -70)
+			bendpoints (0, -80)
 		}
 		outPin {
 			connection_194
 		}
 		inputType units.si.m outputType real
+	}
+	simpleIdentifier resources.CarMessages.v at (781, 165) {
+		label at (0, -1)
+		outPin {
+			connection_201
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	unitConversion at (831, 161) {
+		inPin connection_201
+		outPin {
+			connection_200
+		}
+		inputType units.common.kmph outputType real
+	}
+	multiplication at (1381, 566) {
+		inPin connection_350 {
+			bendpoints (700, 0)
+		}
+		inPin connection_343
+		outPin {
+			connection_352
+		}
+	}
+	complexIdentifier vectOps at (681, 611) size (13, 5) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.getVect {
+			argumentPin pointA at (left, 0) connection_314
+			argumentPin pointB at (left, 3) connection_309 {
+				bendpoints (50, 0)
+			}
+			returnPin at (right, 1) {
+				connection_209
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	complexIdentifier vectOps at (911, 621) size (14, 3) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.angle {
+			argumentPin vectA at (left, 0) connection_209
+			argumentPin vectB at (left, 1) connection_319 {
+				bendpoints (30, 0), (30, -70)
+			}
+			returnPin at (right, 1) {
+				connection_211
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	absolute at (1081, 611) {
+		inPin connection_211 {
+			bendpoints (20, 0)
+		}
+		outPin {
+			connection_212
+		}
+	}
+	complexIdentifier MathLib_instance at (1221, 611) size (14, 3) {
+		label at (0, 1)
+		methodCall SystemLib.Math.MathLib.tan {
+			argumentPin val at (left, 0) connection_214 {
+				bendpoints (0, -10)
+			}
+			returnPin at (right, 0) {
+				connection_342
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	division at (1161, 616) {
+		inPin connection_212
+		inPin connection_213 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_214
+		}
+	}
+	literal Numeric "2.0" at (1101, 643) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_213
+		}
+	}
+	minimum at (1981, 376) {
+		inPin connection_266 {
+			bendpoints (10, 0), (10, 20)
+		}
+		inPin connection_264 {
+			bendpoints (10, 0), (10, -20)
+		}
+		outPin {
+			connection_261
+		}
+	}
+	literal unit units.common.kmph "0.0" at (1191, 483) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_263
+		}
+	}
+	literal unit units.common.kmph "60.0" at (1881, 413) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_264
+		}
+	}
+	simpleIdentifier g at (1481, 325) {
+		label at (0, -1)
+		outPin {
+			connection_265
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	multiplication at (1881, 346) {
+		inPin connection_271 {
+			bendpoints (60, 0)
+		}
+		inPin connection_276 {
+			bendpoints (100, 0)
+		}
+		outPin {
+			connection_266
+		}
+	}
+	literal unit units.si.m "35" at (961, 453) size (49, 0) {
+		label at (30, -16)
+		outPin {
+			connection_267
+		}
+	}
+	lessOrEqual at (1031, 436) {
+		inPin connection_281 {
+			bendpoints (40, 0), (40, 80)
+		}
+		inPin connection_267
+		outPin {
+			connection_268
+		}
+	}
+	typeConverter real at (1611, 371) {
+		inPin connection_272
+		outPin {
+			connection_270
+		}
+	}
+	complexIdentifier MathLib_instance at (1731, 331) size (8, 3) {
+		label at (0, 1)
+		methodCall SystemLib.Math.MathLib.sqrt {
+			argumentPin val at (left, 0) connection_274
+			returnPin at (right, 0) {
+				connection_271
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	unitConversion at (1551, 371) {
+		inPin connection_320
+		outPin {
+			connection_272
+		}
+		inputType units.si.m outputType real
+	}
+	literal Numeric "0.8" at (1481, 293) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_273
+		}
+	}
+	multiplication at (1651, 326) {
+		inPin connection_275 {
+			bendpoints (40, 0)
+		}
+		inPin connection_270
+		outPin {
+			connection_274
+		}
+	}
+	multiplication at (1571, 306) {
+		inPin connection_273 {
+			bendpoints (40, 0)
+		}
+		inPin connection_265
+		outPin {
+			connection_275
+		}
+	}
+	literal unit units.common.kmph "3.6" at (1731, 393) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_276
+		}
+	}
+	ifElse at (1111, 441) {
+		inPin connection_268
+		ifControlFlowOutPin {
+			connection_277
+		}
+		elseControlFlowOutPin {
+			connection_293
+		}
+		sequenceCall {
+			inPin connection_258
+		}
+	}
+	simpleIdentifier target_vel at (1301, 485) {
+		label at (0, -1)
+		inPin connection_263
+		outPin sequenceCall {
+			inPin connection_277 {
+				bendpoints (130, 0)
+			}
+		}
+	}
+	simpleIdentifier target_vel at (2071, 375) {
+		label at (0, -1)
+		inPin connection_261 {
+			bendpoints (50, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_278 {
+				bendpoints (0, -60), (560, -60)
+			}
+		}
+	}
+	simpleIdentifier target_vel at (1751, 615) {
+		label at (0, -1)
+		inPin connection_285
+		outPin sequenceCall {
+			inPin connection_284 {
+				bendpoints (270, 0)
+			}
+		}
+	}
+	literal unit units.common.kmph "60.0" at (1651, 613) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_285
+		}
+	}
+	simpleIdentifier curve at (711, 465) {
+		label at (0, -1)
+		inPin connection_291
+		outPin sequenceCall {
+			inPin connection_290 {
+				bendpoints (0, -60)
+			}
+		}
+	}
+	literal Boolean "true" at (631, 463) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_336, connection_291
+		}
+	}
+	ifElse at (1451, 531) {
+		inPin connection_294
+		ifControlFlowOutPin {
+			connection_353, connection_278
+		}
+		elseControlFlowOutPin {
+			connection_284
+		}
+		sequenceCall {
+			inPin connection_293 {
+				bendpoints (0, 40)
+			}
+		}
+	}
+	simpleIdentifier curve at (1311, 535) {
+		label at (0, -1)
+		inPin outPin {
+			connection_294
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	less at (1081, 196) {
+		inPin connection_296
+		inPin connection_295 {
+			bendpoints (0, -10)
+		}
+		outPin {
+			connection_298
+		}
+	}
+	literal Numeric "0.01" at (1011, 223) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_295
+		}
+	}
+	if at (1171, 201) {
+		inPin connection_298
+		ifControlFlowOutPin {
+			connection_299, connection_339
+		}
+		sequenceCall {
+			inPin connection_297
+		}
+	}
+	simpleIdentifier curve at (1291, 245) {
+		label at (0, -1)
+		inPin connection_300
+		outPin sequenceCall {
+			inPin connection_299 {
+				bendpoints (60, 0)
+			}
+		}
+	}
+	literal Boolean "false" at (1211, 243) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_340, connection_300
+		}
+	}
+	absolute at (1031, 191) {
+		inPin connection_301 {
+			bendpoints (30, 0), (30, -80)
+		}
+		outPin {
+			connection_296
+		}
+	}
+	simpleIdentifier oldFocuspoint at (541, 381) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.oldFocuspoint) {
+			argumentPin at (left, 0) connection_308 {
+				bendpoints (10, 0), (10, 80)
+			}
+			sequenceCall at (-60, -30) {
+				inPin connection_307
+			}
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier oldFocuspoint at (561, 631) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.oldFocuspoint) {
+			returnPin at (right, 0) {
+				connection_348, connection_309
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier radius at (1541, 615) {
+		label at (10, -1)
+		inPin connection_354 {
+			bendpoints (-150, 0)
+		}
+		outPin sequenceCall at (10, -24) {
+			inPin connection_353 {
+				bendpoints (50, 0)
+			}
+		}
+	}
+	complexIdentifier Route at (351, 611) size (14, 3) {
+		label at (0, 1)
+		methodCall myCar.Route.calc {
+			argumentPin arg at (left, 0) connection_331 {
+				bendpoints (0, -40)
+			}
+			sequenceCall at (30, -34) {
+				inPin connection_330 {
+					bendpoints (0, -30), (20, -30), (20, 80)
+				}
+			}
+		}
+		elementCall (myCar.Route.focuspoint) {
+			returnPin at (right, 0) {
+				connection_314
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier focuspointIndex at (191, 605) {
+		label at (-20, -1)
+		inPin outPin {
+			connection_329
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier oldVector at (501, 241) {
+		label at (0, 1)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.oldVector) {
+			argumentPin at (left, 0) connection_318 {
+				bendpoints (0, 20), (30, 20)
+			}
+			sequenceCall at (-50, -14) {
+				inPin connection_317
+			}
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier oldVector at (791, 681) {
+		label at (-100, -19)
+		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.oldVector) {
+			returnPin at (right, 0) {
+				connection_319
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier radius at (1411, 375) {
+		label at (0, -1)
+		inPin outPin {
+			connection_320
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	less at (131, 566) {
+		inPin connection_322 {
+			bendpoints (10, 0)
+		}
+		inPin connection_321 {
+			bendpoints (60, 0)
+		}
+		outPin {
+			connection_334
+		}
+	}
+	literal unit units.si.m "38.0" at (21, 623) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_321
+		}
+	}
+	if at (281, 501) {
+		inPin connection_332 {
+			bendpoints (0, -40)
+		}
+		ifControlFlowOutPin {
+			connection_290, connection_330, connection_341
+		}
+		sequenceCall {
+			inPin connection_323
+		}
+	}
+	addition at (291, 646) {
+		inPin connection_329 {
+			bendpoints (20, 0), (20, 40)
+		}
+		inPin connection_328
+		outPin {
+			connection_331
+		}
+	}
+	literal Numeric "1" at (221, 663) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_328
+		}
+	}
+	complexIdentifier EdgeRising_instance at (231, 531) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
+			argumentPin signal at (left, 1) connection_334 {
+				bendpoints (50, 0)
+			}
+			sequenceCall at (-70, -30) {
+				inPin connection_333
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeRising.value {
+			returnPin at (right, 1) {
+				connection_332
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier check at (801, 515) {
+		label at (0, -1)
+		inPin connection_336 {
+			bendpoints (10, 0), (10, 50)
+		}
+		outPin sequenceCall {
+			inPin connection_335 {
+				bendpoints (70, 0), (70, 40)
+			}
+		}
+	}
+	if at (1111, 101) {
+		inPin connection_338 {
+			bendpoints (30, 0)
+		}
+		ifControlFlowOutPin {
+			connection_297
+		}
+		sequenceCall {
+			inPin connection_337
+		}
+	}
+	simpleIdentifier check at (1031, 115) {
+		label at (0, -1)
+		inPin outPin {
+			connection_338
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier check at (1291, 295) {
+		label at (0, -1)
+		inPin connection_340 {
+			bendpoints (10, 0), (10, 50)
+		}
+		outPin sequenceCall {
+			inPin connection_339 {
+				bendpoints (60, 0)
+			}
+		}
+	}
+	simpleIdentifier angle at (1441, 665) {
+		label at (0, -1)
+		inPin connection_342 {
+			bendpoints (70, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_341 {
+				bendpoints (0, -30), (20, -30), (20, 40), (1100, 40)
+			}
+		}
+	}
+	simpleIdentifier angle at (1271, 585) {
+		label at (0, -1)
+		inPin outPin {
+			connection_343
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	complexIdentifier vectOps at (361, 681) size (15, 4) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.getVect {
+			argumentPin pointA at (left, 0) connection_344 {
+				bendpoints (40, 0), (40, 110), (-210, 110), (-210, 570)
+			}
+			argumentPin pointB at (left, 1) connection_348 {
+				bendpoints (20, 0), (20, 80), (-270, 80)
+			}
+			returnPin at (right, 0) {
+				connection_349
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	if at (431, 381) {
+		inPin connection_346
+		ifControlFlowOutPin {
+			connection_307
+		}
+		sequenceCall {
+			inPin connection_345
+		}
+	}
+	simpleIdentifier curve at (331, 385) {
+		label at (0, -1)
+		inPin outPin {
+			connection_347
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	not at (391, 381) {
+		inPin connection_347
+		outPin {
+			connection_346
+		}
+	}
+	complexIdentifier vectOps at (531, 771) size (14, 3) {
+		label at (0, 1)
+		methodCall vectorOperations.vectOps.length {
+			argumentPin v_in at (left, 1) connection_349
+			returnPin at (right, 1) {
+				connection_350
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	maximum at (1651, 676) {
+		inPin connection_352 {
+			bendpoints (0, 70), (230, 70)
+		}
+		inPin connection_351 {
+			bendpoints (50, 0)
+		}
+		outPin {
+			connection_354
+		}
+	}
+	literal unit units.si.m "5.94" at (1551, 703) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_351
+		}
 	}
 }
 blockdiagramSpecification LateralAcc {

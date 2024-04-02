@@ -13,7 +13,7 @@ data interface CarMessages {
 	real power = 0.0;
 	real brake = 0.0;
 	real steering = 0.0;
-	real mybearing = 0.0;
+	real mybearing = 0.77;
 	@a2l_unit_label("m")
 	m x = 0.0 [m];
 	@a2l_unit_label("m")

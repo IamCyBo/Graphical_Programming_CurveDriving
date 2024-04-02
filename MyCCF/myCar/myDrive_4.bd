@@ -2,7 +2,7 @@ classType myCar.myDrive_4
 blockdiagramSpecification Main {
 	methodBody move {
 		outPin active {
-			connection_2, connection_11, connection_48, connection_36, connection_29, connection_112, connection_56, connection_16, connection_101, connection_102, connection_104, connection_106, connection_118
+			connection_2, connection_11, connection_48, connection_36, connection_29, connection_112, connection_56, connection_16, connection_123, connection_102, connection_104, connection_106, connection_124, connection_136, connection_134
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
@@ -310,7 +310,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier x at (881, 215) {
 		label at (0, -1)
 		inPin connection_105 {
-			bendpoints (0, -10)
+			bendpoints (80, 0)
 		}
 		outPin sequenceCall {
 			inPin connection_104
@@ -344,55 +344,10 @@ blockdiagramSpecification Main {
 	simpleIdentifier bearing at (801, 165) {
 		label at (-10, -1)
 		inPin connection_103 {
-			bendpoints (0, -10)
+			bendpoints (60, 0)
 		}
 		outPin sequenceCall {
 			inPin connection_102
-		}
-	}
-	complexIdentifier MyTurn_instance at (651, 191) size (14, 8) {
-		label at (0, 1)
-		methodCall myCar.MyTurn.move {
-			argumentPin beta at (left, 3) connection_93
-			argumentPin v at (left, 0) connection_100 {
-				bendpoints (40, 0), (40, 40), (-200, 40), (-200, 110)
-			}
-			argumentPin mydt at (left, 6) connection_98
-			sequenceCall at (-100, -44) {
-				inPin connection_101
-			}
-		}
-		elementCall (myCar.MyTurn.x) {
-			returnPin at (right, 3) {
-				connection_105
-			}
-			sequenceCall at (0, 0) {
-				inPin
-			}
-		}
-		elementCall (myCar.MyTurn.y) {
-			returnPin at (right, 5) {
-				connection_107
-			}
-			sequenceCall at (0, 0) {
-				inPin
-			}
-		}
-		elementCall (myCar.MyTurn.bearing) {
-			returnPin at (top, 6) {
-				connection_103
-			}
-			sequenceCall at (0, 0) {
-				inPin
-			}
-		}
-		elementCall (myCar.MyTurn.radius) {
-			returnPin at (right, 1) {
-				connection_119
-			}
-			sequenceCall at (0, 0) {
-				inPin
-			}
 		}
 	}
 	literal unit units.si.m "0.0" at (821, 333) size (49, 0) {
@@ -443,11 +398,111 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier radius at (891, 145) {
 		label at (0, -1)
-		inPin connection_119 {
-			bendpoints (0, -10), (70, -10), (70, -60)
+		inPin connection_125 {
+			bendpoints (0, -20), (90, -20)
 		}
 		outPin sequenceCall {
-			inPin connection_118
+			inPin connection_124
+		}
+	}
+	complexIdentifier MyTurn_instance at (651, 191) size (14, 8) {
+		label at (0, 1)
+		methodCall myCar.MyTurn.move {
+			argumentPin beta at (left, 3) connection_93
+			argumentPin v at (left, 0) connection_100 {
+				bendpoints (-190, 0)
+			}
+			argumentPin mydt at (left, 6) connection_98
+			sequenceCall at (-60, -30) {
+				inPin connection_123
+			}
+		}
+		elementCall (myCar.MyTurn.x) {
+			returnPin at (right, 1) {
+				connection_105
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.MyTurn.y) {
+			returnPin at (right, 5) {
+				connection_107
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.MyTurn.bearing) {
+			returnPin at (top, 8) {
+				connection_103
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.MyTurn.acc) {
+			returnPin at (right, 4) {
+				connection_137
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+		elementCall (myCar.MyTurn.radius) {
+			returnPin at (right, 2) {
+				connection_130, connection_125
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	complexIdentifier Logger_instance at (1061, 221) size (20, 13) {
+		label at (0, 1)
+		methodCall myCar.Logger.calc {
+			argumentPin t at (left, 0) connection_126 {
+				bendpoints (170, 0)
+			}
+			argumentPin x at (left, 2) connection_127 {
+				bendpoints (130, 0), (130, 30)
+			}
+			argumentPin y at (left, 4) connection_128
+			argumentPin z at (left, 6) connection_135 {
+				bendpoints (60, 0), (60, 20)
+			}
+			argumentPin o at (left, 1) connection_132 {
+				bendpoints (160, 0), (160, 20)
+			}
+			sequenceCall at (-70, -54) {
+				inPin connection_134
+			}
+		}
+	}
+	unitConversion at (841, 211) {
+		inPin connection_130
+		outPin {
+			connection_127, connection_132, connection_126
+		}
+		inputType units.si.m outputType real
+	}
+	unitConversion at (931, 261) {
+		inPin connection_133
+		outPin {
+			connection_135, connection_128
+		}
+		inputType units.common.mps2 outputType real
+	}
+	simpleIdentifier acc at (861, 265) {
+		label at (0, -1)
+		inPin connection_137 {
+			bendpoints (0, 30)
+		}
+		outPin {
+			connection_133
+		}
+		sequenceCall {
+			inPin connection_136
 		}
 	}
 }
