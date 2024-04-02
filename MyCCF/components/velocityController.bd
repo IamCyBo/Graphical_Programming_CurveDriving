@@ -1,0 +1,257 @@
+classType components.velocityController
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_29, connection_42, connection_56
+		}
+	}
+	unitConversion at (341, 261) {
+		inPin connection_143
+		outPin {
+			connection_50, connection_146, connection_147, connection_157, connection_54
+		}
+		inputType units.common.kmph outputType real
+	}
+	literal Numeric "0" at (391, 113) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_51, connection_144, connection_55
+		}
+	}
+	literal Numeric "1000" at (251, 223) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_9
+		}
+	}
+	multiplication at (301, 256) {
+		inPin connection_9
+		inPin connection_13
+		outPin {
+			connection_143
+		}
+	}
+	methodArgumentIdentifier calc.target_velocity at (171, 255) {
+		label at (-50, -1)
+		outPin {
+			connection_11
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier calc.current_velocity at (171, 295) {
+		label at (-50, -1)
+		outPin {
+			connection_12
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (261, 266) {
+		inPin connection_11 {
+			bendpoints (50, 0)
+		}
+		inPin connection_12 {
+			bendpoints (50, 0)
+		}
+		outPin {
+			connection_13
+		}
+	}
+	simpleIdentifier brake at (701, 105) {
+		label at (0, -1)
+		inPin connection_26 {
+			bendpoints (10, 0), (10, -60)
+		}
+		outPin sequenceCall at (0, -24) {
+			inPin connection_25 {
+				bendpoints (0, -20)
+			}
+		}
+	}
+	simpleIdentifier power at (701, 165) {
+		label at (0, -1)
+		inPin connection_28
+		outPin sequenceCall at (0, -24) {
+			inPin connection_27 {
+				bendpoints (0, -20), (40, -20), (40, 40)
+			}
+		}
+	}
+	literal Numeric "0.0" at (601, 163) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_28, connection_26
+		}
+	}
+	if at (591, 101) {
+		inPin connection_145
+		ifControlFlowOutPin {
+			connection_25, connection_27
+		}
+		sequenceCall {
+			inPin connection_29
+		}
+	}
+	greater at (541, 236) {
+		inPin connection_50 {
+			bendpoints (0, -80), (160, -80)
+		}
+		inPin connection_51 {
+			bendpoints (90, 0), (90, 140)
+		}
+		outPin {
+			connection_49
+		}
+	}
+	less at (541, 386) {
+		inPin connection_54 {
+			bendpoints (0, 120)
+		}
+		inPin connection_55 {
+			bendpoints (90, 0), (90, 290)
+		}
+		outPin {
+			connection_63
+		}
+	}
+	literal Numeric "0.0" at (661, 243) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_46
+		}
+	}
+	simpleIdentifier brake at (701, 245) {
+		label at (0, -1)
+		inPin connection_46 {
+			bendpoints (-10, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_47 {
+				bendpoints (0, -20)
+			}
+		}
+	}
+	if at (591, 241) {
+		inPin connection_49
+		ifControlFlowOutPin {
+			connection_47, connection_155
+		}
+		sequenceCall {
+			inPin connection_42
+		}
+	}
+	simpleIdentifier power at (701, 295) {
+		label at (0, -1)
+		inPin connection_156
+		outPin sequenceCall {
+			inPin connection_155 {
+				bendpoints (0, 30)
+			}
+		}
+	}
+	literal Numeric "0.0" at (661, 383) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_58
+		}
+	}
+	simpleIdentifier brake at (711, 435) {
+		label at (0, -1)
+		inPin connection_162
+		outPin sequenceCall at (-10, -14) {
+			inPin connection_161 {
+				bendpoints (0, 30)
+			}
+		}
+	}
+	if at (591, 391) {
+		inPin connection_63
+		ifControlFlowOutPin {
+			connection_62, connection_161
+		}
+		sequenceCall {
+			inPin connection_56
+		}
+	}
+	simpleIdentifier power at (701, 385) {
+		label at (0, -1)
+		inPin connection_58 {
+			bendpoints (-10, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_62 {
+				bendpoints (0, -30)
+			}
+		}
+	}
+	literal Numeric "0.0" at (391, 233) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_159, connection_149
+		}
+	}
+	literal Numeric "100.0" at (391, 213) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_160, connection_148
+		}
+	}
+	equal at (541, 96) {
+		inPin connection_146 {
+			bendpoints (0, -170)
+		}
+		inPin connection_144
+		outPin {
+			connection_145
+		}
+	}
+	complexIdentifier Limiter_instance_2 at (461, 281) size (6, 4) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Nonlinears.Limiter.value {
+			argumentPin mn at (top, 0) connection_149 {
+				bendpoints (30, 0)
+			}
+			argumentPin x at (left, 1) connection_147 {
+				bendpoints (0, 30)
+			}
+			argumentPin mx at (top, 4) connection_148 {
+				bendpoints (70, 0)
+			}
+			returnPin at (right, 1) {
+				connection_156
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+	absolute at (391, 431) {
+		inPin connection_157 {
+			bendpoints (0, 170)
+		}
+		outPin {
+			connection_158
+		}
+	}
+	complexIdentifier Limiter_instance_2 at (461, 421) size (6, 4) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Nonlinears.Limiter.value {
+			argumentPin mn at (top, 0) connection_159 {
+				bendpoints (0, 120), (30, 120)
+			}
+			argumentPin x at (left, 1) connection_158
+			argumentPin mx at (top, 4) connection_160 {
+				bendpoints (10, 0), (10, 130), (70, 130)
+			}
+			returnPin at (right, 1) {
+				connection_162
+			}
+			sequenceCall at (0, 6) {
+				inPin
+			}
+		}
+	}
+}

@@ -1,0 +1,177 @@
+classType myCar.SteeringCtrl
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_85, connection_94
+		}
+	}
+	simpleIdentifier delta at (161, 65) {
+		label at (0, -1)
+		inPin outPin {
+			connection_75
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier str at (151, 105) {
+		label at (0, -1)
+		inPin outPin {
+			connection_76
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (251, 86) {
+		inPin connection_75 {
+			bendpoints (40, 0)
+		}
+		inPin connection_76
+		outPin {
+			connection_99, connection_79
+		}
+	}
+	complexIdentifier Signum at (401, 31) size (4, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Nonlinears.Signum.value {
+			argumentPin x at (left, 1) connection_99 {
+				bendpoints (60, 0), (60, -50)
+			}
+			returnPin at (right, 1) {
+				connection_81
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	absolute at (401, 131) {
+		inPin connection_79 {
+			bendpoints (110, 0)
+		}
+		outPin {
+			connection_96
+		}
+	}
+	simpleIdentifier dstr at (421, 175) {
+		label at (0, -1)
+		outPin {
+			connection_97
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	multiplication at (591, 66) {
+		inPin connection_81 {
+			bendpoints (140, 0)
+		}
+		inPin connection_98 {
+			bendpoints (0, -50)
+		}
+		outPin {
+			connection_83
+		}
+	}
+	addition at (741, 86) {
+		inPin connection_83 {
+			bendpoints (110, 0)
+		}
+		inPin connection_87 {
+			bendpoints (0, 40), (-130, 40)
+		}
+		outPin {
+			connection_86
+		}
+	}
+	simpleIdentifier str at (821, 95) {
+		label at (0, -1)
+		inPin connection_86
+		outPin {
+			connection_87
+		}
+		sequenceCall {
+			inPin connection_85
+		}
+	}
+	simpleIdentifier str at (131, 265) {
+		label at (0, -1)
+		inPin outPin {
+			connection_91, connection_88
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	absolute at (271, 291) {
+		inPin connection_88 {
+			bendpoints (90, 0)
+		}
+		outPin {
+			connection_89
+		}
+	}
+	complexIdentifier Signum at (351, 211) size (4, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Nonlinears.Signum.value {
+			argumentPin x at (left, 1) connection_91 {
+				bendpoints (40, 0), (40, -40)
+			}
+			returnPin at (right, 1) {
+				connection_92
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	literal Numeric "0.5" at (271, 333) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_90
+		}
+	}
+	minimum at (401, 306) {
+		inPin connection_89 {
+			bendpoints (90, 0)
+		}
+		inPin connection_90 {
+			bendpoints (80, 0)
+		}
+		outPin {
+			connection_93
+		}
+	}
+	multiplication at (561, 266) {
+		inPin connection_92 {
+			bendpoints (160, 0)
+		}
+		inPin connection_93 {
+			bendpoints (120, 0)
+		}
+		outPin {
+			connection_95
+		}
+	}
+	simpleIdentifier str at (661, 265) {
+		label at (0, -1)
+		inPin connection_95 {
+			bendpoints (60, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_94
+		}
+	}
+	minimum at (531, 126) {
+		inPin connection_96 {
+			bendpoints (90, 0)
+		}
+		inPin connection_97 {
+			bendpoints (70, 0)
+		}
+		outPin {
+			connection_98
+		}
+	}
+}

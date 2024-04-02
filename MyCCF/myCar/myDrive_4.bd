@@ -2,7 +2,7 @@ classType myCar.myDrive_4
 blockdiagramSpecification Main {
 	methodBody move {
 		outPin active {
-			connection_2, connection_11, connection_16, connection_48, connection_36, connection_29, connection_56, connection_101, connection_102, connection_104, connection_106, connection_112
+			connection_2, connection_11, connection_48, connection_36, connection_29, connection_112, connection_56, connection_16, connection_101, connection_102, connection_104, connection_106
 		}
 	}
 	simpleIdentifier BrakeMomentum at (181, 31) {
