@@ -1,0 +1,90 @@
+classType systemTests.R5ST
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_3, connection_13
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (21, 35) {
+		label at (0, -1)
+		outPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	equal at (151, 46) {
+		inPin connection_1 {
+			bendpoints (90, 0)
+		}
+		inPin connection_2 {
+			bendpoints (80, 0)
+		}
+		outPin {
+			connection_4
+		}
+	}
+	literal unit units.common.kmph "0.0" at (21, 73) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_2
+		}
+	}
+	if at (241, 51) {
+		inPin connection_4
+		ifControlFlowOutPin {
+			connection_10
+		}
+		sequenceCall {
+			inPin connection_3
+		}
+	}
+	simpleIdentifier resources.DriverMessages.dist2End at (141, 125) {
+		label at (0, -1)
+		outPin {
+			connection_6
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	less at (251, 136) {
+		inPin connection_6 {
+			bendpoints (70, 0)
+		}
+		inPin connection_7 {
+			bendpoints (70, 0)
+		}
+		outPin {
+			connection_14, connection_11
+		}
+	}
+	simpleIdentifier proximity at (141, 165) {
+		label at (0, -1)
+		outPin {
+			connection_7
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.TestMessages.r5st_success at (361, 145) {
+		label at (0, -1)
+		inPin connection_11
+		sequenceCall {
+			inPin connection_10 {
+				bendpoints (60, 0)
+			}
+		}
+	}
+	simpleIdentifier v at (331, 215) {
+		label at (0, -1)
+		inPin connection_14 {
+			bendpoints (40, 0)
+		}
+		outPin sequenceCall {
+			inPin connection_13
+		}
+	}
+}
