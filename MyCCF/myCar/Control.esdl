@@ -13,7 +13,7 @@ import SystemLib.Math.MathLib;
 import SystemLib.Miscellaneous.EdgeFalling;
 
 singleton class Control
-reads CarMessages.mybearing, CarMessages.x, CarMessages.y, CarMessages.v, CarMessages.radius
+reads CarMessages.mybearing, CarMessages.x, CarMessages.y, CarMessages.v
 writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route, CarMessages.power, CarMessages.brake {
 
 	vectOps vectOps;
@@ -39,9 +39,12 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	real angle;
 	EdgeFalling EdgeFalling_instance;
 	boolean first = true;
+	const m breakingDistance = 33.0[m];
+	const kmph vMax = 60.0[kmph];
+	const kmph fullStop = 0.0[kmph];
 
 	@thread
-	@generated("blockdiagram", "c9bfff2b")
+	@generated("blockdiagram", "61a2eaee")
 	public void calc() {
 		this.nextFocuspoint(Route.focuspoint, vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 1
 		Route.calc(focuspointIndex); // Main/calc 2
@@ -59,44 +62,34 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	}
 
 	@thread
-	@generated("blockdiagram", "ab00bf20")
-	public void setTargetVel() {
-		if (distance2end <= 35[m]) {
-			target_vel = 0.0[kmph]; // TargetVeloOld/setTargetVel 1/if-then 1
-		} else {
-			target_vel = min((MathLib_instance.sqrt(((0.8 * g) * real(CarMessages.radius / 1.0[m]))) * 3.6[kmph]), 60.0[kmph]); // TargetVeloOld/setTargetVel 1/if-else 1
-		} // TargetVeloOld/setTargetVel 1
-	}
-
-	@thread
-	@generated("blockdiagram", "a951ac51")
+	@generated("blockdiagram", "f1ef9520")
 	public void setPwrBrk() {
 		velocityController.calc(target_vel, CarMessages.v); // VelocityCtrl/setPwrBrk 1
 		CarMessages.power = velocityController.power; // VelocityCtrl/setPwrBrk 2
 		CarMessages.brake = velocityController.brake; // VelocityCtrl/setPwrBrk 3
 	}
 
-	@generated("blockdiagram", "90d52fc8")
+	@generated("blockdiagram", "abc73124")
 	public void getTargetVelo(m in d2end, m in distanceFPend) {
-		if (d2end <= 35[m]) {
-			target_vel = 0.0[kmph]; // TargetVelo/getTargetVelo 1/if-then 1
+		if (d2end <= breakingDistance) {
+			target_vel = fullStop; // TargetVelo/getTargetVelo 1/if-then 1
 		} else {
 			if ((!curve) && (distanceFPend == 0.0[m])) {
-				target_vel = 60.0[kmph]; // TargetVelo/getTargetVelo 1/if-else 1/if-then 1
+				target_vel = vMax; // TargetVelo/getTargetVelo 1/if-else 1/if-then 1
 			} else {
 				this.calcRadius(); // TargetVelo/getTargetVelo 1/if-else 1/if-else 1
-				target_vel = min((MathLib_instance.sqrt(((0.8 * g) * real(radius / 1.0[m]))) * 3.6[kmph]), 60.0[kmph]); // TargetVelo/getTargetVelo 1/if-else 1/if-else 2
+				target_vel = min((MathLib_instance.sqrt(((0.8 * g) * real(radius / 1.0[m]))) * 3.6[kmph]), vMax); // TargetVelo/getTargetVelo 1/if-else 1/if-else 2
 			} // TargetVelo/getTargetVelo 1/if-else 1
 		} // TargetVelo/getTargetVelo 1
 	}
 
-	@generated("blockdiagram", "742e91c5")
+	@generated("blockdiagram", "dca11db7")
 	public void calcAngle() {
 		Route.calc((focuspointIndex + 1)); // CalcAngle/calcAngle 1
 		angle = MathLib_instance.tan((abs(vectOps.angle(vectOps.getVect(Route.focuspoint, oldFocuspoint), oldVector)) / 2.0)); // CalcAngle/calcAngle 2
 	}
 
-	@generated("blockdiagram", "f64bd060")
+	@generated("blockdiagram", "6f75efb4")
 	public void checkDelta(real in ^delta) {
 		if (curve) {
 			if (abs(^delta) < 0.01) {
@@ -105,7 +98,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		} // CheckCurve/checkDelta 1
 	}
 
-	@generated("blockdiagram", "2e93f06b")
+	@generated("blockdiagram", "604b2232")
 	public void nextFocuspoint(arr_m in oldFP[2], arr_m in oldVec[2]) {
 		^trigger.compute((distance2focuspoint < proximity)); // NextFocuspoint/nextFocuspoint 1
 		if (^trigger.value()) {
@@ -123,7 +116,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		} // NextFocuspoint/nextFocuspoint 5
 	}
 
-	@generated("blockdiagram", "04058894")
+	@generated("blockdiagram", "f1b37327")
 	public void calcRadius() {
 		radius = max((vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), oldFocuspoint)) * angle), 5.94[m]); // CalcRadius/calcRadius 1
 	}

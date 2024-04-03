@@ -366,176 +366,6 @@ blockdiagramSpecification Main {
 		}
 	}
 }
-blockdiagramSpecification TargetVeloOld {
-	methodBody setTargetVel {
-		outPin active {
-			connection_163
-		}
-	}
-	lessOrEqual at (331, 166) {
-		inPin connection_192 {
-			bendpoints (100, 0)
-		}
-		inPin connection_167
-		outPin {
-			connection_164
-		}
-	}
-	literal unit units.common.kmph "0.0" at (491, 213) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_166
-		}
-	}
-	literal unit units.si.m "35" at (261, 183) size (49, 0) {
-		label at (30, -16)
-		outPin {
-			connection_167
-		}
-	}
-	multiplication at (321, 306) {
-		inPin connection_180 {
-			bendpoints (40, 0)
-		}
-		inPin connection_181
-		outPin {
-			connection_168
-		}
-	}
-	multiplication at (401, 326) {
-		inPin connection_168 {
-			bendpoints (40, 0)
-		}
-		inPin connection_170
-		outPin {
-			connection_169
-		}
-	}
-	typeConverter real at (361, 371) {
-		inPin connection_172
-		outPin {
-			connection_170
-		}
-	}
-	multiplication at (631, 346) {
-		inPin connection_174 {
-			bendpoints (60, 0)
-		}
-		inPin connection_173 {
-			bendpoints (100, 0)
-		}
-		outPin {
-			connection_171
-		}
-	}
-	unitConversion at (301, 371) {
-		inPin connection_182
-		outPin {
-			connection_172
-		}
-		inputType units.si.m outputType real
-	}
-	literal unit units.common.kmph "3.6" at (481, 393) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_173
-		}
-	}
-	complexIdentifier MathLib_instance at (481, 331) size (8, 3) {
-		label at (0, 1)
-		methodCall SystemLib.Math.MathLib.sqrt {
-			argumentPin val at (left, 0) connection_169
-			returnPin at (right, 0) {
-				connection_174
-			}
-			sequenceCall at (0, 6) {
-				inPin
-			}
-		}
-	}
-	literal unit units.common.kmph "60.0" at (631, 413) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_175
-		}
-	}
-	minimum at (731, 376) {
-		inPin connection_171 {
-			bendpoints (10, 0), (10, 20)
-		}
-		inPin connection_175 {
-			bendpoints (10, 0), (10, -20)
-		}
-		outPin {
-			connection_177
-		}
-	}
-	simpleIdentifier target_vel at (821, 375) {
-		label at (0, -1)
-		inPin connection_177 {
-			bendpoints (50, 0)
-		}
-		outPin sequenceCall {
-			inPin connection_179 {
-				bendpoints (0, 70), (380, 70)
-			}
-		}
-	}
-	simpleIdentifier target_vel at (601, 215) {
-		label at (0, -1)
-		inPin connection_166
-		outPin sequenceCall {
-			inPin connection_178 {
-				bendpoints (130, 0)
-			}
-		}
-	}
-	ifElse at (411, 171) {
-		inPin connection_164
-		ifControlFlowOutPin {
-			connection_178
-		}
-		elseControlFlowOutPin {
-			connection_179
-		}
-		sequenceCall {
-			inPin connection_163
-		}
-	}
-	literal Numeric "0.8" at (231, 293) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_180
-		}
-	}
-	simpleIdentifier g at (231, 325) {
-		label at (0, -1)
-		outPin {
-			connection_181
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.CarMessages.radius at (201, 375) {
-		label at (0, -1)
-		outPin {
-			connection_182
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier distance2end at (181, 145) {
-		label at (0, -1)
-		inPin outPin {
-			connection_192
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-}
 blockdiagramSpecification VelocityCtrl {
 	methodBody setPwrBrk {
 		outPin active {
@@ -607,25 +437,19 @@ blockdiagramSpecification TargetVelo {
 			connection_390
 		}
 	}
-	literal unit units.si.m "35" at (51, 273) size (49, 0) {
-		label at (30, -16)
-		outPin {
-			connection_392
-		}
-	}
-	lessOrEqual at (121, 256) {
+	lessOrEqual at (191, 256) {
 		inPin connection_449 {
 			bendpoints (20, 0)
 		}
-		inPin connection_392
+		inPin connection_166
 		outPin {
 			connection_393
 		}
 	}
-	ifElse at (211, 261) {
+	ifElse at (281, 261) {
 		inPin connection_393
 		ifControlFlowOutPin {
-			connection_394
+			connection_174
 		}
 		elseControlFlowOutPin {
 			connection_391
@@ -634,24 +458,16 @@ blockdiagramSpecification TargetVelo {
 			inPin connection_390
 		}
 	}
-	literal unit units.common.kmph "0.0" at (381, 233) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_395
-		}
-	}
-	simpleIdentifier target_vel at (501, 225) {
+	simpleIdentifier target_vel at (571, 225) {
 		label at (0, -1)
-		inPin connection_395 {
-			bendpoints (70, 0)
-		}
+		inPin connection_175
 		outPin sequenceCall {
-			inPin connection_394 {
+			inPin connection_174 {
 				bendpoints (0, -60)
 			}
 		}
 	}
-	simpleIdentifier curve at (81, 325) {
+	simpleIdentifier curve at (151, 325) {
 		label at (0, -1)
 		inPin outPin {
 			connection_396
@@ -660,13 +476,13 @@ blockdiagramSpecification TargetVelo {
 			inPin
 		}
 	}
-	not at (191, 321) {
+	not at (261, 321) {
 		inPin connection_396
 		outPin {
 			connection_397
 		}
 	}
-	and at (341, 326) {
+	and at (411, 326) {
 		inPin connection_397
 		inPin connection_399 {
 			bendpoints (0, -50)
@@ -675,7 +491,7 @@ blockdiagramSpecification TargetVelo {
 			connection_398
 		}
 	}
-	equal at (221, 386) {
+	equal at (291, 386) {
 		inPin connection_450
 		inPin connection_400 {
 			bendpoints (10, 0), (10, -10)
@@ -684,13 +500,13 @@ blockdiagramSpecification TargetVelo {
 			connection_399
 		}
 	}
-	literal unit units.si.m "0.0" at (151, 413) size (49, 0) {
+	literal unit units.si.m "0.0" at (221, 413) size (49, 0) {
 		label at (30, -16)
 		outPin {
 			connection_400
 		}
 	}
-	simpleIdentifier radius at (451, 495) {
+	simpleIdentifier radius at (521, 495) {
 		label at (0, -1)
 		inPin outPin {
 			connection_406
@@ -699,7 +515,7 @@ blockdiagramSpecification TargetVelo {
 			inPin
 		}
 	}
-	simpleIdentifier g at (511, 435) {
+	simpleIdentifier g at (581, 435) {
 		label at (0, -1)
 		outPin {
 			connection_407
@@ -708,13 +524,13 @@ blockdiagramSpecification TargetVelo {
 			inPin
 		}
 	}
-	literal Numeric "0.8" at (511, 403) size (49, 0) {
+	literal Numeric "0.8" at (581, 403) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_408
 		}
 	}
-	multiplication at (601, 416) {
+	multiplication at (671, 416) {
 		inPin connection_408 {
 			bendpoints (40, 0)
 		}
@@ -723,20 +539,20 @@ blockdiagramSpecification TargetVelo {
 			connection_409
 		}
 	}
-	unitConversion at (521, 491) {
+	unitConversion at (591, 491) {
 		inPin connection_406
 		outPin {
 			connection_410
 		}
 		inputType units.si.m outputType real
 	}
-	typeConverter real at (581, 491) {
+	typeConverter real at (651, 491) {
 		inPin connection_410
 		outPin {
 			connection_411
 		}
 	}
-	multiplication at (661, 426) {
+	multiplication at (731, 426) {
 		inPin connection_409
 		inPin connection_411 {
 			bendpoints (40, 0)
@@ -745,7 +561,7 @@ blockdiagramSpecification TargetVelo {
 			connection_412
 		}
 	}
-	complexIdentifier MathLib_instance at (761, 431) size (8, 3) {
+	complexIdentifier MathLib_instance at (831, 431) size (8, 3) {
 		label at (0, 1)
 		methodCall SystemLib.Math.MathLib.sqrt {
 			argumentPin val at (left, 0) connection_412
@@ -757,7 +573,7 @@ blockdiagramSpecification TargetVelo {
 			}
 		}
 	}
-	multiplication at (911, 446) {
+	multiplication at (981, 446) {
 		inPin connection_413 {
 			bendpoints (60, 0)
 		}
@@ -768,18 +584,18 @@ blockdiagramSpecification TargetVelo {
 			connection_414
 		}
 	}
-	minimum at (1011, 476) {
+	minimum at (1081, 476) {
 		inPin connection_414 {
 			bendpoints (10, 0), (10, 20)
 		}
-		inPin connection_419 {
-			bendpoints (10, 0), (10, -20)
+		inPin connection_171 {
+			bendpoints (60, 0)
 		}
 		outPin {
 			connection_416
 		}
 	}
-	simpleIdentifier target_vel at (1101, 475) {
+	simpleIdentifier target_vel at (1171, 475) {
 		label at (0, -1)
 		inPin connection_416 {
 			bendpoints (50, 0)
@@ -790,35 +606,29 @@ blockdiagramSpecification TargetVelo {
 			}
 		}
 	}
-	literal unit units.common.kmph "60.0" at (911, 513) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_419, connection_418
-		}
-	}
-	literal unit units.common.kmph "3.6" at (761, 493) size (49, 0) {
+	literal unit units.common.kmph "3.6" at (831, 493) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_420
 		}
 	}
-	simpleIdentifier target_vel at (1071, 575) {
+	simpleIdentifier target_vel at (1141, 575) {
 		label at (0, -1)
-		inPin connection_418 {
-			bendpoints (0, 60)
+		inPin connection_173 {
+			bendpoints (40, 0), (40, 40)
 		}
 		outPin sequenceCall {
-			inPin connection_421 {
-				bendpoints (590, 0), (590, 230)
+			inPin connection_172 {
+				bendpoints (600, 0)
 			}
 		}
 	}
-	ifElse at (411, 321) {
+	ifElse at (481, 321) {
 		inPin connection_398 {
 			bendpoints (30, 0)
 		}
 		ifControlFlowOutPin {
-			connection_421
+			connection_172
 		}
 		elseControlFlowOutPin {
 			connection_548, connection_423
@@ -829,7 +639,7 @@ blockdiagramSpecification TargetVelo {
 			}
 		}
 	}
-	methodArgumentIdentifier getTargetVelo.d2end at (61, 195) {
+	methodArgumentIdentifier getTargetVelo.d2end at (131, 195) {
 		label at (-50, -41)
 		outPin {
 			connection_449
@@ -838,7 +648,7 @@ blockdiagramSpecification TargetVelo {
 			inPin
 		}
 	}
-	methodArgumentIdentifier getTargetVelo.distanceFPend at (111, 385) {
+	methodArgumentIdentifier getTargetVelo.distanceFPend at (181, 385) {
 		label at (-30, -31)
 		outPin {
 			connection_450
@@ -847,7 +657,7 @@ blockdiagramSpecification TargetVelo {
 			inPin
 		}
 	}
-	complexIdentifier Control at (341, 491) size (9, 4) {
+	complexIdentifier Control at (411, 491) size (9, 4) {
 		label at (0, 1)
 		methodCall myCar.Control.calcRadius {
 			methodVoidPin at (top, 0) sequenceCall at (-14, -36) {
@@ -855,6 +665,33 @@ blockdiagramSpecification TargetVelo {
 					bendpoints (0, 20), (-130, 20), (-130, 100), (-100, 100)
 				}
 			}
+		}
+	}
+	simpleIdentifier breakingDistance at (111, 275) {
+		label at (-40, 9)
+		outPin {
+			connection_166
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier vMax at (981, 535) {
+		label at (0, -1)
+		outPin {
+			connection_173, connection_171
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier fullStop at (461, 225) {
+		label at (0, -1)
+		outPin {
+			connection_175
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }

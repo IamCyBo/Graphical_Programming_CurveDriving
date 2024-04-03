@@ -7,14 +7,14 @@ import units.common.mps2;
 
 singleton class myCar
 reads CarMessages.steering, CarMessages.power, CarMessages.brake
-writes CarMessages.v, CarMessages.x, CarMessages.y, CarMessages.mybearing, CarMessages.radius {
+writes CarMessages.v, CarMessages.x, CarMessages.y, CarMessages.mybearing, CarMessages.acc {
 
 	myDrive_4 myVehicle;
 	characteristic mps2 g = 0.0[mps2];
 	real mydt = 0.0;
 
 	@thread
-	@generated("blockdiagram", "926380f7")
+	@generated("blockdiagram", "6a519de1")
 	public void calc() {
 		mydt = DeltaTimeService.deltaT; // Main/calc 1
 		myVehicle.move(CarMessages.power, CarMessages.brake, mydt * 1.0[s], g, CarMessages.steering); // Main/calc 2
@@ -22,6 +22,6 @@ writes CarMessages.v, CarMessages.x, CarMessages.y, CarMessages.mybearing, CarMe
 		CarMessages.x = myVehicle.x; // Main/calc 4
 		CarMessages.y = myVehicle.y; // Main/calc 5
 		CarMessages.v = myVehicle.v; // Main/calc 6
-		CarMessages.radius = myVehicle.radius; // Main/calc 7
+		CarMessages.acc = myVehicle.acc; // Main/calc 7
 	}
 }

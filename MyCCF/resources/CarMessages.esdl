@@ -8,8 +8,8 @@ import units.common.mps2;
 data interface CarMessages {
 	@a2l_unit_label("km/h")
 	kmph v = 0.0 [kmph];
-	@a2l_unit_label("m")
-	m radius = 0.0 [m];
+	@a2l_unit_label("m/s^2")
+	mps2 acc = 0.0 [mps2];
 	real power = 0.0;
 	real brake = 0.0;
 	real steering = 0.0;
