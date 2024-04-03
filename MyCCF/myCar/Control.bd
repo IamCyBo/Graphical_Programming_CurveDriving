@@ -651,7 +651,7 @@ blockdiagramSpecification TargetVelo {
 			}
 		}
 	}
-	simpleIdentifier curve at (131, 325) {
+	simpleIdentifier curve at (81, 325) {
 		label at (0, -1)
 		inPin outPin {
 			connection_396
@@ -802,7 +802,7 @@ blockdiagramSpecification TargetVelo {
 			connection_420
 		}
 	}
-	simpleIdentifier target_vel at (1041, 575) {
+	simpleIdentifier target_vel at (1071, 575) {
 		label at (0, -1)
 		inPin connection_418 {
 			bendpoints (0, 60)
@@ -852,7 +852,7 @@ blockdiagramSpecification TargetVelo {
 		methodCall myCar.Control.calcRadius {
 			methodVoidPin at (top, 0) sequenceCall at (-14, -36) {
 				inPin connection_548 {
-					bendpoints (0, 20), (-130, 20), (-130, 90), (-100, 90)
+					bendpoints (0, 20), (-130, 20), (-130, 100), (-100, 100)
 				}
 			}
 		}
