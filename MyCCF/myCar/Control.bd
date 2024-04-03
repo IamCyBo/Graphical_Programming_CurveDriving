@@ -2,7 +2,7 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_3, connection_481, connection_535, connection_107, connection_146, connection_102, connection_105, connection_43, connection_533, connection_5, connection_90, connection_92, connection_460
+			connection_535, connection_3, connection_107, connection_481, connection_146, connection_102, connection_105, connection_43, connection_533, connection_5, connection_90, connection_92, connection_460
 		}
 	}
 	complexIdentifier vectOps at (411, 301) size (13, 5) {
@@ -1090,7 +1090,7 @@ blockdiagramSpecification CheckCurve {
 blockdiagramSpecification NextFocuspoint {
 	methodBody nextFocuspoint {
 		outPin active {
-			connection_510, connection_512, connection_495, connection_496, connection_497
+			connection_510, connection_495, connection_512, connection_496, connection_497
 		}
 	}
 	simpleIdentifier oldVector at (811, 311) {
