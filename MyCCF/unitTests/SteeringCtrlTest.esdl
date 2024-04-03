@@ -1,6 +1,6 @@
 package unitTests;
 
-import myCar.SteeringCtrl;
+import components.SteeringCtrl;
 import assert.Assert;
 
 singleton class SteeringCtrlTest {

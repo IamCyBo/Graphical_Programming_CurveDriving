@@ -146,9 +146,9 @@ blockdiagramSpecification Main {
 		label at (0, 1)
 		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
 			argumentPin signal at (left, 1) connection_58 {
-				bendpoints (50, 0)
+				bendpoints (60, 0)
 			}
-			sequenceCall at (10, -54) {
+			sequenceCall at (-50, -24) {
 				inPin connection_57
 			}
 		}
@@ -161,11 +161,11 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier EdgeRising_instance at (171, 101) size (3, 3) backgroundColor #ffffff {
-		label at (0, 1)
+	complexIdentifier EdgeRising at (171, 121) size (3, 3) backgroundColor #ffffff {
+		label at (-50, 11)
 		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
 			argumentPin signal at (left, 1) connection_60 {
-				bendpoints (50, 0)
+				bendpoints (60, 0)
 			}
 			sequenceCall at (20, 46) {
 				inPin connection_59

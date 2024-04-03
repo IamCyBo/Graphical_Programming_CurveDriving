@@ -1,0 +1,307 @@
+classType systemTests.R4ST
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_59, connection_65, connection_34, connection_5, connection_7, connection_88
+		}
+	}
+	simpleIdentifier start at (51, 205) {
+		label at (-40, 9)
+		outPin {
+			connection_35, connection_60, connection_8
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	if at (271, 211) {
+		inPin connection_36
+		ifControlFlowOutPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin connection_5
+		}
+	}
+	if at (141, 291) {
+		inPin connection_8 {
+			bendpoints (20, 0), (20, 90)
+		}
+		ifControlFlowOutPin {
+			connection_12, connection_26
+		}
+		sequenceCall {
+			inPin connection_7
+		}
+	}
+	absolute at (691, 371) {
+		inPin connection_90
+		outPin {
+			connection_46
+		}
+	}
+	literal Numeric "0.01" at (551, 453) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_84, connection_83
+		}
+	}
+	complexIdentifier Timer at (261, 381) size (5, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.CounterTimer.Timer.begin {
+			argumentPin startTime at (top, 2) connection_16 {
+				bendpoints (10, 0)
+			}
+			sequenceCall at (36, -40) {
+				inPin connection_15
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.compute {
+			methodVoidPin at (left, 1) sequenceCall at (-50, -44) {
+				inPin connection_12 {
+					bendpoints (0, 60)
+				}
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.isElapsed {
+			returnPin at (right, 0) {
+				connection_27
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	literal Numeric "20" at (231, 323) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_16
+		}
+	}
+	ifElse at (491, 241) {
+		inPin connection_27 {
+			bendpoints (120, 0), (120, -140)
+		}
+		ifControlFlowOutPin {
+			connection_75, connection_74
+		}
+		elseControlFlowOutPin {
+			connection_55
+		}
+		sequenceCall {
+			inPin connection_26 {
+				bendpoints (290, 0)
+			}
+		}
+	}
+	simpleIdentifier result at (691, 265) {
+		label at (0, -1)
+		inPin outPin {
+			connection_29
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	literal Boolean "true" at (721, 183) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_31
+		}
+	}
+	complexIdentifier EdgeRising at (191, 201) size (3, 3) backgroundColor #ffffff {
+		label at (-40, 11)
+		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
+			argumentPin signal at (left, 1) connection_35 {
+				bendpoints (20, 0), (20, 10)
+			}
+			sequenceCall at (-30, -44) {
+				inPin connection_34
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeRising.value {
+			returnPin at (right, 1) {
+				connection_36
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	greater at (761, 396) {
+		inPin connection_46 {
+			bendpoints (30, 0)
+		}
+		inPin connection_92 {
+			bendpoints (40, 0)
+		}
+		outPin {
+			connection_56
+		}
+	}
+	if at (821, 401) {
+		inPin connection_56
+		ifControlFlowOutPin {
+			connection_57
+		}
+		sequenceCall {
+			inPin connection_55 {
+				bendpoints (0, 50), (300, 50)
+			}
+		}
+	}
+	simpleIdentifier result at (921, 465) {
+		label at (0, -1)
+		inPin connection_58
+		outPin sequenceCall {
+			inPin connection_57 {
+				bendpoints (40, 0)
+			}
+		}
+	}
+	literal Boolean "false" at (821, 463) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_58
+		}
+	}
+	complexIdentifier EdgeFalling at (221, 101) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
+			argumentPin signal at (left, 1) connection_60 {
+				bendpoints (20, 0), (20, 10), (50, 10), (50, -90)
+			}
+			sequenceCall at (-70, -30) {
+				inPin connection_59
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeFalling.value {
+			returnPin at (right, 1) {
+				connection_66
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	literal Boolean "false" at (411, 53) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_64, connection_62
+		}
+	}
+	if at (291, 91) {
+		inPin connection_66 {
+			bendpoints (30, 0)
+		}
+		ifControlFlowOutPin {
+			connection_76, connection_77, connection_67
+		}
+		sequenceCall {
+			inPin connection_65
+		}
+	}
+	simpleIdentifier result at (521, 195) {
+		label at (0, -1)
+		inPin connection_68
+		outPin sequenceCall at (-10, -24) {
+			inPin connection_67 {
+				bendpoints (20, 0), (20, 40), (170, 40)
+			}
+		}
+	}
+	literal Boolean "true" at (431, 193) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_68
+		}
+	}
+	simpleIdentifier resources.CarMessages.steering at (481, 375) {
+		label at (0, -1)
+		outPin {
+			connection_89
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.TestMessages.r4st_complete at (811, 195) {
+		label at (0, -1)
+		inPin connection_31 {
+			bendpoints (40, 0)
+		}
+		sequenceCall {
+			inPin connection_74 {
+				bendpoints (150, 0), (150, -100), (260, -100)
+			}
+		}
+	}
+	simpleIdentifier resources.TestMessages.r4st_success at (811, 265) {
+		label at (0, -1)
+		inPin connection_29
+		sequenceCall {
+			inPin connection_75
+		}
+	}
+	simpleIdentifier resources.TestMessages.r4st_complete at (521, 55) {
+		label at (0, -1)
+		inPin connection_62
+		sequenceCall {
+			inPin connection_76 {
+				bendpoints (60, 0), (60, -60)
+			}
+		}
+	}
+	simpleIdentifier resources.TestMessages.r4st_success at (521, 115) {
+		label at (0, -1)
+		inPin connection_64 {
+			bendpoints (20, 0), (20, 60)
+		}
+		sequenceCall {
+			inPin connection_77
+		}
+	}
+	literal Numeric "0.01" at (561, 483) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_82
+		}
+	}
+	multiplication at (621, 466) {
+		inPin connection_83 {
+			bendpoints (20, 0)
+		}
+		inPin connection_82
+		outPin {
+			connection_85
+		}
+	}
+	addition at (681, 446) {
+		inPin connection_84 {
+			bendpoints (20, 0), (20, -10)
+		}
+		inPin connection_85 {
+			bendpoints (0, -10)
+		}
+		outPin {
+			connection_92
+		}
+	}
+	complexIdentifier delta at (601, 371) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.Miscellaneous.DeltaOneStep.compute {
+			argumentPin val at (left, 0) connection_89
+			sequenceCall at (-40, -34) {
+				inPin connection_88
+			}
+		}
+		methodCall SystemLib.Miscellaneous.DeltaOneStep.value {
+			returnPin at (right, 0) {
+				connection_90
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+}

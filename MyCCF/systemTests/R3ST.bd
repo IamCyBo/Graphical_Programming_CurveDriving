@@ -1,0 +1,264 @@
+classType systemTests.R3ST
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_59, connection_65, connection_34, connection_5, connection_7
+		}
+	}
+	simpleIdentifier start at (61, 205) {
+		label at (-40, 9)
+		outPin {
+			connection_35, connection_60, connection_8
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	if at (261, 211) {
+		inPin connection_36
+		ifControlFlowOutPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin connection_5
+		}
+	}
+	if at (131, 291) {
+		inPin connection_8 {
+			bendpoints (20, 0), (20, 90)
+		}
+		ifControlFlowOutPin {
+			connection_12, connection_26
+		}
+		sequenceCall {
+			inPin connection_7
+		}
+	}
+	absolute at (621, 371) {
+		inPin connection_69
+		outPin {
+			connection_46
+		}
+	}
+	literal Numeric "0.5" at (671, 413) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_70
+		}
+	}
+	simpleIdentifier resources.TestMessages.r3st_complete at (801, 305) {
+		label at (0, -1)
+		inPin connection_31
+		sequenceCall {
+			inPin connection_30 {
+				bendpoints (140, 0), (140, -40)
+			}
+		}
+	}
+	simpleIdentifier resources.TestMessages.r3st_success at (801, 245) {
+		label at (0, -1)
+		inPin connection_29
+		sequenceCall {
+			inPin connection_28 {
+				bendpoints (0, -100)
+			}
+		}
+	}
+	complexIdentifier Timer at (251, 381) size (5, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.CounterTimer.Timer.begin {
+			argumentPin startTime at (top, 2) connection_16 {
+				bendpoints (10, 0)
+			}
+			sequenceCall at (26, -30) {
+				inPin connection_15 {
+					bendpoints (0, 120), (-10, 120)
+				}
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.compute {
+			methodVoidPin at (left, 1) sequenceCall at (-50, -44) {
+				inPin connection_12 {
+					bendpoints (0, 60)
+				}
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.isElapsed {
+			returnPin at (right, 0) {
+				connection_27
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	literal Numeric "20" at (221, 323) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_16
+		}
+	}
+	ifElse at (471, 321) {
+		inPin connection_27 {
+			bendpoints (120, 0), (120, -60)
+		}
+		ifControlFlowOutPin {
+			connection_28, connection_30
+		}
+		elseControlFlowOutPin {
+			connection_55
+		}
+		sequenceCall {
+			inPin connection_26 {
+				bendpoints (280, 0)
+			}
+		}
+	}
+	simpleIdentifier result at (681, 245) {
+		label at (0, -1)
+		inPin outPin {
+			connection_29
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	literal Boolean "true" at (711, 303) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_31
+		}
+	}
+	complexIdentifier EdgeRising at (181, 201) size (3, 3) backgroundColor #ffffff {
+		label at (-40, 11)
+		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
+			argumentPin signal at (left, 1) connection_35 {
+				bendpoints (20, 0), (20, 10)
+			}
+			sequenceCall at (-30, -44) {
+				inPin connection_34
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeRising.value {
+			returnPin at (right, 1) {
+				connection_36
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	greater at (751, 396) {
+		inPin connection_46 {
+			bendpoints (90, 0)
+		}
+		inPin connection_70
+		outPin {
+			connection_56
+		}
+	}
+	if at (811, 401) {
+		inPin connection_56
+		ifControlFlowOutPin {
+			connection_57
+		}
+		sequenceCall {
+			inPin connection_55 {
+				bendpoints (310, 0)
+			}
+		}
+	}
+	simpleIdentifier result at (911, 465) {
+		label at (0, -1)
+		inPin connection_58
+		outPin sequenceCall {
+			inPin connection_57 {
+				bendpoints (40, 0)
+			}
+		}
+	}
+	literal Boolean "false" at (811, 463) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_58
+		}
+	}
+	complexIdentifier EdgeFalling at (191, 61) size (3, 3) backgroundColor #ffffff {
+		label at (-30, 11)
+		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
+			argumentPin signal at (left, 1) connection_60 {
+				bendpoints (20, 0), (20, 10), (50, 10), (50, -130)
+			}
+			sequenceCall at (-70, -30) {
+				inPin connection_59
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeFalling.value {
+			returnPin at (right, 1) {
+				connection_66
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.TestMessages.r3st_complete at (501, 45) {
+		label at (0, -1)
+		inPin connection_62 {
+			bendpoints (0, -10)
+		}
+		sequenceCall {
+			inPin connection_61 {
+				bendpoints (20, 0), (20, -20), (60, -20), (60, -50)
+			}
+		}
+	}
+	simpleIdentifier resources.TestMessages.r3st_success at (501, 95) {
+		label at (0, -1)
+		inPin connection_64 {
+			bendpoints (0, 40)
+		}
+		sequenceCall {
+			inPin connection_63
+		}
+	}
+	literal Boolean "false" at (411, 53) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_64, connection_62
+		}
+	}
+	if at (281, 71) {
+		inPin connection_66
+		ifControlFlowOutPin {
+			connection_61, connection_63, connection_67
+		}
+		sequenceCall {
+			inPin connection_65
+		}
+	}
+	simpleIdentifier result at (511, 155) {
+		label at (0, 9)
+		inPin connection_68
+		outPin sequenceCall at (-10, -24) {
+			inPin connection_67 {
+				bendpoints (20, 0), (20, 60)
+			}
+		}
+	}
+	literal Boolean "true" at (421, 153) size (49, 0) {
+		label at (0, 4)
+		outPin {
+			connection_68
+		}
+	}
+	simpleIdentifier resources.CarMessages.steering at (501, 375) {
+		label at (0, -1)
+		outPin {
+			connection_69
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+}
