@@ -2,16 +2,16 @@ classType systemTests.R1ST
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_33, connection_44, connection_57, connection_59, connection_63, connection_67, connection_69
+			connection_57, connection_59, connection_63, connection_69, connection_97
 		}
 	}
-	literal unit units.common.kmph "60" at (201, 273) size (49, 0) {
+	literal unit units.common.kmph "60" at (341, 263) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_9, connection_5
 		}
 	}
-	multiplication at (291, 296) {
+	multiplication at (431, 286) {
 		inPin connection_5 {
 			bendpoints (30, 0), (30, 20)
 		}
@@ -20,13 +20,13 @@ blockdiagramSpecification Main {
 			connection_22
 		}
 	}
-	literal Numeric "0.01" at (201, 313) size (49, 0) {
+	literal Numeric "0.01" at (341, 303) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_6
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (201, 235) {
+	simpleIdentifier resources.CarMessages.v at (341, 225) {
 		label at (0, -1)
 		outPin {
 			connection_50
@@ -35,7 +35,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	subtraction at (291, 236) {
+	subtraction at (431, 226) {
 		inPin connection_50
 		inPin connection_9 {
 			bendpoints (30, 0), (30, -20)
@@ -44,24 +44,24 @@ blockdiagramSpecification Main {
 			connection_10
 		}
 	}
-	absolute at (341, 241) {
+	absolute at (481, 231) {
 		inPin connection_10
 		outPin {
 			connection_21
 		}
 	}
-	if at (451, 271) {
+	if at (591, 261) {
 		inPin connection_20
 		ifControlFlowOutPin {
 			connection_37
 		}
 		sequenceCall {
 			inPin connection_15 {
-				bendpoints (210, 0), (210, -190), (-20, -190)
+				bendpoints (140, 0), (140, -210), (50, -210)
 			}
 		}
 	}
-	greater at (401, 266) {
+	greater at (541, 256) {
 		inPin connection_21 {
 			bendpoints (20, 0)
 		}
@@ -72,63 +72,21 @@ blockdiagramSpecification Main {
 			connection_20
 		}
 	}
-	complexIdentifier StopWatch at (201, 511) size (6, 4) backgroundColor #ffffff {
-		label at (-120, -109)
-		methodCall SystemLib.CounterTimer.StopWatch.value {
-			returnPin at (right, 1) {
-				connection_41, connection_30
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-		methodCall SystemLib.CounterTimer.StopWatch.compute {
-			methodVoidPin at (bottom, 2) sequenceCall at (-24, 11) {
-				inPin connection_28
-			}
-		}
-		methodCall SystemLib.CounterTimer.StopWatch.reset {
-			methodVoidPin at (top, 1) sequenceCall at (-24, -30) {
-				inPin connection_29 {
-					bendpoints (0, -40), (-260, -40), (-260, 440), (-100, 440)
-				}
-			}
-		}
-	}
-	simpleIdentifier T_1D_REAL_TEST at (291, 361) {
-		label at (-50, -59)
-		inPin connection_30 {
-			bendpoints (0, -150)
-		}
-		outPin {
-			connection_31
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	equal at (361, 386) {
-		inPin connection_31 {
-			bendpoints (0, 10)
-		}
-		inPin connection_32
-		outPin {
-			connection_34
-		}
-	}
-	literal Numeric "1.0" at (311, 443) size (49, 0) {
+	literal Numeric "15.0" at (171, 473) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_43, connection_32
+			connection_91
 		}
 	}
-	if at (411, 391) {
-		inPin connection_34
+	if at (481, 411) {
+		inPin connection_88
 		ifControlFlowOutPin {
 			connection_15
 		}
 		sequenceCall {
-			inPin connection_33
+			inPin connection_33 {
+				bendpoints (0, 40), (350, 40)
+			}
 		}
 	}
 	simpleIdentifier result at (851, 245) {
@@ -139,7 +97,7 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin connection_37 {
-				bendpoints (20, 0), (20, -50)
+				bendpoints (90, 0), (90, -40)
 			}
 		}
 	}
@@ -149,49 +107,32 @@ blockdiagramSpecification Main {
 			connection_38
 		}
 	}
-	simpleIdentifier resources.TestMessages.r1st_success at (921, 245) {
+	simpleIdentifier resources.TestMessages.r1st_success at (951, 245) {
 		label at (0, -1)
 		inPin connection_49
-		sequenceCall {
+		sequenceCall at (10, -24) {
 			inPin connection_48 {
-				bendpoints (230, 0), (230, -330), (450, -330)
+				bendpoints (380, 0), (380, -290)
 			}
 		}
 	}
-	simpleIdentifier T_1D_REAL_END at (291, 511) {
-		label at (0, 1)
-		inPin connection_41
-		outPin {
-			connection_42
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	equal at (361, 496) {
-		inPin connection_43
-		inPin connection_42 {
-			bendpoints (10, 0)
-		}
-		outPin {
-			connection_45
-		}
-	}
-	if at (411, 501) {
-		inPin connection_45
+	if at (481, 511) {
+		inPin connection_89
 		ifControlFlowOutPin {
 			connection_46, connection_48
 		}
 		sequenceCall {
-			inPin connection_44
+			inPin connection_44 {
+				bendpoints (0, 40), (350, 40)
+			}
 		}
 	}
-	simpleIdentifier resources.TestMessages.r1st_complete at (921, 295) {
+	simpleIdentifier resources.TestMessages.r1st_complete at (971, 295) {
 		label at (0, -1)
 		inPin connection_47
 		sequenceCall {
 			inPin connection_46 {
-				bendpoints (260, 0), (260, -230)
+				bendpoints (380, 0), (380, -240)
 			}
 		}
 	}
@@ -201,8 +142,8 @@ blockdiagramSpecification Main {
 			connection_47
 		}
 	}
-	complexIdentifier EdgeFalling at (171, 51) size (3, 3) backgroundColor #ffffff {
-		label at (10, 11)
+	complexIdentifier EdgeFalling_instance at (171, 11) size (3, 3) backgroundColor #ffffff {
+		label at (0, 1)
 		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
 			argumentPin signal at (left, 1) connection_58 {
 				bendpoints (60, 0)
@@ -226,7 +167,7 @@ blockdiagramSpecification Main {
 			argumentPin signal at (left, 1) connection_60 {
 				bendpoints (60, 0)
 			}
-			sequenceCall at (-30, 46) {
+			sequenceCall at (20, 46) {
 				inPin connection_59
 			}
 		}
@@ -239,126 +180,139 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier cstart at (61, 105) {
+	simpleIdentifier start at (71, 85) {
 		label at (0, -1)
 		outPin {
-			connection_60, connection_58
+			connection_60, connection_98, connection_58
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	if at (241, 51) {
-		inPin connection_64 {
-			bendpoints (0, -10)
-		}
+	if at (241, 21) {
+		inPin connection_64
 		ifControlFlowOutPin {
-			connection_29, connection_75, connection_80, connection_78, connection_82
+			connection_80, connection_92, connection_95
 		}
 		sequenceCall {
 			inPin connection_63
 		}
 	}
-	if at (141, 561) {
-		inPin connection_77
-		ifControlFlowOutPin {
-			connection_28
-		}
-		sequenceCall {
-			inPin connection_67
-		}
-	}
-	if at (241, 131) {
+	if at (241, 111) {
 		inPin connection_70
 		ifControlFlowOutPin {
-			connection_71
+			connection_86, connection_90
 		}
 		sequenceCall {
 			inPin connection_69
 		}
 	}
-	simpleIdentifier start at (401, 155) {
-		label at (0, -1)
-		inPin connection_72
-		outPin sequenceCall at (-10, -44) {
-			inPin connection_71 {
-				bendpoints (100, 0)
-			}
-		}
-	}
-	literal Boolean "false" at (331, 73) size (49, 0) {
+	literal Boolean "true" at (521, 133) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_76
+			connection_96
 		}
 	}
-	literal Boolean "true" at (331, 153) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_72
-		}
-	}
-	simpleIdentifier start at (401, 75) {
+	simpleIdentifier resources.TestMessages.r1st_complete at (591, 75) {
 		label at (0, -1)
-		inPin connection_76
-		outPin sequenceCall {
-			inPin connection_75 {
-				bendpoints (0, -30), (100, -30)
-			}
-		}
-	}
-	simpleIdentifier start at (51, 565) {
-		label at (0, -1)
-		inPin outPin {
-			connection_77
+		inPin connection_93 {
+			bendpoints (0, 60)
 		}
 		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.TestMessages.r1st_complete at (931, 395) {
-		label at (0, -1)
-		inPin connection_79
-		sequenceCall {
-			inPin connection_78 {
-				bendpoints (0, -30), (460, -30), (460, 320)
+			inPin connection_92 {
+				bendpoints (110, 0), (110, 30)
 			}
 		}
 	}
-	literal Boolean "false" at (761, 343) size (49, 0) {
+	literal Boolean "false" at (451, 13) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_81
+			connection_93, connection_81
 		}
 	}
-	literal Boolean "false" at (761, 393) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_79
-		}
-	}
-	simpleIdentifier resources.TestMessages.r1st_success at (931, 345) {
+	simpleIdentifier resources.TestMessages.r1st_success at (591, 15) {
 		label at (0, -1)
 		inPin connection_81
 		sequenceCall {
 			inPin connection_80 {
-				bendpoints (0, -30), (530, -30), (530, 270)
+				bendpoints (110, 0), (110, -30)
 			}
 		}
 	}
-	simpleIdentifier result at (681, 115) {
-		label at (0, -1)
-		inPin connection_83
-		outPin sequenceCall {
-			inPin connection_82 {
-				bendpoints (0, -30), (380, -30)
+	complexIdentifier Timer_instance_2 at (201, 401) size (5, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.CounterTimer.Timer.begin {
+			argumentPin startTime at (top, 2) connection_87
+			sequenceCall at (-14, -36) {
+				inPin connection_86 {
+					bendpoints (0, 220), (-80, 220)
+				}
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.compute {
+			methodVoidPin at (left, 1) sequenceCall at (-70, -30) {
+				inPin connection_84
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.isElapsed {
+			returnPin at (right, 1) {
+				connection_88
+			}
+			sequenceCall {
+				inPin
 			}
 		}
 	}
-	literal Boolean "true" at (601, 113) size (49, 0) {
+	complexIdentifier Timer_instance at (201, 501) size (5, 3) backgroundColor #ffffff {
+		label at (0, 1)
+		methodCall SystemLib.CounterTimer.Timer.begin {
+			argumentPin startTime at (top, 2) connection_91 {
+				bendpoints (10, 0)
+			}
+			sequenceCall at (46, -20) {
+				inPin connection_90 {
+					bendpoints (0, 220), (-20, 220)
+				}
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.compute {
+			methodVoidPin at (left, 1) sequenceCall at (-70, -30) {
+				inPin connection_85
+			}
+		}
+		methodCall SystemLib.CounterTimer.Timer.isElapsed {
+			returnPin at (right, 1) {
+				connection_89
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	literal Numeric "5.0" at (171, 383) size (49, 0) {
 		label at (0, 4)
 		outPin {
-			connection_83
+			connection_87
+		}
+	}
+	simpleIdentifier result at (591, 135) {
+		label at (0, -1)
+		inPin connection_96
+		outPin sequenceCall {
+			inPin connection_95 {
+				bendpoints (110, 0), (110, 90)
+			}
+		}
+	}
+	if at (71, 281) {
+		inPin connection_98 {
+			bendpoints (50, 0), (50, 30), (-40, 30)
+		}
+		ifControlFlowOutPin {
+			connection_84, connection_85, connection_33, connection_44
+		}
+		sequenceCall {
+			inPin connection_97
 		}
 	}
 }

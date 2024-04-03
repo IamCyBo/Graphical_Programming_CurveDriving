@@ -13,4 +13,5 @@ data interface TestMessages {
 	boolean r4st_complete = false;
 	boolean d6st_success = false;
 	boolean d6st_complete = false;
+	boolean r5st_success = false;
 }
