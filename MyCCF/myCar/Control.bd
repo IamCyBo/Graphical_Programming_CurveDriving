@@ -390,17 +390,11 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	literal unit units.si.m "35" at (671, 453) size (49, 0) {
-		label at (30, -16)
-		outPin {
-			connection_148
-		}
-	}
 	lessOrEqual at (741, 436) {
 		inPin connection_149 {
 			bendpoints (10, 0), (10, 80)
 		}
-		inPin connection_148
+		inPin connection_163
 		outPin {
 			connection_151
 		}
@@ -408,10 +402,10 @@ blockdiagramSpecification Main {
 	ifElse at (821, 441) {
 		inPin connection_151
 		ifControlFlowOutPin {
-			connection_152
+			connection_167
 		}
 		elseControlFlowOutPin {
-			connection_154
+			connection_165
 		}
 		sequenceCall {
 			inPin connection_150
@@ -419,30 +413,18 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier target_vel at (1011, 485) {
 		label at (0, -1)
-		inPin connection_153
+		inPin connection_168
 		outPin sequenceCall {
-			inPin connection_152 {
+			inPin connection_167 {
 				bendpoints (130, 0)
 			}
 		}
 	}
-	literal unit units.common.kmph "0.0" at (901, 483) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_153
-		}
-	}
-	literal unit units.common.kmph "60" at (901, 553) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_155
-		}
-	}
 	simpleIdentifier target_vel at (1011, 555) {
 		label at (0, -1)
-		inPin connection_155
+		inPin connection_166
 		outPin sequenceCall {
-			inPin connection_154 {
+			inPin connection_165 {
 				bendpoints (0, 60)
 			}
 		}
@@ -503,6 +485,33 @@ blockdiagramSpecification Main {
 		inPin connection_160
 		sequenceCall {
 			inPin connection_159
+		}
+	}
+	simpleIdentifier brakingDistance at (651, 455) {
+		label at (0, -1)
+		outPin {
+			connection_163
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier vMax at (901, 555) {
+		label at (0, -1)
+		outPin {
+			connection_166
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier fullStop at (901, 485) {
+		label at (0, -1)
+		outPin {
+			connection_168
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }

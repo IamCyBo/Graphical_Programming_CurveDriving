@@ -59,7 +59,7 @@ blockdiagramSpecification Main {
 			connection_22
 		}
 	}
-	literal Numeric "0.01" at (591, 513) size (49, 0) {
+	literal Numeric "0.01" at (581, 513) size (49, 0) {
 		label at (0, 4)
 		outPin {
 			connection_23
@@ -71,7 +71,7 @@ blockdiagramSpecification Main {
 			connection_25
 		}
 	}
-	literal unit units.si.m "3" at (581, 483) size (49, 0) {
+	literal unit units.si.m "4" at (581, 483) size (49, 0) {
 		label at (30, -16)
 		outPin {
 			connection_27, connection_26

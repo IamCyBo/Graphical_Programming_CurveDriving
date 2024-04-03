@@ -26,9 +26,13 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	SteeringCtrl SteeringCtrl;
 	kmph target_vel = 0.0[kmph];
 	VelocityCtrl velocityController;
+	characteristic real c = 0.0;
+	const m brakingDistance = 33.5[m];
+	const kmph vMax = 60.0[kmph];
+	const kmph fullStop = 0.0[kmph];
 
 	@thread
-	@generated("blockdiagram", "20d7bed6")
+	@generated("blockdiagram", "a330c840")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -44,10 +48,10 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		distance2focuspoint = vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 10
 		DriverMessages.dist2End = (distance2focuspoint + Route.distanceFocusEnd); // Main/calc 11
 		DriverMessages.dist2Route = Route.point_distance(vectOps.getPoint(CarMessages.x, CarMessages.y)); // Main/calc 12
-		if ((distance2focuspoint + Route.distanceFocusEnd) <= 35[m]) {
-			target_vel = 0.0[kmph]; // Main/calc 13/if-then 1
+		if ((distance2focuspoint + Route.distanceFocusEnd) <= brakingDistance) {
+			target_vel = fullStop; // Main/calc 13/if-then 1
 		} else {
-			target_vel = 60[kmph]; // Main/calc 13/if-else 1
+			target_vel = vMax; // Main/calc 13/if-else 1
 		} // Main/calc 13
 		velocityController.calc(target_vel, CarMessages.v); // Main/calc 14
 		CarMessages.brake = velocityController.brake; // Main/calc 15

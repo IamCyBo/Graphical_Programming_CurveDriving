@@ -18,7 +18,7 @@ writes TestMessages.d6st_complete, TestMessages.d6st_success {
 	characteristic boolean ^start = false;
 
 	@thread
-	@generated("blockdiagram", "8b921421")
+	@generated("blockdiagram", "60c92ef9")
 	public void calc() {
 		EdgeFalling.compute(^start); // Main/calc 1
 		if (EdgeFalling.value()) {
@@ -36,7 +36,7 @@ writes TestMessages.d6st_complete, TestMessages.d6st_success {
 				TestMessages.d6st_success = result; // Main/calc 5/if-then 2/if-then 1
 				TestMessages.d6st_complete = true; // Main/calc 5/if-then 2/if-then 2
 			} else {
-				if (abs(DriverMessages.dist2Route) > (3[m] + (3[m] * 0.01))) {
+				if (abs(DriverMessages.dist2Route) > (4[m] + (4[m] * 0.01))) {
 					result = false; // Main/calc 5/if-then 2/if-else 1/if-then 1
 				} // Main/calc 5/if-then 2/if-else 1
 			} // Main/calc 5/if-then 2

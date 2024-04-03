@@ -18,14 +18,10 @@ blockdiagramSpecification Main {
 			connection_51, connection_144, connection_55
 		}
 	}
-	literal Numeric "1000" at (251, 223) size (49, 0) {
-		label at (0, 4)
-		outPin {
-			connection_9
-		}
-	}
 	multiplication at (301, 256) {
-		inPin connection_9
+		inPin connection_163 {
+			bendpoints (20, 0), (20, 20)
+		}
 		inPin connection_13
 		outPin {
 			connection_143
@@ -252,6 +248,15 @@ blockdiagramSpecification Main {
 			sequenceCall at (0, 6) {
 				inPin
 			}
+		}
+	}
+	simpleIdentifier k at (231, 235) {
+		label at (0, -1)
+		outPin {
+			connection_163
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }
