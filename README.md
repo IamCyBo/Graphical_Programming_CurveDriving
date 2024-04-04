@@ -1,7 +1,11 @@
 ### Documentation
-The documentation can be found in the docs.zip folder
+The documentation can be found in the docs.zip folder. In the subfolder videos you can watch a demonstration-video for every systemtest and some special events.
+In the images folder you can find every image that is used in the docu.pdf. In the tables folder you can find our enfilled three-point-estimate excel-sheat also as pdf.
+The display.ipynb file is a jupyter notebook in which the logged data from the track can be plotted via matplotlib.
 ### The Project
 The whole project with every experiment is located in https://github.com/IamCyBo/Graphical_Programming_CurveDriving/blob/D9-merge/Projekt_KampTriebelZiller.zip
+### The Experiments
+The configured experiments should be in the .zip file mentioned in the project paragraph. If the experiment files cannot be imported with the Project.zip, they are provided again separately in an extra file
 ### Logger-setup
 Before the Logger is used, it's important that the folder exists where the logger should create the file in. Or else the Experiment environment crashes.
 ### Multiple Control.bd files
