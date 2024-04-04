@@ -13,4 +13,4 @@ We provide two control files (Control.bd; ControlAccel.bd), one that implements 
 ### What needs to be imported
 To get the project working you need to import Commons, EUnitSupport and SystemLib
 ### How to get the Project into Ascet
-To import the project into Ascet, you can simply import the project .zip file into Ascet or clone the repository with the git extension and specify myCCF as the root folder. It is very important that "import nested projects" is not ticked in Ascet when cloning.
+To import the project into Ascet, you can simply import the project .zip file into Ascet or clone the repository with the git extension and specify myCCF as the root folder. It is very important that "import nested projects" is not ticked in Ascet while cloning.
