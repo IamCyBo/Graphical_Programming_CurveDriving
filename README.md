@@ -12,3 +12,5 @@ Before the Logger is used, it's important that the folder exists where the logge
 We provide two control files (Control.bd; ControlAccel.bd), one that implements all mandatory requirements and one that also implements the lateral acceleration velocity control. We also provide two corresponding Apps that can be executed so that the user can decide whether to use the lateral acceleration function or not. We decided to do this because the documentation is far better readable when having both implementations since a lot was changed in the control file during implementation of the lateral acceleration velocity control.
 ### What needs to be imported
 To get the project working you need to import Commons, EUnitSupport and SystemLib
+### How to get the Project into Ascet
+To import the project into Ascet, you can simply import the project .zip file into Ascet or clone the repository with the git extension and specify myCCF as the root folder. It is very important that "import nested projects" is not ticked in Ascet when cloning.
