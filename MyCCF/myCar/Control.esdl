@@ -18,7 +18,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	Route Route;
 	integer focuspointIndex = 0;
 	m distance2focuspoint = 340.0E6[m];
-	characteristic m proximity = 11.0[m];
+	characteristic m proximity = 12.0[m];
 	EdgeRising ^trigger;
 	arr_m tmp[2] = {1.0[m], 0.0[m]};
 	real str = 0.0;
@@ -26,13 +26,12 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	SteeringCtrl SteeringCtrl;
 	kmph target_vel = 0.0[kmph];
 	VelocityCtrl velocityController;
-	characteristic real c = 0.0;
-	const m brakingDistance = 33.5[m];
+	const m breakingDistance = 33.0[m];
 	const kmph vMax = 60.0[kmph];
 	const kmph fullStop = 0.0[kmph];
 
 	@thread
-	@generated("blockdiagram", "a330c840")
+	@generated("blockdiagram", "61c3728d")
 	public void calc() {
 		^trigger.compute((distance2focuspoint < proximity)); // Main/calc 1
 		if (^trigger.value()) {
@@ -48,7 +47,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		distance2focuspoint = vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 10
 		DriverMessages.dist2End = (distance2focuspoint + Route.distanceFocusEnd); // Main/calc 11
 		DriverMessages.dist2Route = Route.point_distance(vectOps.getPoint(CarMessages.x, CarMessages.y)); // Main/calc 12
-		if ((distance2focuspoint + Route.distanceFocusEnd) <= brakingDistance) {
+		if ((distance2focuspoint + Route.distanceFocusEnd) <= breakingDistance) {
 			target_vel = fullStop; // Main/calc 13/if-then 1
 		} else {
 			target_vel = vMax; // Main/calc 13/if-else 1

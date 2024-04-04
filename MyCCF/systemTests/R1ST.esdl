@@ -19,7 +19,7 @@ writes TestMessages.r1st_success, TestMessages.r1st_complete {
 	Timer Timer_instance_2;
 
 	@thread
-	@generated("blockdiagram", "e1195d90")
+	@generated("blockdiagram", "ee2ca0f3")
 	public void calc() {
 		EdgeFalling_instance.compute(^start); // Main/calc 1
 		EdgeRising_instance.compute(^start); // Main/calc 2

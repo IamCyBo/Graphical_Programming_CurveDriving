@@ -2,24 +2,26 @@ classType myCar.myCar
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_58, connection_54, connection_45, connection_40, connection_24, connection_19
+			connection_58, connection_64, connection_45, connection_40, connection_24, connection_19, connection_65
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (611, 175) {
 		label at (0, -1)
-		inPin connection_20
+		inPin connection_20 {
+			bendpoints (0, 10)
+		}
 		sequenceCall at (-10, -14) {
 			inPin connection_19
 		}
 	}
-	simpleIdentifier resources.CarMessages.x at (611, 75) {
+	simpleIdentifier resources.CarMessages.x at (641, 105) {
 		label at (0, -1)
 		inPin connection_41
 		sequenceCall at (-10, -14) {
 			inPin connection_40
 		}
 	}
-	simpleIdentifier resources.CarMessages.y at (611, 125) {
+	simpleIdentifier resources.CarMessages.y at (611, 135) {
 		label at (0, -1)
 		inPin connection_25
 		sequenceCall at (-10, -14) {
@@ -62,64 +64,13 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.mybearing at (611, 25) {
+	simpleIdentifier resources.CarMessages.mybearing at (621, 25) {
 		label at (0, -1)
 		inPin connection_31 {
-			bendpoints (0, -20)
+			bendpoints (140, 0), (140, -20)
 		}
 		sequenceCall at (-10, -14) {
 			inPin connection_45
-		}
-	}
-	complexIdentifier myVehicle at (151, 61) size (38, 14) backgroundColor #ffffff {
-		label at (-10, 1)
-		methodCall myCar.myDrive_4.move {
-			argumentPin powerCtrl at (left, 2) connection_3
-			argumentPin brakeCtrl at (left, 9) connection_1
-			argumentPin mydt at (bottom, 31) connection_53 {
-				bendpoints (10, 0)
-			}
-			argumentPin myg at (bottom, 16) connection_47 {
-				bendpoints (50, 0)
-			}
-			argumentPin delta at (top, 14) connection_18 {
-				bendpoints (200, 0)
-			}
-			sequenceCall at (220, -54) {
-				inPin connection_54
-			}
-		}
-		elementCall (myCar.myDrive_4.v) {
-			returnPin at (right, 11) {
-				connection_20
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-		elementCall (myCar.myDrive_4.x) {
-			returnPin at (right, 1) {
-				connection_41
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-		elementCall (myCar.myDrive_4.y) {
-			returnPin at (right, 6) {
-				connection_25
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-		elementCall (myCar.myDrive_4.bearing) {
-			returnPin at (top, 30) {
-				connection_31
-			}
-			sequenceCall {
-				inPin
-			}
 		}
 	}
 	simpleIdentifier mydt at (351, 275) {
@@ -146,6 +97,74 @@ blockdiagramSpecification Main {
 		}
 		sequenceCall {
 			inPin
+		}
+	}
+	complexIdentifier myVehicle at (151, 61) size (38, 14) backgroundColor #ffffff {
+		label at (-10, 1)
+		methodCall myCar.myDrive_4.move {
+			argumentPin powerCtrl at (left, 2) connection_3
+			argumentPin brakeCtrl at (left, 9) connection_1
+			argumentPin mydt at (bottom, 31) connection_53 {
+				bendpoints (0, -70)
+			}
+			argumentPin myg at (bottom, 16) connection_47 {
+				bendpoints (50, 0)
+			}
+			argumentPin delta at (top, 14) connection_18 {
+				bendpoints (200, 0)
+			}
+			sequenceCall at (-50, -30) {
+				inPin connection_64
+			}
+		}
+		elementCall (myCar.myDrive_4.v) {
+			returnPin at (right, 10) {
+				connection_20
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.x) {
+			returnPin at (right, 4) {
+				connection_41
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.y) {
+			returnPin at (right, 7) {
+				connection_25
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.bearing) {
+			returnPin at (top, 30) {
+				connection_31
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myCar.myDrive_4.acc) {
+			returnPin at (right, 0) {
+				connection_66
+			}
+			sequenceCall at (0, 0) {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.acc at (741, 75) {
+		label at (0, -1)
+		inPin connection_66 {
+			bendpoints (200, 0)
+		}
+		sequenceCall {
+			inPin connection_65
 		}
 	}
 }

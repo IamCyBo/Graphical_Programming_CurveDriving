@@ -68,7 +68,26 @@ class vectOps {
 	
 	// Calculates the difference between two angles, result is in [-pi;pi]
 	public real angleDiff(real alpha, real beta){
-		real diff = alpha - beta;
+		
+		real diff = 0.0;
+		real nAlpha = alpha;
+		real nBeta = beta;
+		
+	    // Normalize alpha and beta to the range [-pi, pi]
+	    while (nAlpha < -pi) {
+	         nAlpha += 2.0 * pi;
+	    }
+	    while (nAlpha > pi) {
+	        nAlpha -= 2.0 * pi;
+	    }
+	    while (nBeta < -pi) {
+	        nBeta += 2.0 * pi;
+	    }
+	    while (nBeta > pi) {
+	        nBeta -= 2.0 * pi;
+	    }
+		
+		diff = nAlpha - nBeta;
 		if(abs(diff) > pi){
 			return -2 * sign.value(diff) * pi + diff;
 		}

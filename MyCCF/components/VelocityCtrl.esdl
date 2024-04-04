@@ -10,7 +10,7 @@ class VelocityCtrl {
 	@get
 	real brake;
 	Limiter Limiter;
-	const real k = 0.0;
+	const real k = 1000.0;
 
 	@generated("blockdiagram", "f90ba731")
 	public void calc(kmph in target_velocity, kmph in current_velocity) {

@@ -1,4 +1,5 @@
 package myCar;
+import units.common.mps2;
 import SystemLib.Math.MathLib;
 import units.common.kmph;
 import units.si.m;
@@ -12,9 +13,14 @@ class MyTurn {
 	m y = 0.0 [m];
 	@get
 	real bearing = 0.0;
+	@get
+	mps2 acc = 0.0 [mps2];
 
 	characteristic m D = 2.85 [m];
 	m ds = 0.0 [m];
+	m dx = 0.0 [m];
+	m dy = 0.0 [m];
+	m radius = 0.0 [m];
 	MathLib Lib;
 	real dpi = 6.28318531;
 	real pi = 3.141592653; 
@@ -28,7 +34,13 @@ class MyTurn {
 		if (bearing < -pi) {
 			bearing = bearing + 2*pi;
 		}
-		x = x + ds*Lib.cos(bearing);
-		y = y + ds*Lib.sin(bearing);
+		dx = ds*Lib.cos(bearing); 
+		dy = ds*Lib.sin(bearing);
+		x = x + dx;
+		y = y + dy;
+		
+		radius = 2.85 [m] / Lib.sin(abs(beta));
+		acc = Lib.pow(v * (5 / 18[kmph]), 2) * 1.0[mps2] * 1.0[m] / radius;	
+		
 	}
 }

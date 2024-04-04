@@ -2,7 +2,7 @@ classType systemTests.R5ST
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_3, connection_13
+			connection_3
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (21, 35) {
@@ -57,7 +57,7 @@ blockdiagramSpecification Main {
 			bendpoints (70, 0)
 		}
 		outPin {
-			connection_14, connection_11
+			connection_11
 		}
 	}
 	simpleIdentifier proximity at (141, 165) {
@@ -76,15 +76,6 @@ blockdiagramSpecification Main {
 			inPin connection_10 {
 				bendpoints (60, 0)
 			}
-		}
-	}
-	simpleIdentifier v at (331, 215) {
-		label at (0, -1)
-		inPin connection_14 {
-			bendpoints (40, 0)
-		}
-		outPin sequenceCall {
-			inPin connection_13
 		}
 	}
 }

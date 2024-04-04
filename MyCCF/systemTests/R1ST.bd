@@ -2,7 +2,7 @@ classType systemTests.R1ST
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_57, connection_59, connection_63, connection_69, connection_97
+			connection_57, connection_99, connection_63, connection_69, connection_97
 		}
 	}
 	literal unit units.common.kmph "60" at (341, 263) size (49, 0) {
@@ -142,11 +142,11 @@ blockdiagramSpecification Main {
 			connection_47
 		}
 	}
-	complexIdentifier EdgeFalling_instance at (171, 11) size (3, 3) backgroundColor #ffffff {
-		label at (0, 1)
+	complexIdentifier EdgeFalling_instance at (191, 11) size (3, 3) backgroundColor #ffffff {
+		label at (-10, 21)
 		methodCall SystemLib.Miscellaneous.EdgeFalling.compute {
 			argumentPin signal at (left, 1) connection_58 {
-				bendpoints (60, 0)
+				bendpoints (50, 0), (50, -60)
 			}
 			sequenceCall at (-50, -24) {
 				inPin connection_57
@@ -155,25 +155,6 @@ blockdiagramSpecification Main {
 		methodCall SystemLib.Miscellaneous.EdgeFalling.value {
 			returnPin at (right, 1) {
 				connection_64
-			}
-			sequenceCall {
-				inPin
-			}
-		}
-	}
-	complexIdentifier EdgeRising at (171, 121) size (3, 3) backgroundColor #ffffff {
-		label at (-50, 11)
-		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
-			argumentPin signal at (left, 1) connection_60 {
-				bendpoints (60, 0)
-			}
-			sequenceCall at (20, 46) {
-				inPin connection_59
-			}
-		}
-		methodCall SystemLib.Miscellaneous.EdgeRising.value {
-			returnPin at (right, 1) {
-				connection_70
 			}
 			sequenceCall {
 				inPin
@@ -198,7 +179,7 @@ blockdiagramSpecification Main {
 			inPin connection_63
 		}
 	}
-	if at (241, 111) {
+	if at (241, 131) {
 		inPin connection_70
 		ifControlFlowOutPin {
 			connection_86, connection_90
@@ -245,7 +226,7 @@ blockdiagramSpecification Main {
 			argumentPin startTime at (top, 2) connection_87
 			sequenceCall at (-14, -36) {
 				inPin connection_86 {
-					bendpoints (0, 220), (-80, 220)
+					bendpoints (0, 200), (-80, 200)
 				}
 			}
 		}
@@ -271,7 +252,7 @@ blockdiagramSpecification Main {
 			}
 			sequenceCall at (46, -20) {
 				inPin connection_90 {
-					bendpoints (0, 220), (-20, 220)
+					bendpoints (0, 200), (-20, 200)
 				}
 			}
 		}
@@ -306,13 +287,32 @@ blockdiagramSpecification Main {
 	}
 	if at (71, 281) {
 		inPin connection_98 {
-			bendpoints (50, 0), (50, 30), (-40, 30)
+			bendpoints (50, 0), (50, 50), (-50, 50), (-50, 200)
 		}
 		ifControlFlowOutPin {
 			connection_84, connection_85, connection_33, connection_44
 		}
 		sequenceCall {
 			inPin connection_97
+		}
+	}
+	complexIdentifier EdgeRising_instance at (181, 121) size (3, 3) backgroundColor #ffffff {
+		label at (-90, 11)
+		methodCall SystemLib.Miscellaneous.EdgeRising.compute {
+			argumentPin signal at (left, 1) connection_60 {
+				bendpoints (50, 0), (50, 50)
+			}
+			sequenceCall at (0, -44) {
+				inPin connection_99
+			}
+		}
+		methodCall SystemLib.Miscellaneous.EdgeRising.value {
+			returnPin at (right, 1) {
+				connection_70
+			}
+			sequenceCall {
+				inPin
+			}
 		}
 	}
 }
