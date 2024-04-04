@@ -5,7 +5,7 @@ The display.ipynb file is a jupyter notebook in which the logged data from the t
 ### The Project
 The whole project with every experiment is located in https://github.com/IamCyBo/Graphical_Programming_CurveDriving/blob/D9-merge/Projekt_KampTriebelZiller.zip
 ### The Experiments
-The configured experiments should be in the .zip file mentioned in the project paragraph. If the experiment files cannot be imported with the Project.zip, they are provided again separately in an extra file
+The configured experiments should be in the .zip file mentioned in the project paragraph. If the experiment files cannot be imported with the Project.zip, they are provided again separately in an extra file (https://github.com/IamCyBo/Graphical_Programming_CurveDriving/blob/RELEASE/experiments.zip)
 ### Logger-setup
 Before the Logger is used, it's important that the folder exists where the logger should create the file in. Or else the Experiment environment crashes.
 ### Multiple Control.bd files
