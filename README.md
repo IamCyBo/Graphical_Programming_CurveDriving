@@ -1,5 +1,7 @@
 ### Documentation
 The documentation can be found in the docs.zip folder
+### The Project
+The whole project with every experiment is located 
 ### Logger-setup
 Before the Logger is used, it's important that the folder exists where the logger should create the file in. Or else the Experiment environment crashes.
 ### Multiple Control.bd files
