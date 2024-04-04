@@ -44,7 +44,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 	const kmph fullStop = 0.0[kmph];
 
 	@thread
-	@generated("blockdiagram", "61a2eaee")
+	@generated("blockdiagram", "94a382be")
 	public void calc() {
 		this.nextFocuspoint(Route.focuspoint, vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), Route.focuspoint)); // Main/calc 1
 		Route.calc(focuspointIndex); // Main/calc 2
@@ -59,17 +59,12 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		DriverMessages.dist2End = (distance2focuspoint + Route.distanceFocusEnd); // Main/calc 11
 		DriverMessages.dist2Route = Route.point_distance(vectOps.getPoint(CarMessages.x, CarMessages.y)); // Main/calc 12
 		this.getTargetVelo((distance2focuspoint + Route.distanceFocusEnd), Route.distanceFocusEnd); // Main/calc 13
+		velocityController.calc(target_vel, CarMessages.v); // Main/calc 14
+		CarMessages.power = velocityController.power; // Main/calc 15
+		CarMessages.brake = velocityController.brake; // Main/calc 16
 	}
 
-	@thread
-	@generated("blockdiagram", "f1ef9520")
-	public void setPwrBrk() {
-		velocityController.calc(target_vel, CarMessages.v); // VelocityCtrl/setPwrBrk 1
-		CarMessages.power = velocityController.power; // VelocityCtrl/setPwrBrk 2
-		CarMessages.brake = velocityController.brake; // VelocityCtrl/setPwrBrk 3
-	}
-
-	@generated("blockdiagram", "abc73124")
+	@generated("blockdiagram", "1c5532b3")
 	public void getTargetVelo(m in d2end, m in distanceFPend) {
 		if (d2end <= breakingDistance) {
 			target_vel = fullStop; // TargetVelo/getTargetVelo 1/if-then 1
@@ -83,13 +78,13 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		} // TargetVelo/getTargetVelo 1
 	}
 
-	@generated("blockdiagram", "dca11db7")
+	@generated("blockdiagram", "d2847130")
 	public void calcAngle() {
 		Route.calc((focuspointIndex + 1)); // CalcAngle/calcAngle 1
 		angle = MathLib_instance.tan((abs(vectOps.angle(vectOps.getVect(Route.focuspoint, oldFocuspoint), oldVector)) / 2.0)); // CalcAngle/calcAngle 2
 	}
 
-	@generated("blockdiagram", "6f75efb4")
+	@generated("blockdiagram", "179d2a6a")
 	public void checkDelta(real in ^delta) {
 		if (curve) {
 			if (abs(^delta) < 0.01) {
@@ -98,7 +93,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		} // CheckCurve/checkDelta 1
 	}
 
-	@generated("blockdiagram", "604b2232")
+	@generated("blockdiagram", "f205a2c2")
 	public void nextFocuspoint(arr_m in oldFP[2], arr_m in oldVec[2]) {
 		^trigger.compute((distance2focuspoint < proximity)); // NextFocuspoint/nextFocuspoint 1
 		if (^trigger.value()) {
@@ -116,7 +111,7 @@ writes CarMessages.steering, DriverMessages.dist2End, DriverMessages.dist2Route,
 		} // NextFocuspoint/nextFocuspoint 5
 	}
 
-	@generated("blockdiagram", "f1b37327")
+	@generated("blockdiagram", "76f34b9b")
 	public void calcRadius() {
 		radius = max((vectOps.length(vectOps.getVect(vectOps.getPoint(CarMessages.x, CarMessages.y), oldFocuspoint)) * angle), 5.94[m]); // CalcRadius/calcRadius 1
 	}

@@ -2,10 +2,10 @@ classType myCar.Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_535, connection_3, connection_107, connection_481, connection_146, connection_102, connection_105, connection_43, connection_533, connection_5, connection_90, connection_92, connection_460
+			connection_535, connection_3, connection_107, connection_481, connection_146, connection_102, connection_105, connection_43, connection_533, connection_5, connection_90, connection_92, connection_460, connection_559, connection_555, connection_557
 		}
 	}
-	complexIdentifier vectOps at (411, 301) size (13, 5) {
+	complexIdentifier vectOps at (531, 341) size (13, 5) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.length {
 			argumentPin v_in at (left, 1) connection_49 {
@@ -19,7 +19,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier Route at (51, 301) size (15, 7) {
+	complexIdentifier Route at (171, 341) size (15, 7) {
 		label at (50, 11)
 		methodCall myCar.Route.calc {
 			argumentPin arg at (left, 2) connection_4
@@ -55,7 +55,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier focuspointIndex at (-19, 325) {
+	simpleIdentifier focuspointIndex at (101, 365) {
 		label at (-50, 9)
 		inPin outPin {
 			connection_4
@@ -64,7 +64,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier distance2focuspoint at (561, 315) {
+	simpleIdentifier distance2focuspoint at (681, 355) {
 		label at (0, -1)
 		inPin connection_6
 		outPin {
@@ -74,7 +74,7 @@ blockdiagramSpecification Main {
 			inPin connection_5
 		}
 	}
-	simpleIdentifier resources.CarMessages.mybearing at (581, 245) {
+	simpleIdentifier resources.CarMessages.mybearing at (701, 285) {
 		label at (0, -1)
 		outPin {
 			connection_145
@@ -83,7 +83,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier vectOps at (561, 151) size (12, 6) {
+	complexIdentifier vectOps at (681, 191) size (12, 6) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.angle {
 			argumentPin vectA at (left, 1) connection_69
@@ -98,7 +98,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier vectOps at (321, 151) size (14, 5) {
+	complexIdentifier vectOps at (441, 191) size (14, 5) {
 		label at (20, 1)
 		methodCall vectorOperations.vectOps.getVect {
 			argumentPin pointA at (left, 0) connection_21 {
@@ -115,7 +115,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier vectOps at (61, 111) size (14, 4) {
+	complexIdentifier vectOps at (181, 151) size (14, 4) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.getPoint {
 			argumentPin x at (left, 0) connection_19
@@ -128,7 +128,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.x at (11, 105) {
+	simpleIdentifier resources.CarMessages.x at (131, 145) {
 		label at (0, -1)
 		outPin {
 			connection_19
@@ -137,7 +137,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.y at (11, 135) {
+	simpleIdentifier resources.CarMessages.y at (131, 175) {
 		label at (0, -1)
 		outPin {
 			connection_20
@@ -146,7 +146,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier tmp at (491, 101) {
+	simpleIdentifier tmp at (611, 141) {
 		label at (0, 1)
 		inPin inPin INDEX_SET_X inPin INDEX_GET_X outPin elementCall (myCar.Control.tmp) {
 			returnPin at (right, 0) {
@@ -160,7 +160,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	complexIdentifier Logger at (891, 91) size (11, 12) {
+	complexIdentifier Logger at (1011, 131) size (11, 12) {
 		label at (0, 1)
 		methodCall myCar.Logger.calc {
 			argumentPin t at (left, 0) connection_95 {
@@ -181,7 +181,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.x at (741, 95) {
+	simpleIdentifier resources.CarMessages.x at (861, 135) {
 		label at (0, -1)
 		outPin {
 			connection_40
@@ -190,7 +190,7 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.y at (741, 125) {
+	simpleIdentifier resources.CarMessages.y at (861, 165) {
 		label at (0, -1)
 		outPin {
 			connection_41
@@ -199,21 +199,21 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	unitConversion at (801, 91) {
+	unitConversion at (921, 131) {
 		inPin connection_40
 		outPin {
 			connection_96
 		}
 		inputType units.si.m outputType real
 	}
-	unitConversion at (801, 121) {
+	unitConversion at (921, 161) {
 		inPin connection_41
 		outPin {
 			connection_97
 		}
 		inputType units.si.m outputType real
 	}
-	simpleIdentifier str at (871, 25) {
+	simpleIdentifier str at (991, 65) {
 		label at (0, -1)
 		inPin outPin {
 			connection_95, connection_44
@@ -222,14 +222,14 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.steering at (951, 25) {
+	simpleIdentifier resources.CarMessages.steering at (1071, 65) {
 		label at (0, -1)
 		inPin connection_44
 		sequenceCall {
 			inPin connection_43
 		}
 	}
-	simpleIdentifier str at (1141, 285) {
+	simpleIdentifier str at (1261, 325) {
 		label at (0, -1)
 		inPin connection_106
 		outPin {
@@ -239,7 +239,7 @@ blockdiagramSpecification Main {
 			inPin connection_105
 		}
 	}
-	addition at (671, 346) {
+	addition at (791, 386) {
 		inPin connection_82 {
 			bendpoints (60, 0)
 		}
@@ -250,7 +250,7 @@ blockdiagramSpecification Main {
 			connection_457, connection_91
 		}
 	}
-	simpleIdentifier resources.DriverMessages.dist2End at (791, 355) {
+	simpleIdentifier resources.DriverMessages.dist2End at (911, 395) {
 		label at (0, -1)
 		inPin connection_91 {
 			bendpoints (0, -2)
@@ -259,14 +259,14 @@ blockdiagramSpecification Main {
 			inPin connection_90
 		}
 	}
-	simpleIdentifier resources.DriverMessages.dist2Route at (211, 305) {
+	simpleIdentifier resources.DriverMessages.dist2Route at (331, 345) {
 		label at (0, -1)
 		inPin connection_93
 		sequenceCall {
 			inPin connection_92
 		}
 	}
-	complexIdentifier SteeringCtrl at (961, 281) size (14, 8) {
+	complexIdentifier SteeringCtrl at (1081, 321) size (14, 8) {
 		label at (0, 1)
 		methodCall components.SteeringCtrl.calc {
 			methodVoidPin at (top, 0) sequenceCall at (16, -20) {
@@ -293,7 +293,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier vectOps at (741, 251) size (14, 6) {
+	complexIdentifier vectOps at (861, 291) size (14, 6) {
 		label at (0, 1)
 		methodCall vectorOperations.vectOps.angleDiff {
 			argumentPin alpha at (left, 1) connection_144 {
@@ -310,7 +310,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	simpleIdentifier resources.CarMessages.v at (781, 165) {
+	simpleIdentifier resources.CarMessages.v at (901, 205) {
 		label at (0, -1)
 		outPin {
 			connection_201
@@ -319,28 +319,28 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	unitConversion at (831, 161) {
+	unitConversion at (951, 201) {
 		inPin connection_201
 		outPin {
 			connection_534, connection_200
 		}
 		inputType units.common.kmph outputType real
 	}
-	complexIdentifier Control at (851, 421) size (14, 8) {
+	complexIdentifier Control at (971, 461) size (14, 8) {
 		label at (0, 1)
 		methodCall myCar.Control.getTargetVelo {
 			argumentPin d2end at (left, 0) connection_457 {
 				bendpoints (50, 0), (50, 70)
 			}
 			argumentPin distanceFPend at (left, 5) connection_461 {
-				bendpoints (120, 0), (120, 130)
+				bendpoints (120, 0), (120, 50), (520, 50), (520, 130)
 			}
 			sequenceCall at (-80, -24) {
 				inPin connection_460
 			}
 		}
 	}
-	complexIdentifier Control at (1061, 221) size (7, 4) {
+	complexIdentifier Control at (1181, 261) size (7, 4) {
 		label at (0, 1)
 		methodCall myCar.Control.checkDelta {
 			argumentPin delta at (left, 0) connection_482 {
@@ -351,7 +351,7 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-	complexIdentifier Control at (571, 21) size (12, 6) {
+	complexIdentifier Control at (691, 61) size (12, 6) {
 		label at (0, 1)
 		methodCall myCar.Control.nextFocuspoint {
 			argumentPin oldFP at (left, 1) connection_536 {
@@ -365,34 +365,27 @@ blockdiagramSpecification Main {
 			}
 		}
 	}
-}
-blockdiagramSpecification VelocityCtrl {
-	methodBody setPwrBrk {
-		outPin active {
-			connection_190, connection_186, connection_188
-		}
-	}
-	simpleIdentifier resources.CarMessages.v at (231, 235) {
+	simpleIdentifier target_vel at (311, 515) {
 		label at (0, -1)
-		outPin {
-			connection_185
+		inPin outPin {
+			connection_554
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	complexIdentifier velocityController at (351, 181) size (14, 8) {
+	complexIdentifier velocityController at (441, 501) size (14, 8) {
 		label at (0, 1)
 		methodCall components.VelocityCtrl.calc {
-			argumentPin target_velocity at (left, 1) connection_191
-			argumentPin current_velocity at (left, 5) connection_185
-			sequenceCall at (-70, -30) {
-				inPin connection_190
+			argumentPin target_velocity at (left, 1) connection_554
+			argumentPin current_velocity at (left, 5) connection_560
+			sequenceCall at (-60, -30) {
+				inPin connection_559
 			}
 		}
 		elementCall (components.VelocityCtrl.power) {
 			returnPin at (right, 1) {
-				connection_187
+				connection_556
 			}
 			sequenceCall at (0, 0) {
 				inPin
@@ -400,34 +393,36 @@ blockdiagramSpecification VelocityCtrl {
 		}
 		elementCall (components.VelocityCtrl.brake) {
 			returnPin at (right, 5) {
-				connection_189
+				connection_558
 			}
 			sequenceCall at (0, 0) {
 				inPin
 			}
 		}
 	}
-	simpleIdentifier target_vel at (231, 195) {
+	simpleIdentifier resources.CarMessages.v at (311, 555) {
 		label at (0, -1)
-		inPin outPin {
-			connection_191
+		outPin {
+			connection_560
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	simpleIdentifier resources.CarMessages.brake at (561, 235) {
+	simpleIdentifier resources.CarMessages.power at (621, 505) {
 		label at (0, -1)
-		inPin connection_189
+		inPin connection_556 {
+			bendpoints (30, 0)
+		}
 		sequenceCall {
-			inPin connection_188
+			inPin connection_555
 		}
 	}
-	simpleIdentifier resources.CarMessages.power at (501, 195) {
+	simpleIdentifier resources.CarMessages.brake at (641, 555) {
 		label at (0, -1)
-		inPin connection_187
+		inPin connection_558
 		sequenceCall {
-			inPin connection_186
+			inPin connection_557
 		}
 	}
 }
