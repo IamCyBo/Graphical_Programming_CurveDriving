@@ -240,4 +240,95 @@ singleton class vectOpsTest {
 
 		Assert.assertNear(distance/1[m], 1.581138, 0.0001);
 	}
+	
+	@Test
+	// Test case: first angle positive, second angle negative, both angles in [-pi;pi], absolute difference bigger than pi
+	public void testAngleDiff1(){
+		real alpha = 2.5;
+		real beta = -1.6;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertNear(diff, -2.183185, 0.0001);
+	}
+	
+	@Test
+	// Test case: first angle negative, second angle positive, both angles in [-pi;pi], absolute difference bigger than pi
+	public void testAngleDiff2(){
+		real alpha = -2.5;
+		real beta = 1.6;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertNear(diff, 2.183185, 0.0001);
+	}
+	
+	@Test
+	// Test case: both angles negative and in [-pi;pi], absolute difference smaller than pi
+	public void testAngleDiff3(){
+		real alpha = -2.5;
+		real beta = -1.6;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertEqual(diff, -0.9);
+	}
+	
+	@Test
+	// Test case: both angles positive and in [-pi;pi], absolute difference smaller than pi
+	public void testAngleDiff4(){
+		real alpha = 2.5;
+		real beta = 1.6;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertEqual(diff, 0.9);
+	}
+	
+	@Test
+	// Test case: alpha is in [-pi;pi], beta > pi
+	public void testAngleDiff5(){
+		real alpha = 2.5;
+		real beta = 4.7;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertNear(diff, -2.2, 0.0001);
+	}
+	
+	@Test
+	// Test case: alpha is in [-pi;pi], beta < -pi
+	public void testAngleDiff6(){
+		real alpha = 2.5;
+		real beta = -4.7;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertNear(diff, 0.916814, 0.0001);
+	}
+	
+		@Test
+	// Test case: beta is in [-pi;pi], alpha > pi
+	public void testAngleDiff7(){
+		real alpha = 4.5;
+		real beta = 1.7;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertEqual(diff, 2.8);
+	}
+	
+	@Test
+	// Test case: beta is in [-pi;pi], alpha < -pi
+	public void testAngleDiff8(){
+		real alpha = -4.5;
+		real beta = 1.7;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertNear(diff, 0.083185, 0.0001);
+	}
+	
+	@Test
+	// Test case: both angles not in [-pi;pi]
+	public void testAngleDiff9(){
+		real alpha = -4.5;
+		real beta = 16.7;
+		real diff = testee.angleDiff(alpha, beta);
+		
+		Assert.assertNear(diff, -2.350444, 0.0001);
+	}
+	
 }
